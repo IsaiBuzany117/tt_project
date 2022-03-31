@@ -1,11 +1,14 @@
 import React from 'react'
-import Image from 'next/image'
-import googleicon from '../assets/googleicon.svg'
-import facebookicon from '../assets/facebookicon.svg'
+import {FcGoogle} from 'react-icons/fc'
+import {FaFacebook} from 'react-icons/fa'
+import Head from 'next/head'
 
 const Login = () => {
   return (
     <div className='flex justify-center items-center h-screen bg-purple-700'>
+      <Head>
+        <title>Iniciar Sesion</title>
+      </Head>
       <div className='grid grid-cols-2 divide-x-2 divide-indigo-300 w-full'>
         <div className='flex justify-end'>
           <div className='flex flex-col justify-center -translate-x-5 w-80 bg-slate-100 border-2 rounded-2xl'>
@@ -37,13 +40,13 @@ const Login = () => {
           <div className='flex flex-col justify-center translate-x-5 w-80 rounded-2xl'>
             <div className='m-2'>
               <button className=' flex justify-center w-full p-1 shadow-md bg-slate-100 text-slate-800 border rounded-md hover:bg-slate-200'>
-              <Image src={googleicon} alt="google icon svg" width={27} height={27}/>
+                <FcGoogle className='h-7 w-7 mr-2'/>
                 <span className='ml-1'>Iniciar Sesion con Google</span>
               </button>
             </div>
             <div className='m-2'>
               <button className=' flex justify-center w-full p-1 shadow-md bg-blue-800 text-slate-100 border rounded-md hover:bg-blue-900'>
-              <Image src={facebookicon} alt="facebook icon svg" width={27} height={27}/>
+                <FaFacebook className='h-7 w-7 mr-2'/>
                 <span className='ml-1'>Iniciar Sesion con Facebook</span>
               </button>
             </div>

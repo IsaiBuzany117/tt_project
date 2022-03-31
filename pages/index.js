@@ -1,11 +1,17 @@
 import Navinicio from "../components/navinicio"
 import Image from "next/image"
+import Head from 'next/head'
 import logo1 from "../assets/logo1.svg"
 import blockchain from "../assets/blockchain.svg"
+import {HiShieldCheck} from 'react-icons/hi'
+import {MdEventAvailable, MdDevices} from 'react-icons/md'
 
 const index = () => {
   return (
     <div className='h-screen w-full'>
+      <Head>
+        <title>Blockhealth</title>
+      </Head>
       {/* Navbar y logo */}
       <div className='w-full h-3/4 bg-slate-100'>
         <Navinicio />
@@ -42,8 +48,33 @@ const index = () => {
       </div>
       {/* Ventajas */}
       <div className='w-full h-3/4 bg-purple-700'>
-
+        <div className="flex justify-center items-center h-full">
+          <div className="grid grid-cols-3 divide-x-2 divide-solid h-5/6 w-full">
+            <div className="flex flex-col justify-center items-center">
+              <HiShieldCheck className="text-slate-100 h-40 w-40"/>
+              <br />
+              <div>
+                <h2 className="text-slate-100 text-2xl">Seguro</h2>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <MdEventAvailable className="text-slate-100 h-40 w-40"/>
+              <br />
+              <div>
+                <h2 className="text-slate-100 text-2xl">Disponible las 24 hrs</h2>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <MdDevices className="text-slate-100 h-40 w-40"/>
+              <br />
+              <div>
+                <h2 className="text-slate-100 text-2xl">Consultalo en cualquier dispositivo</h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      
       {/* Especialidades */}
       <div className='w-full h-3/4 bg-slate-100'>
 
