@@ -1,7 +1,7 @@
 import Navbar from "../../components/navbar"
 import Head from 'next/head'
 import FormularioP from "../../components/formularioP"
-import { RiHeartPulseFill } from 'react-icons/ri'
+import { RiHeartPulseFill } from 'react-icons/ri' 
 
 const paciente = () => {
   return (
