@@ -6,4 +6,6 @@ const Medico = () => {
   )
 }
 
+
+
 export default Medico
