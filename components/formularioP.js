@@ -3,6 +3,8 @@ import InputField from "./inputfield"
 import RadioButton from "./radiobutton"
 import {pacientevalues, pacienteValidate} from '../utils/formconfig'
 
+
+
 const FormularioP = () => {
   return (
     <>
