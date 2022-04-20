@@ -1,7 +1,10 @@
 import React from 'react'
-import {FcGoogle} from 'react-icons/fc'
-import {FaFacebook} from 'react-icons/fa'
 import Head from 'next/head'
+import { Form, Formik } from 'formik'
+import { loginValues, loginValidate } from '../utils/login.config'
+import TextField from '../components/TextField'
+import PasswordField from '../components/PasswordField'
+import ButtonSubmit from '../components/ButtonSubmit'
 
 const Login = () => {
   return (
@@ -9,9 +12,31 @@ const Login = () => {
       <Head>
         <title>Iniciar Sesion</title>
       </Head>
-      <div className='grid grid-cols-2 divide-x-2 divide-indigo-300 w-full'>
-        <div className='flex justify-end'>
-          <div className='flex flex-col justify-center -translate-x-5 w-80 bg-slate-100 border-2 rounded-2xl'>
+      <div className='grid grid-cols-2 w-8/12 h-96 divide-x-2 divide-indigo-300 bg-slate-100 shadow-lg border rounded-lg'>
+        <div className='mx-4'>
+          <h1 className='m-2 mb-4 text-xl'><strong>Iniciar Sesion</strong></h1>
+          <div>
+          <Formik
+            initialValues={loginValues}
+            // validate={values => loginValidate(values)}
+            onSubmit={values => {
+              console.log(values)
+            }}
+          >
+            {({}) => (
+              <Form>
+                <TextField name="email" label="Correo electronico" placeholder="Correo electronico"/>
+                <PasswordField name="password" label="Contraseña" placeholder="Contraseña"/>
+                <ButtonSubmit name="ingresar" value="Ingresar"/>
+              </Form>
+            )}
+          </Formik>
+            
+          </div>
+        </div>
+        <div>2</div>
+        {/* <div className='flex justify-center'>
+          <div className='flex flex-col justify-center'>
             <div className='flex justify-center'>
               <h1 className='m-2 mb-4 text-xl'><strong>Iniciar Sesion</strong></h1>
             </div>
@@ -51,7 +76,7 @@ const Login = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
