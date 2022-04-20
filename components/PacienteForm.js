@@ -39,7 +39,7 @@ const PacienteForm = () => {
             <TextField name="mun" label="Municipio de residencia" placeholder="Escribe tu municipio" error={errors.mun}/>
             <TextField name="loc" label="Localidad de residencia" placeholder="Escribe tu localidad" error={errors.loc}/>
             <TextField name="tel" label="Telefono" placeholder="Escribe tu numero de telefono o celular" error={errors.tel}/>
-            <TextField name="email" label="Correo Electronico" type="email" placeholder="Escribe la direccion de correo electronico" error={errors.email}/>
+            <TextField name="email" label="Correo Electronico" placeholder="Escribe la direccion de correo electronico" error={errors.email}/>
             <PasswordField name="password" label="Contraseña" placeholder="Escribe una contraseña" error={errors.password}/>
 
             <small className="m-2 text-slate-700">Al registrarte aceptas nuestras <a className="text-purple-500">politicas de privacidad</a></small>
