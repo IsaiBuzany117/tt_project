@@ -1,9 +1,10 @@
 import { Field, ErrorMessage } from "formik"
 
-const TextField = ({name, label, placeholder, error}) =>{
+const TextField = ({name, label, placeholder, required, error}) =>{
+
   return(
     <div className="flex flex-col my-2 mx-2">
-      <label htmlFor="">{label}<span className="text-red-500">*</span></label>
+      <label htmlFor="">{label}{required && <span className="text-red-500">*</span>}</label>
       <Field 
         type="text"
         id={name}
