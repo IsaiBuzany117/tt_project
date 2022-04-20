@@ -8,9 +8,12 @@ const Navinicio = () => {
           <span className="mx-2 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Busqueda</span>
         </div>
         <div className="flex justify-end">
-          <span className="mx-2 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Registrate</span>
-          <Link href="/login" passHref>
-            <span className="mx-3 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Iniciar Sesion</span>
+          <Link href="/registro/paciente">
+            <a className="mx-2 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Registrate como Paciente</a>
+          </Link>
+          <a className="mx-2 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Registrate como Médico</a>
+          <Link href="/login" >
+            <a className="mx-3 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Iniciar Sesion</a>
           </Link>
         </div>
       </div>
