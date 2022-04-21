@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 
 const NavbarP = () => {
-    const isClicked = true
     return (
         <div className='grid grid-cols-2 border-b-2 border-purple-700'>
             <div>CLICK</div>

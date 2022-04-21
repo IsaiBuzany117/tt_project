@@ -1,4 +1,4 @@
-import Navbar from "../../components/navprincipal"
+import NavbarP from "../../components/navprincipal"
 import Head from 'next/head'
 import { AiFillPlusCircle } from "react-icons/ai"
 import { BiSearchAlt } from "react-icons/bi"
@@ -11,7 +11,7 @@ const medico_I = () => {
             <Head>
                 <title>Inicio - Medico</title>
             </Head>
-            <Navbar />
+            <NavbarP />
 
             <div className="text-center my-2">
                 <br>
@@ -25,46 +25,46 @@ const medico_I = () => {
                 </br>
             </div>
             <div className="flex justify-center items-center">
-                <div class="w-11/12">
-                    <div class=" flex w-full bg-base-300 rounded-box place-items-center">
-                        <div class="grid h-20 w-96 card place-items-center"><b>Nombre</b></div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center"><b>Edad</b></div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center"><b>Género</b></div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center"><b>Expediente</b></div>
+                <div className="w-11/12">
+                    <div className=" flex w-full bg-slate-300 rounded-box place-items-center">
+                        <div className="grid h-20 w-96 card place-items-center"><b>Nombre</b></div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center"><b>Edad</b></div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center"><b>Género</b></div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center"><b>Expediente</b></div>
 
                     </div>
                     <br></br>
-                    <div class="flex w-full bg-base-300 rounded-box place-items-center">
-                        <div class="grid h-20 w-96 card place-items-center">Oscar Isai Buzany Ramirez</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center">21</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center">Masculino</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center"><a className="hover:text-purple-800 hover:underline">Consultar</a></div>
+                    <div className="flex w-full bg-slate-300 rounded-md place-items-center">
+                        <div className="grid h-20 w-96 card place-items-center">Oscar Isai Buzany Ramirez</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center">21</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center">Masculino</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center"><a className="hover:text-purple-800 hover:underline">Consultar</a></div>
                     </div>
                     <br></br>
-                    <div class="flex w-full bg-base-300 rounded-box place-items-center">
-                        <div class="grid h-20 w-96 card place-items-center">Dayann Ordoñez Castro</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center">22</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center">Femenino</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center"><a className="hover:text-purple-800 hover:underline">Consultar</a></div>
+                    <div className="flex w-full bg-slate-300 rounded-md place-items-center">
+                        <div className="grid h-20 w-96 card place-items-center">Dayann Ordoñez Castro</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center">22</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center">Femenino</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center"><a className="hover:text-purple-800 hover:underline">Consultar</a></div>
                     </div>
                     <br></br>
-                    <div class="flex w-full bg-base-300 rounded-box place-items-center">
-                        <div class="grid h-20 w-96 card place-items-center">Diana Santamaria Arcos</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center">21</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center">Femenino</div>
-                        <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center"><a className="hover:text-purple-800 hover:underline">Consultar</a></div>
+                    <div className="flex w-full bg-slate-300 rounded-md place-items-center">
+                        <div className="grid h-20 w-96 card place-items-center">Diana Santamaria Arcos</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center">21</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center">Femenino</div>
+                        <div className="divider divider-horizontal"></div>
+                        <div className="grid h-20 w-72 card place-items-center"><a className="hover:text-purple-800 hover:underline">Consultar</a></div>
                     </div>
                 </div>
                 <br></br>
@@ -78,7 +78,7 @@ const medico_I = () => {
                     <button type="submit" ><AiFillPlusCircle className="h-20 w-20 text-purple-600" /></button>
                 </div>
                 <div className="flex justify-center items-center">
-                    <Link href="/inicio/accesoC">
+                    <Link href="/inicio/accesoC" passHref>
                         <button type="submit" ><BiSearchAlt className="h-20 w-20 text-purple-600" /></button>
                     </Link>
 
