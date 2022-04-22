@@ -127,7 +127,10 @@ const MedicoForm = () => {
             <TextField name="tel" label="Teléfono" placeholder="Escribe tu numero de telefono o celular" error={errors.tel}/>
             <TextField name="email" label="Correo Electrónico" placeholder="Escribe la dirección de correo electronico" error={errors.email}/>
             <PasswordField name="password" label="Contraseña" placeholder="Escribe una contraseña" error={errors.password}/>
-
+            <small className="m-2 text-slate-700">Al registrarte aceptas nuestras <a className="text-purple-500">politicas de privacidad</a></small>
+            
+            
+            <br></br>
             <small className="m-2 text-slate-700">Al registrarte aceptas nuestras <a className="text-purple-500">politicas de privacidad</a></small>
             <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Registrarse</button>
           </Form>
