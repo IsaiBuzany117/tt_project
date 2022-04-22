@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import { Form, Formik } from 'formik'
 import { loginValues, loginValidate } from '../utils/login.config'
 import TextField from '../components/TextField'
@@ -36,7 +37,10 @@ const Login = () => {
                   Olvidaste tu contraseña? <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'>Recuperala aqui</a>
                   </span>
                   <span className='block text-sm text-slate-600 mx-2 my-2'>
-                  Eres paciente? <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'>Registrate aqui</a>
+                  Eres paciente? 
+                  <Link href="/registro/paciente">
+                    <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'>Registrate aqui</a>
+                  </Link>
                   </span>
                   <span className='block text-sm text-slate-600 mx-2 my-2'>
                   Eres medico? <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'>Registrate aqui</a>
