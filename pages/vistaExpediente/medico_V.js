@@ -43,8 +43,10 @@ const medico_V = () => {
                                             } w-5 h-5 text-purple-500`}
                                     />
                                 </Disclosure.Button>
-                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm">
+                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm divide-y-4 divide-slate-400/25">
                                     <div class="flex flex-col w-full">
+                                        <b>Interrogatorio</b>
+                                        <br></br>
                                         <div class="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
                                             <br></br>
                                             Ficha de identificación
@@ -60,6 +62,23 @@ const medico_V = () => {
                                             Antecedentes personales patológicos
                                         </div>
                                     </div>
+                                    <br></br>
+
+                                    <div class="flex flex-col w-full ">                                        
+                                        <b>Exploración física</b>
+                                        <br></br>
+                                        <div class="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <br></br>
+                                            Aspecto general (Habitus exterior)
+                                        </div>
+                                        <br></br>
+                                        <div class="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <br></br>
+                                            Signos vitales
+                                        </div>
+                                    </div>
+                                    <br></br>
+
                                     <div className="flex justify-center items-center">
                                         <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Modificar</button>
                                     </div>
