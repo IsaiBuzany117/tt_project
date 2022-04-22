@@ -64,7 +64,9 @@ const medico_I = () => {
                         <div class="divider divider-horizontal"></div>
                         <div class="grid h-20 w-72 card place-items-center">Femenino</div>
                         <div class="divider divider-horizontal"></div>
-                        <div class="grid h-20 w-72 card place-items-center"><a className="hover:text-purple-800 hover:underline">Consultar</a></div>
+                        <Link href="/vistaExpediente/medico_V">
+                            <div class="grid h-20 w-72 card place-items-center"><a className="hover:text-purple-800 hover:underline">Consultar</a></div>
+                        </Link>
                     </div>
                 </div>
                 <br></br>
@@ -73,16 +75,11 @@ const medico_I = () => {
             <br></br>
             <br></br>
             <br></br>
-            <div className="grid grid-cols-2 h-full">
-                <div className="flex justify-center items-center">
-                    <button type="submit" ><AiFillPlusCircle className="h-20 w-20 text-purple-600" /></button>
-                </div>
-                <div className="flex justify-center items-center">
-                    <Link href="/inicio/accesoC">
-                        <button type="submit" ><BiSearchAlt className="h-20 w-20 text-purple-600" /></button>
-                    </Link>
-
-                </div>
+            <div className="flex justify-around">
+                <button type="submit" ><AiFillPlusCircle className="h-20 w-20 text-purple-600" /></button>
+                <Link href="/inicio/accesoC">
+                    <button type="submit" ><BiSearchAlt className="h-20 w-20 text-purple-600" /></button>
+                </Link>
             </div>
         </div>
     )
