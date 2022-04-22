@@ -2,6 +2,7 @@ import Navinicio from "../components/navinicio"
 import Image from "next/image"
 import Head from 'next/head'
 import logo1 from "../assets/logo1.svg"
+import ipn from '../assets/ipn.svg'
 import blockchain from "../assets/blockchain.svg"
 import {HiShieldCheck} from 'react-icons/hi'
 import {MdEventAvailable, MdDevices} from 'react-icons/md'
@@ -103,8 +104,19 @@ const index = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-3/4 bg-purple-700">
-        div
+      <div className="w-full h-1/3 bg-purple-700">
+        <div className="grid grid-rows-2 divide-y-2 divide-purple-500 mx-40">
+            <div className="flex justify-center">
+              <div className="h-8 w-8">
+                <Image src={ipn} alt="" />
+              </div>
+              <h3>Instituto Politecnico Nacional</h3>
+              <div className="h-8 w-8">
+                <Image src={ipn} alt="" />
+              </div>
+            </div>
+            <div>2</div>
+        </div>
       </div>
     </div>
   )

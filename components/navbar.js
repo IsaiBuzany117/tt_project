@@ -1,11 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import logoMain from '../assets/logoMain.svg'
 
 const Navbar = () => {
-    const isClicked = true
     return (
         <div className='grid grid-cols-2 border-b-2 border-purple-700'>
-            <div>CLICK</div>
+            <div className='p-1'>
+                <Image src={logoMain} alt="" width={30} height={30}/>
+            </div>
             <div className='flex justify-end'>
                 <div className='grid grid-cols-3'>
                     <Link href='/' passHref>

@@ -6,15 +6,22 @@ import { HiChevronDown } from 'react-icons/hi'
 import { GoGear } from 'react-icons/go'
 import { HiLogout } from 'react-icons/hi'
 import Image from 'next/image'
-import logo1 from '../assets/logo1.svg'
+import logoMain from '../assets/logoMain.svg'
 
 const MenuDropdown = () => {
     return (
-        <Menu as="div" className="relative inline-block">
-            <Menu.Button className='text-center p-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline'>
-                <div className='flex'>
-                    Mi Cuenta
-                    <HiChevronDown className='h-6 w-6'/>
+        <div className='flex justify-center items-center'>
+        <Menu as="div" className="relative inline-bloc">
+            <Menu.Button>
+                {/* <div>1</div>
+                <div>2</div> */}
+                <div className='text-center p-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline'>
+                    <div className='flex justify-center items-center'>
+                        <div className='flex'>
+                            Mi Cuenta
+                            <HiChevronDown className='h-6 w-6'/>
+                        </div>
+                    </div>
                 </div>
             </Menu.Button>
             <Transition
@@ -57,16 +64,18 @@ const MenuDropdown = () => {
                 </Menu.Items>
             </Transition>
         </Menu>
+        </div>
     )
 }
 
 const NavbarP = () => {
     return (
         <div className='grid grid-cols-2 border-b-2 border-purple-700'>
-            <div className=''>
-                <Image src={logo1} alt="" width={32} height={32}/>            </div>
-            <div className='flex justify-end'>
-                <div className='grid grid-cols-3'>
+            <div className='p-1'>
+                <Image src={logoMain} alt="" width={30} height={30}/>
+            </div>
+            <div className='flex justify-end '>
+                <div className='grid grid-cols-2'>
                     <MenuDropdown />
                     <div className='flex justify-center items-center'>
                         <span className='p-1 cursor-pointer hover:text-purple-800'>
