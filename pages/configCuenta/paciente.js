@@ -1,7 +1,6 @@
 import Navbar from "../../components/navbar2"
 import Head from 'next/head'
-import PacienteForm from "../../components/PacienteConf"
-import { RiHeartPulseFill } from 'react-icons/ri' 
+import PacienteConf from "../../components/PacienteConf"
 
 const paciente = () => {
   return (
@@ -16,10 +15,7 @@ const paciente = () => {
         </div>
             <div className=" flex justify-center ">
                 <div className = " w-9/12">
-                <div className="text-right">
-                        <small className="text-rose-500">*Campos requeridos</small>
-                </div>
-                    <PacienteForm />
+                    <PacienteConf />
              </div>
             </div>
     </div>
