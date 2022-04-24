@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
-    "@heroicons/react": "^1.0.6",
     "daisyui": "^2.14.1",
     "formik": "^2.2.9",
     "next": "12.1.1",

@@ -1,13 +1,13 @@
 import { Disclosure, Dialog, Transition } from '@headlessui/react'
-import { ChevronUpIcon } from '@heroicons/react/solid'
 import { Fragment, useState } from 'react'
+import { HiChevronUp } from 'react-icons/hi'
 import Head from 'next/head'
 import Navbar from "../../components/navprincipal"
 import Link from "next/link"
 
-const medico_V = () => {
+const Medico_V = () => {
 
-    let [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
         setIsOpen(false)
@@ -24,55 +24,64 @@ const medico_V = () => {
                 <title>Expediente Médico </title>
             </Head>
             <Navbar />
+            {/* <div>
+                <h1 className="text-center text-2xl my-2"><b>Expediente Médico</b></h1>
+                <div>
+                    1
+                </div>
+                <div>
+                    1
+                </div>
+            </div> */}
+
+
 
             <div className="text-center my-2">
-                <br>
-                </br>
                 <h1 className="text-2xl"><b>Expediente Médico</b></h1>
             </div>
 
-            <div className="w-full px-4 pt-16">
-                <div className="w-full max-w-4xl p-2 mx-auto bg-white rounded-2xl">
+            <div className="px-4 my-6">
+                <div className=" w-2/3 p-2 mx-auto">
                     <Disclosure>
                         {({ open }) => (
                             <>
                                 <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                                     <span>Historia Clínica</span>
-                                    <ChevronUpIcon
+                                    <HiChevronUp
                                         className={`${open ? 'transform rotate-180' : ''
                                             } w-5 h-5 text-purple-500`}
                                     />
                                 </Disclosure.Button>
-                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm divide-y-4 divide-slate-400/25">
-                                    <div class="flex flex-col w-full">
+                                <Disclosure.Panel className=" m-2 p-4 text-sm divide-y-4 divide-slate-400/25 bg-blue-400">
+                                    <div className="flex flex-col w-full">
                                         <b>Interrogatorio</b>
                                         <br></br>
-                                        <div class="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
                                             <br></br>
                                             Ficha de identificación
                                         </div>
                                         <br></br>
-                                        <div class="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
                                             <br></br>
                                             Antecedentes heredofamiliares
                                         </div>
                                         <br></br>
-                                        <div class="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
                                             <br></br>
                                             Antecedentes personales patológicos
                                         </div>
                                     </div>
                                     <br></br>
 
-                                    <div class="flex flex-col w-full ">                                        
+                                    <div className="flex flex-col w-full ">                                        
                                         <b>Exploración física</b>
                                         <br></br>
-                                        <div class="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
                                             <br></br>
                                             Aspecto general (Habitus exterior)
                                         </div>
                                         <br></br>
-                                        <div class="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
                                             <br></br>
                                             Signos vitales
                                         </div>
@@ -92,7 +101,7 @@ const medico_V = () => {
                             <>
                                 <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                                     <span>Nota de evolución</span>
-                                    <ChevronUpIcon
+                                    <HiChevronUp
                                         className={`${open ? 'transform rotate-180' : ''
                                             } w-5 h-5 text-purple-500`}
                                     />
@@ -111,7 +120,7 @@ const medico_V = () => {
                             <>
                                 <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                                     <span>Nota de interconsulta</span>
-                                    <ChevronUpIcon
+                                    <HiChevronUp
                                         className={`${open ? 'transform rotate-180' : ''
                                             } w-5 h-5 text-purple-500`}
                                     />
@@ -128,7 +137,7 @@ const medico_V = () => {
             </div>
 
             <div className="flex flex-row justify-center items-center">
-                <Link href="/inicio/medico_I">
+                <Link href="/inicio/medico_I" passHref>
                     <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Regresar</button>
                 </Link>
                 <button type="submit" onClick={openModal} className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Guardar expediente</button>
@@ -141,7 +150,7 @@ const medico_V = () => {
                             <Dialog.Overlay className="fixed inset-0" />
                         </Transition.Child>
 
-                        {/* This element is to trick the browser into centering the modal contents. */}
+                        
                         <span
                             className="inline-block h-screen align-middle"
                             aria-hidden="true"
@@ -173,4 +182,4 @@ const medico_V = () => {
         </div>
     )
 }
-export default medico_V
+export default Medico_V

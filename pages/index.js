@@ -2,9 +2,13 @@ import Navinicio from "../components/navinicio"
 import Image from "next/image"
 import Head from 'next/head'
 import logo1 from "../assets/logo1.svg"
+import ipn from '../assets/ipn.svg'
 import blockchain from "../assets/blockchain.svg"
 import {HiShieldCheck} from 'react-icons/hi'
 import {MdEventAvailable, MdDevices} from 'react-icons/md'
+import {BiHealth} from 'react-icons/bi'
+import { especialidades } from "../utils/especialidades"
+import Link from "next/link"
 
 const index = () => {
   return (
@@ -77,7 +81,42 @@ const index = () => {
       
       {/* Especialidades */}
       <div className='w-full h-3/4 bg-slate-100'>
-
+        <div className=" p-12 h-full">
+          <div className="flex">
+            <h1 className="text-3xl">Especialidades</h1>
+            <BiHealth className="h-10 w-10 text-purple-600"/>
+          </div>
+          <div className="pt-4 text-lg">
+            <p>Si desea conocer más información de clic en la especialidad deseada y se realizará una búsqueda de los doctores disponibles.</p>
+          </div>
+          <div className="grid grid-cols-4 gap-4 mt-6">
+            {especialidades.map((espec, i) =>{
+              return (
+                <div key={i}>
+                  <p className="text-xl hover:text-purple-500 hover:cursor-pointer">
+                    <Link href={`especialidad/${espec}`}>
+                      <a>{espec}</a>
+                    </Link>
+                  </p>
+                </div>
+              )
+            } )}
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-1/3 bg-purple-700">
+        <div className="grid grid-rows-2 divide-y-2 divide-purple-500 mx-40">
+            <div className="flex justify-center">
+              <div className="h-8 w-8">
+                <Image src={ipn} alt="" />
+              </div>
+              <h3>Instituto Politecnico Nacional</h3>
+              <div className="h-8 w-8">
+                <Image src={ipn} alt="" />
+              </div>
+            </div>
+            <div>2</div>
+        </div>
       </div>
     </div>
   )
