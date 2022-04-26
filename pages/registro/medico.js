@@ -2,9 +2,7 @@ import React from 'react'
 import Navbar from "../../components/navbar"
 import Head from 'next/head'
 import MedicoForm from '../../components/MedicoForm'
-import { RiHeartPulseFill } from 'react-icons/ri' 
-
-
+import { MdHealthAndSafety } from 'react-icons/md' 
 
 const medico = () => {
   return (
@@ -15,10 +13,17 @@ const medico = () => {
       <Navbar />
 
       <div className="text-center my-2">
-        <br></br>
         <h1 className="text-3xl">Registro del Médico</h1>
       </div>
       <div className="grid grid-cols-2">
+        <div className='flex justify-end '>
+        <div className="w-9/12 ">
+          <div className="text-right">
+            <small className="text-rose-500">*Campos requeridos</small>
+          </div>
+          <MedicoForm/>
+        </div>
+        </div>
         <div className="flex justify-center items-center">
           <div className="w-9/12 my-4">
             <h2 className="text-center text-3xl">¡BIENVENIDOS A BLOCKHEALTH!</h2>
@@ -30,23 +35,12 @@ const medico = () => {
             </div>
             <br />
             <div className="flex justify-center">
-              <RiHeartPulseFill className="h-64 w-64 text-purple-600"/>
+              <MdHealthAndSafety className="h-64 w-64 text-purple-600"/>
             </div>
           </div>
         </div>
-        <div className="w-9/12">
-          <div className="text-right">
-            <small className="text-rose-500">*Campos requeridos</small>
-          </div>
-          <MedicoForm/>
-        </div>
       </div>
     </div>
-
-
-
-
-
   )
 }
 

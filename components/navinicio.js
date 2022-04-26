@@ -11,7 +11,9 @@ const Navinicio = () => {
           <Link href="/registro/paciente">
             <a className="mx-2 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Registrate como Paciente</a>
           </Link>
-          <a className="mx-2 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Registrate como Médico</a>
+          <Link href="/registro/medico">
+            <a className="mx-2 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Registrate como Médico</a>
+          </Link>
           <Link href="/login" >
             <a className="mx-3 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline">Iniciar Sesion</a>
           </Link>

@@ -65,15 +65,19 @@ export const medicoValidate = values => {
     }
 
     if (!values.cedula) {
-        errors.loc = "Por favor, ingrese su cedula profesional"
+        errors.cedula = "Por favor, ingrese su cedula profesional"
     }
 
     if (!values.especialidad) {
-        errors.loc = "Por favor, ingrese su especialidad"
+        errors.especialidad = "Por favor, ingrese su especialidad"
     }
 
     if (!values.experiencia) {
-        errors.loc = "Por favor, ingrese su experiencia"
+        errors.experiencia = "Por favor, ingrese su experiencia"
+    }
+
+    if (!values.tel) {
+        errors.tel = "Por favor, ingrese su telefono o numero celular"
     }
 
     if (!values.email) {
