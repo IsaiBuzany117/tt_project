@@ -10,7 +10,7 @@ const TextField = ({name, label, placeholder, required, disabled,error}) =>{
         id={name}
         name={name}
         placeholder={placeholder}
-        disabled={disabled}
+        disabled = {disabled}
         className="p-2 text-sm ring-1 border rounded shadow focus:outline-none focus:ring-purple-600"
       />
       <ErrorMessage name={name} component={() => (
