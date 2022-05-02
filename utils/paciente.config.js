@@ -14,6 +14,12 @@ export const pacientevalues = {
     email:'',
     password:''
 }
+
+const includeUpper = pass => /(?=.*[A-Z])/.test(pass)
+const includeLower = pass => /(?=.*[a-z])/.test(pass)
+const includeNumber = pass => /(?=.*[0-9])/.test(pass)
+const includeChar = pass => /(?=.*[-+_!@#$%^&*.,?])/.test(pass)
+
 export const pacienteValidate = values => {
     let errors = {}
     if(!values.nombre) {
@@ -70,6 +76,30 @@ export const pacienteValidate = values => {
 
     if (!values.password) {
         errors.password = "Por favor, ingrese una contraseña"
+    }
+
+    if (!values.password) {
+        errors.password = "Por favor, ingrese una contraseña"
+    } else {
+        if (values.password.length < 8) {
+            errors.password = "La contraseña debe tener minimo 8 caracteres"
+        } else{
+            if(!includeUpper(values.password)){
+                errors.password = "La contraseña debe tener minimo 1 letra mayuscula"
+            } else{
+                if(!includeLower(values.password)){
+                    errors.password = "La contraseña debe tener minimo 1 letra minuscula"
+                } else{
+                    if(!includeNumber(values.password)){
+                        errors.password = "La contraseña debe tener minimo 1 numero"
+                    } else{
+                        if(!includeChar(values.password)){
+                            errors.password = "La contraseña debe tener minimo 1 caracter especial"
+                        }
+                    }
+                }
+            }
+        }
     }
 
     return errors
