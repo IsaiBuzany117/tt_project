@@ -5,11 +5,11 @@ import { BiSearchAlt } from "react-icons/bi"
 import Link from "next/link"
 
 
-const medico_I = () => {
+const Medico_I = () => {
     return (
         <div className='h-screeen'>
             <Head>
-                <title>Inicio - Medico</title>
+                <title>Inicio - Médico</title>
             </Head>
             <Navbar />
 
@@ -49,7 +49,7 @@ const medico_I = () => {
               </div>
               <div className="flex justify-center mt-16">
                 <div className="grid grid-cols-2 gap-52">
-                  <Link href="/crear">
+                  <Link href="/crear/expedienteMedico">
                     <a>
                       <AiFillPlusCircle className="h-20 w-20 text-purple-600" />
                     </a>
@@ -131,4 +131,4 @@ const medico_I = () => {
     )
 }
 
-export default medico_I
+export default Medico_I
