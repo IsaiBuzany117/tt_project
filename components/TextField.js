@@ -1,6 +1,6 @@
 import { Field, ErrorMessage } from "formik"
 
-const TextField = ({name, label, placeholder, required, error}) =>{
+const TextField = ({name, label, placeholder, required, disabled,error}) =>{
 
   return(
     <div className="flex flex-col my-2 mx-2">
@@ -10,6 +10,7 @@ const TextField = ({name, label, placeholder, required, error}) =>{
         id={name}
         name={name}
         placeholder={placeholder}
+        disabled = {disabled}
         className="p-2 text-sm ring-1 border rounded shadow focus:outline-none focus:ring-purple-600"
       />
       <ErrorMessage name={name} component={() => (

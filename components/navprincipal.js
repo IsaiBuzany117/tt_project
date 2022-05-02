@@ -13,8 +13,6 @@ const MenuDropdown = () => {
         <div className='flex justify-center items-center'>
         <Menu as="div" className="relative inline-bloc">
             <Menu.Button>
-                {/* <div>1</div>
-                <div>2</div> */}
                 <div className='text-center p-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-purple-800 hover:underline'>
                     <div className='flex justify-center items-center'>
                         <div className='flex'>
@@ -40,7 +38,7 @@ const MenuDropdown = () => {
                                     {
                                         active ? (<GoGear className='h-4 w-4 mr-2'/>):(<GoGear className='h-4 w-4 mr-2'/>)
                                     }
-                                    <Link href="/configuracion">
+                                    <Link href="/configCuenta">
                                         <a>Configuracion</a>
                                     </Link>
                                 </button>

@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 const _document = () => {
     return (
-        <Html>
+        <Html lang='es'>
             <Head />
             <body className='bg-white'>
                 <Main />
