@@ -3,6 +3,7 @@ import Image from "next/image"
 import Head from 'next/head'
 import logo1 from "../assets/logo1.svg"
 import ipn from '../assets/ipn.svg'
+import escom from '../assets/escom.svg'
 import blockchain from "../assets/blockchain.svg"
 import {HiShieldCheck} from 'react-icons/hi'
 import {MdEventAvailable, MdDevices} from 'react-icons/md'
@@ -105,17 +106,24 @@ const index = () => {
         </div>
       </div>
       <div className="w-full h-1/3 bg-purple-700">
-        <div className="grid grid-rows-2 divide-y-2 divide-purple-500 mx-40">
+        <div className="grid grid-rows-2 px-40 py-6">
             <div className="flex justify-center">
-              <div className="h-8 w-8">
-                <Image src={ipn} alt="" />
+              <div className="h-10 w-10 mx-4 my-2">
+                <Image src={ipn} alt="ipn logo" />
               </div>
-              <h3>Instituto Politecnico Nacional</h3>
-              <div className="h-8 w-8">
-                <Image src={ipn} alt="" />
+              <div>
+                <h3 className="mx-3 my-2 text-lg font-semibold">Instituto Politecnico Nacional</h3>
+                <h3 className="mx-3 text-lg font-semibold">Escuela Superior de Computo</h3>
+              </div>
+              <div className="h-20 w-20 mx-2 my-2">
+                <Image src={escom} alt="escom logo" />
               </div>
             </div>
-            <div>2</div>
+            <div className="grid place-content-center gap-2">
+              <h3 className="text-center"><i>Trabajo Terminal</i></h3>
+              <h1 className="text-center text-lg font-semibold">{`"Prototipo web para la gestión de expedientes médicos utilizando una cadena de bloques"`}</h1>
+              <h3 className="text-center"><i>2021-B066</i></h3>
+            </div>
         </div>
       </div>
     </div>
