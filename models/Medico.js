@@ -1,0 +1,118 @@
+import { Schema, model, models } from 'mongoose'
+
+const float = Schema.Types.Decimal128
+
+const medicoSchema = new Schema({
+    nombre:{
+        type: String,
+        required: [true, 'El nombre es requerido'],
+        trim: true,
+        maxlength: [50, 'El nombre no puede ser mayor a 50']
+    },
+    apaterno:{
+        type: String,
+        required: [true, 'El apellido paterno es requerido'],
+        trim: true,
+        maxlength: [50, 'El apellido paterno no puede ser mayor a 50']
+    },
+    amaterno:{
+        type: String,
+        required: false,
+        trim: true,
+        maxlength: [50, 'El apellido materno no puede ser mayor a 50']
+    },
+    fecnac:{
+        type: Number,
+        required: [true, 'La fecha de nacimiento es requerida'],
+    },
+    edonac:{
+        type: String,
+        required: [true, 'El estado de nacimiento es requerido'],
+        trim: true,
+        maxlength: [2, 'El estado de nacimiento no puede ser mayor a 2'],
+        minlength: [2, 'El estado de nacimiento no puede ser menor a 2']
+    },
+    sexo:{
+        type: String,
+        required: [true, 'El sexo es requerido'],
+        trim: true,
+        maxlength: [1, 'El sexo no puede ser mayor a 1'],
+        minlength: [1, 'El sexo no puede ser menor a 1']
+    },
+    nac:{
+        type: String,
+        required: [true, 'La nacionalidad es requerida'],
+        trim: true,
+        maxlength: [30, 'La nacionalidad no puede ser mayor a 30']
+    },
+    curp:{
+        type: String,
+        required: [true, 'El CURP es requerido'],
+        trim: true,
+        maxlength: [18, 'El CURP no puede ser mayor a 18'],
+        minlength: [18, 'El CURP no puede ser menor a 18']
+    },
+    edo:{
+        type: String,
+        required: [true, 'El estado de residencia es requerido'],
+        trim: true,
+        maxlength: [2, 'El estado de residencia no puede ser mayor a 2'],
+        minlength: [2, 'El estado de residencia no puede ser menor a 2']
+    },
+    mun:{
+        type: String,
+        required: [true, 'El municipio de residencia es requerido'],
+        trim: true,
+    },
+    loc:{
+        type: String,
+        required: [true, 'La localidad de residencia es requerido'],
+        trim: true,
+    },
+    cedula:{
+        type: String,
+        required: [true, 'La cedula profesional es requerida'],
+        trim: true,
+    },
+    especialidad:{
+        type: String,
+        required: [true, 'La especialidad es requerida'],
+        trim: true,
+    },
+    experiencia:{
+        type: Number,
+        required: [true, 'La experiencia es requerida'],
+    },
+    dirconsul:{
+        type: String,
+        required: [true, 'La direccion del consultorio es requerido'],
+        trim: true,
+    },
+    precio:{
+        type: float,
+        required: false,
+    },
+    tel:{
+        type: String,
+        required: [true, 'El telefono de contacto es requerido'],
+        trim: true,
+    },
+    email:{
+        type: String,
+        required: [true, 'El correo es requerido'],
+        trim: true,
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'El correo debe ser un correo valido']
+    },
+    password:{
+        type: String,
+        required: [true, 'La contraseña es requerida'],
+        trim: true,
+        match: [/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/, 'La contraseña no es valida valida'],
+        minlength: [8, 'La contraseseña no puede ser menor a 8']
+    }
+}, {
+    timestamps: true,
+    versionKey: false
+})
+
+export default models.Medico || model('Medico', medicoSchema)
