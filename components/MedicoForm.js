@@ -1,19 +1,45 @@
+import { useRouter } from "next/router"
 import { Formik, Form } from "formik"
 import TextField from "./TextField"
 import DateField from "./DateField"
 import SelectField from "./SelectField"
 import PasswordField from "./PasswordField"
 import {medicovalues, medicoValidate} from '../utils/medico.config'
+import {estados} from '../utils/estados'
+import {especialidades} from'../utils/especialidades'
+
 
 const MedicoForm = () => {
 
+  const router = useRouter()
+
+  const handleSubmit = async (values) => {
+    await fetch('http://localhost:3000/api/medico', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(values)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      router.push('/login')
+    })
+    .catch(err => console.log(err))
+  }
     return (
       <>
       <Formik
         initialValues={medicovalues}
         validate={values => medicoValidate(values) }
         onSubmit={values => {
+          const {fecnac, experiencia, precio} = values
+          values.fecnac = Number(fecnac.replace(/-/g, ''))
+          values.experiencia = Number(experiencia)
+          values.precio = Number(precio)
           console.log(values)
+          handleSubmit(values)
         }}
       >
         {({errors}) => (
@@ -21,106 +47,57 @@ const MedicoForm = () => {
             <TextField name="nombre" label="Nombre" placeholder="Escribe tu nombre" required={true} error={errors.nombre}/>
             <div className="grid grid-cols-2">
               <TextField name="apaterno" label="Apellido Paterno" placeholder="Escribe tu apellido paterno" required={true} error={errors.apaterno}/>
-              <TextField name="amaterno" label="Apellido Materno" placeholder="Escribe tu apellido materno" required={false} error={errors.amaterno}/>
+              <TextField name="amaterno" label="Apellido Materno" placeholder="Escribe tu apellido materno" required={false}/>
             </div>
             <div className="grid grid-cols-2">
               <DateField name="fecnac" label="Fecha de nacimiento" placeholder="Escribe tu edad" required={true} error={errors.fecnac}/>
               <SelectField name="edonac" label="Estado de nacimiento" placeholder="Escribe el estado de nacimiento" error={errors.edonac}>
                 <option value="">Selecciona tu estado de nacimiento</option>
-                <option value="AS">Aguascalientes</option>
-                <option value="BC">Baja California</option>
-                <option value="BS">Baja California Sur</option>
-                <option value="CC">Campeche</option>
-                <option value="CL">Coahuila de Zaragoza</option>
-                <option value="CM">Colima</option>
-                <option value="CS">Chiapas</option>
-                <option value="CH">Chihuahua</option>
-                <option value="DF">Ciudad de México</option>
-                <option value="DG">Durango</option>
-                <option value="GT">Guanajuato</option>
-                <option value="GR">Guerrero</option>
-                <option value="HG">Hidalgo</option>
-                <option value="JC">Jalisco</option>
-                <option value="MC">México</option>
-                <option value="MN">Michoacán de Ocampo</option>
-                <option value="MS">Morelos</option>
-                <option value="NT">Nayarit</option>
-                <option value="NL">Nuevo León</option>
-                <option value="OC">Oaxaca</option>
-                <option value="PL">Puebla</option>
-                <option value="QT">Querétaro</option>
-                <option value="QR">Quintana Roo</option>
-                <option value="SP">San Luis Potosí</option>
-                <option value="SL">Sinaloa</option>
-                <option value="SR">Sonora</option>
-                <option value="TC">Tabasco</option>
-                <option value="TS">Tamaulipas</option>
-                <option value="TL">Tlaxcala</option>
-                <option value="VZ">Veracruz de Ignacio de la Llave</option>
-                <option value="YN">Yucátan</option>
-                <option value="ZS">Zacatecas</option>
-                <option value="NE">Extranjero</option>
-                <option value="00">Se ignora</option>
+                {
+                  estados.map((estado, i)=> (
+                    <option value={estado.codigo} key={i}>{estado.nombre}</option>
+                  ))
+                }
               </SelectField>
             </div>
             <div className="grid grid-cols-2">
               <SelectField name="sexo" label="Sexo" placeholder="Selecciona tu sexo" required={true} error={errors.sexo}>
                 <option value="">Selecciona tu sexo</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Masculino">Masculino</option>
+                <option value="M">Femenino</option>
+                <option value="H">Masculino</option>
               </SelectField>
               <TextField name="nac" label="Nacionalidad" placeholder="Escribe tu nacionalidad" required={true} error={errors.nac}/>
             </div>
             <TextField name="curp" label="CURP" placeholder="Escribe tu CURP" required={true} error={errors.curp}/>
             <div className="grid grid-cols-2">
                 <SelectField name="edo" label="Entidad federativa de residencia" placeholder="Escribe tu entidad federativa" error={errors.edo}>
-                  <option value="">Selecciona tu nacionalidad</option>
-                  <option value="AS">Aguascalientes</option>
-                  <option value="BC">Baja California</option>
-                  <option value="BS">Baja California Sur</option>
-                  <option value="CC">Campeche</option>
-                  <option value="CL">Coahuila de Zaragoza</option>
-                  <option value="CM">Colima</option>
-                  <option value="CS">Chiapas</option>
-                  <option value="CH">Chihuahua</option>
-                  <option value="DF">Ciudad de México</option>
-                  <option value="DG">Durango</option>
-                  <option value="GT">Guanajuato</option>
-                  <option value="GR">Guerrero</option>
-                  <option value="HG">Hidalgo</option>
-                  <option value="JC">Jalisco</option>
-                  <option value="MC">México</option>
-                  <option value="MN">Michoacán de Ocampo</option>
-                  <option value="MS">Morelos</option>
-                  <option value="NT">Nayarit</option>
-                  <option value="NL">Nuevo León</option>
-                  <option value="OC">Oaxaca</option>
-                  <option value="PL">Puebla</option>
-                  <option value="QT">Querétaro</option>
-                  <option value="QR">Quintana Roo</option>
-                  <option value="SP">San Luis Potosí</option>
-                  <option value="SL">Sinaloa</option>
-                  <option value="SR">Sonora</option>
-                  <option value="TC">Tabasco</option>
-                  <option value="TS">Tamaulipas</option>
-                  <option value="TL">Tlaxcala</option>
-                  <option value="VZ">Veracruz de Ignacio de la Llave</option>
-                  <option value="YN">Yucátan</option>
-                  <option value="ZS">Zacatecas</option>
-                  <option value="NND">Se ignora</option>
+                  <option value="">Selecciona tu estado de residencia</option>
+                  {
+                    estados.map((estado, i)=> (
+                      <option value={estado.codigo} key={i}>{estado.nombre}</option>
+                    ))
+                  }
                 </SelectField>
                 <TextField name="mun" label="Municipio de residencia" placeholder="Escribe tu municipio" required={true} error={errors.mun}/>
             </div>
-
+            
             <TextField name="loc" label="Localidad de residencia" placeholder="Escribe tu localidad" required={true} error={errors.loc}/>
-            <TextField name="cedula" label="Cedula profesional" placeholder="Escribe tu cédula profesional" error={errors.cedula}/>
+            <TextField name="cedula" label="Cedula profesional" placeholder="Escribe tu cédula profesional" required={true} error={errors.cedula}/>
 
             <div className="grid grid-cols-2">
-              <TextField name="especialidad" label="Especialidad" placeholder="Escribe tu especialidad" required={true} error={errors.especialidad}/>
+              <SelectField name="especialidad" label="Especialidad" placeholder="Escribe tu especialidad" required={true} error={errors.especialidad}>
+                <option value="">Selecciona tu especialidad</option>
+                {
+                  especialidades.map((especialidad, i)=> (
+                    <option value={especialidad} key={i}>{especialidad}</option>
+                  ))
+                }
+              </SelectField>
+              {/* <TextField name="especialidad" label="Especialidad" placeholder="Escribe tu especialidad" required={true} error={errors.especialidad}/> */}
               <TextField name="experiencia" label="Experiencia" placeholder="Escribe tus años de experiencia" required={true} error={errors.experiencia}/>
             </div>
 
-            <TextField name="dirConsul" label="Dirección del Consultorio" placeholder="Escribe la dirección de tu consultorio" required={false}/>
+            <TextField name="dirconsul" label="Dirección del Consultorio" placeholder="Escribe la dirección de tu consultorio" required={false}/>
             <TextField name="precio" label="Precio por consulta (pesos mexicanos)" placeholder="Escribe el precio por consulta" required={false}/>
             <TextField name="tel" label="Teléfono" placeholder="Escribe tu numero de telefono o celular" required={false}/>
             <TextField name="email" label="Correo Electrónico" placeholder="Escribe la dirección de correo electronico" required={true} error={errors.email}/>

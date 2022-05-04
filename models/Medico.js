@@ -1,6 +1,8 @@
 import { Schema, model, models } from 'mongoose'
 
-const pacienteSchema = new Schema({
+const float = Schema.Types.Decimal128
+
+const medicoSchema = new Schema({
     nombre:{
         type: String,
         required: [true, 'El nombre es requerido'],
@@ -67,9 +69,32 @@ const pacienteSchema = new Schema({
         required: [true, 'La localidad de residencia es requerido'],
         trim: true,
     },
+    cedula:{
+        type: String,
+        required: [true, 'La cedula profesional es requerida'],
+        trim: true,
+    },
+    especialidad:{
+        type: String,
+        required: [true, 'La especialidad es requerida'],
+        trim: true,
+    },
+    experiencia:{
+        type: Number,
+        required: [true, 'La experiencia es requerida'],
+    },
+    dirconsul:{
+        type: String,
+        required: [true, 'La direccion del consultorio es requerido'],
+        trim: true,
+    },
+    precio:{
+        type: float,
+        required: false,
+    },
     tel:{
         type: String,
-        required: false,
+        required: [true, 'El telefono de contacto es requerido'],
         trim: true,
     },
     email:{
@@ -90,4 +115,4 @@ const pacienteSchema = new Schema({
     versionKey: false
 })
 
-export default models.Paciente || model('Paciente', pacienteSchema)
+export default models.Medico || model('Medico', medicoSchema)

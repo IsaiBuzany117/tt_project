@@ -13,6 +13,8 @@ export const medicovalues = {
     cedula:'',
     especialidad:'',
     experiencia:'',
+    dirconsul:'',
+    precio:'',
     tel:'',
     email:'',
     password:''
@@ -74,6 +76,14 @@ export const medicoValidate = values => {
 
     if (!values.experiencia) {
         errors.experiencia = "Por favor, ingrese su experiencia"
+    }
+
+    if (!values.dirconsul) {
+        errors.dirconsul = "Por favor, ingrese su direccion de consultorio"
+    }
+
+    if (!values.precio) {
+        errors.precio = "Por favor, ingrese el precio de su consulta"
     }
 
     if (!values.tel) {
