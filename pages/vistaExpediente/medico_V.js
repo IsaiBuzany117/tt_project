@@ -52,41 +52,64 @@ const Medico_V = () => {
                                             } w-5 h-5 text-purple-500`}
                                     />
                                 </Disclosure.Button>
-                                <Disclosure.Panel className=" m-2 p-4 text-sm divide-y-4 divide-slate-400/25 bg-blue-400">
-                                    <div className="flex flex-col w-full">
-                                        <b>Interrogatorio</b>
-                                        <br></br>
-                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
-                                            <br></br>
-                                            Ficha de identificación
-                                        </div>
-                                        <br></br>
-                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
-                                            <br></br>
-                                            Antecedentes heredofamiliares
-                                        </div>
-                                        <br></br>
-                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
-                                            <br></br>
-                                            Antecedentes personales patológicos
-                                        </div>
-                                    </div>
-                                    <br></br>
+                                <Disclosure.Panel className=" m-2 p-4 text-sm ">
+                                    <div className="flex flex-col w-full ">
+                                        <p className='font-bold'>Interrogatorio</p>
 
-                                    <div className="flex flex-col w-full ">                                        
-                                        <b>Exploración física</b>
-                                        <br></br>
                                         <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
-                                            <br></br>
-                                            Aspecto general (Habitus exterior)
+                                            <p className='italic '>Ficha de identificación</p>
                                         </div>
-                                        <br></br>
                                         <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
-                                            <br></br>
-                                            Signos vitales
+                                            <p className='italic'>Antecedentes heredofamiliares</p>
+
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Antecedentes personales patológicos</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Antecedentes personales no patológicos</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Padecimiento Actual</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Interrogatorio por aparatos y sistemas</p>
                                         </div>
                                     </div>
-                                    <br></br>
+
+                                    <div className="flex flex-col w-full ">
+                                        <p className='font-bold'>Exploración física</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Aspecto general (Habitus exterior)</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Signos vitales</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Somatometría</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Cabeza</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Cuello</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Torax</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Abdomen</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Extremidades</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Genitales</p>
+                                        </div>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'>Exploraciones especiales</p>
+                                        </div>
+                                    </div>
 
                                     <div className="flex justify-center items-center">
                                         <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Modificar</button>
@@ -106,7 +129,33 @@ const Medico_V = () => {
                                             } w-5 h-5 text-purple-500`}
                                     />
                                 </Disclosure.Button>
-                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm">
+                                    <div className="flex flex-col w-full ">
+                                        <p className='font-bold'>Evolución y actualización del cuadro clínico</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                        <p className='font-bold'>Signos vitales</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                        <p className='font-bold'>Resultados de estudios solicitados</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                        <p className='font-bold'>Diagnóstico o problema clínico</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                        <p className='font-bold'>Pronóstico</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                        <p className='font-bold'>Tratamiento</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                    </div>
                                     <div className="flex justify-center items-center">
                                         <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Modificar</button>
                                     </div>
@@ -125,9 +174,24 @@ const Medico_V = () => {
                                             } w-5 h-5 text-purple-500`}
                                     />
                                 </Disclosure.Button>
-                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                    <div className="flex justify-center items-center">
-                                        <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Modificar</button>
+                                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm ">
+
+                                    <div className="flex flex-col w-full ">
+                                        <p className='font-bold'>Criterios de diagnóstico</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                        <p className='font-bold'>Plan de estudios</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                        <p className='font-bold'>Sugerencias diagnósticas y tratamiento</p>
+                                        <div className="grid h-20 card border-purple-700 border-dotted border-2 rounded-box">
+                                            <p className='italic'></p>
+                                        </div>
+                                        <div className="flex justify-center items-center">
+                                            <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Modificar</button>
+                                        </div>
                                     </div>
                                 </Disclosure.Panel>
                             </>
@@ -150,7 +214,7 @@ const Medico_V = () => {
                             <Dialog.Overlay className="fixed inset-0" />
                         </Transition.Child>
 
-                        
+
                         <span
                             className="inline-block h-screen align-middle"
                             aria-hidden="true"
