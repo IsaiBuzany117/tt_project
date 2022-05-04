@@ -69,7 +69,7 @@ const pacienteSchema = new Schema({
     },
     tel:{
         type: String,
-        required: [true, 'El telefono de contacto es requerido'],
+        required: false,
         trim: true,
     },
     email:{

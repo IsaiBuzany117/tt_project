@@ -39,11 +39,14 @@ const Login = () => {
                   <span className='block text-sm text-slate-600 mx-2 my-2'>
                   Eres paciente? 
                   <Link href="/registro/paciente">
-                    <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'>Registrate aqui</a>
+                    <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'> Registrate aqui</a>
                   </Link>
                   </span>
                   <span className='block text-sm text-slate-600 mx-2 my-2'>
-                  Eres medico? <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'>Registrate aqui</a>
+                  Eres medico?
+                  <Link href="/registro/medico">
+                    <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'> Registrate aqui</a>
+                  </Link>
                   </span>
                 </div>
               </Form>
