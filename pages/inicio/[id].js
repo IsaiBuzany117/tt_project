@@ -1,8 +1,19 @@
 import NavbarP from "../../components/navprincipal"
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from "next/router"
+import useSWR from 'swr'
 
-const paciente_I = () => {
+const PacienteI = () => {
+    const router = useRouter()
+    const { id } = router.query
+    const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+    const { data, error } = useSWR(`http://localhost:3000/api/paciente/${id}`, fetcher)
+
+    if(error) return <div>Error al cargar la informacion</div>
+    if(!data) return <div>Cargando...</div>
+
     return (
         <div className='h-screen'>
             <Head>
@@ -11,16 +22,16 @@ const paciente_I = () => {
             <NavbarP />
 
             <div>
-                <h1 className="text-center text-3xl m-4">¡Bienvenido, *Nombre!</h1>
+                <h1 className="text-center text-3xl m-4">¡Bienvenido, {data.nombre}!</h1>
                 <div className="grid grid-cols-2 grid-rows-2 gap-4 mx-32">
                     <div className="flex justify-center items-center">
                         <div className="h-full w-full border border-slate-300 rounded-md shadow-md">
                             <h2 className="text-center text-xl p-2">Datos Generales</h2>
                             <div className="p-8">
-                                <p className="my-2"><strong>Nombre completo: </strong> ... </p>
-                                <p className="my-2"><strong>Fecha de nacimiento: </strong> ... </p>
-                                <p className="my-2"><strong>Correo: </strong> ... </p>
-                                <p className="my-2"><strong>Telefono: </strong> ... </p>
+                                <p className="my-2"><strong>Nombre completo: </strong> {data.nombre} {data.apaterno} {data.amaterno} </p>
+                                <p className="my-2"><strong>Fecha de nacimiento: </strong> {data.fecnac} </p>
+                                <p className="my-2"><strong>Correo: </strong> {data.email} </p>
+                                <p className="my-2"><strong>Telefono: </strong> {data.tel} </p>
                             </div>
                         </div>
                     </div>
@@ -31,7 +42,7 @@ const paciente_I = () => {
                                 *****************
                             </p>
                             <div className="flex justify-center items-center">
-                            <Link href="especialidad">
+                            <Link href="/especialidad">
                                 <a className="bg-purple-600 border rounded-md p-2 text-slate-100 hover:bg-purple-500">
                                     Expediente Medico
                                 </a>
@@ -62,7 +73,7 @@ const paciente_I = () => {
                     </div>
                 </div>
                 <div className="flex justify-center p-8">
-                    <Link href="especialidad">
+                    <Link href="/especialidad">
                         <a className="bg-purple-600 border rounded-md p-2 text-slate-100 hover:bg-purple-500">
                             Buscar medico
                         </a>
@@ -73,4 +84,4 @@ const paciente_I = () => {
     )
 }
 
-export default paciente_I
+export default PacienteI

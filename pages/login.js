@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Form, Formik } from 'formik'
 import { loginValues, loginValidate } from '../utils/login.config'
 import TextField from '../components/TextField'
@@ -10,6 +11,22 @@ import Image from 'next/image'
 import logo1 from "../assets/logo1.svg"
 
 const Login = () => {
+  const router = useRouter()
+  const handleSubmit = async (values) => {
+    await fetch('http://localhost:3000/api/paciente/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(values)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      router.push(`/inicio/${data.id}`)
+    })
+  }
+
   return (
     <div className='flex justify-center items-center h-screen bg-purple-700'>
       <Head>
@@ -24,6 +41,7 @@ const Login = () => {
             // validate={values => loginValidate(values)}
             onSubmit={values => {
               console.log(values)
+              handleSubmit(values)
             }}
           >
             {({}) => (

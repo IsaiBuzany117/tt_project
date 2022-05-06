@@ -34,7 +34,7 @@ const PacienteForm = () => {
         validate={values => pacienteValidate(values) }
         onSubmit={values => {
           const {fecnac} = values
-          values.fecnac = Number(fecnac.replace(/-/g, ''))
+          // values.fecnac = Number(fecnac.replace(/-/g, ''))
           console.log(values)
           handleSubmit(values)
         }}
