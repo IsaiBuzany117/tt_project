@@ -1,9 +1,12 @@
 import Navbar from "../../components/navprincipal"
 import Head from 'next/head'
 import ExpedienteM1 from "../../components/ExpedienteHCMenu"
+import ExpedienteM2 from "../../components/ExpedienteEFMenu"
+import ExpedienteNE from "../../components/ExpedienteNEForm"
+import ExpedienteNI from "../../components/ExpedienteNIForm"
 import { useState } from 'react'
 import { Tab } from '@headlessui/react'
-
+//Buscar la propiedad HIDE para que no se renderice una y otra vez
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
@@ -13,30 +16,28 @@ const ExpedienteMedico = () => {
         Historia_Clínica: [
             {
                 id: 1,
-                title: 'Secciones',
+                title: 'Interrogatorio',
                 data: <ExpedienteM1 />,
+            },
+            {
+                id: 2,
+                title: 'Exploración Física',
+                data: <ExpedienteM2 />,
             }
         ],
         Nota_de_Evolución: [
             {
                 id: 1,
-                title: 'Ejemplo',
-
-            },
-            {
-                id: 2,
-                title: 'Ejemplo',
+                title: 'Secciones',
+                data: <ExpedienteNE />,
             },
         ],
         Nota_de_Interconsulta: [
             {
                 id: 1,
-                title: 'Ejemplo',
-            },
-            {
-                id: 2,
-                title: 'Ejemplo',
-            },
+                title: 'Secciones',
+                data: <ExpedienteNI />,
+            }
         ],
     })
     return (
@@ -61,7 +62,7 @@ const ExpedienteMedico = () => {
                                             'ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-400 focus:outline-none focus:ring-2',
                                             selected
                                                 ? 'bg-white shadow'
-                                                : 'text-blue-100 hover:bg-purple-500 hover:text-white'
+                                                : 'text-purple-700 hover:bg-purple-500 hover:text-white'
                                         )
                                     }
                                 >
@@ -84,13 +85,13 @@ const ExpedienteMedico = () => {
                                                 key={post.id}
                                                 className="relative rounded-md p-3 hover:bg-gray-100"
                                             >
-                                                <h2 className="text-base font-bold my-6">
+                                                <h2 className="text-base font-bold">
                                                     {post.title}
                                                 </h2>
 
-                                                <p>
+                                                <div>
                                                     {post.data}
-                                                </p>
+                                                </div>
                                             </li>
                                         ))}
                                     </ul>

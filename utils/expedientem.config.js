@@ -16,6 +16,38 @@ export const expedienteIvalues = {
     relig:'',
     claseS:'',
     famA:'',
+    tabaco:'',
+    alc:'',
+    toxi:'',
+    dep_ej:'',
+    hig:'',
+    hab:'',
+    alim:'',
+    inmu_suero:'',
+    trab_dcso_s:'',
+    prot:'',
+    hobby:'',
+    int_fam:'',
+    att:'',
+    problema:'',
+    enf_cong:'',
+    enf_infancia:'',
+    qx:'',
+    trauma:'',
+    alergia:'',
+    trans:'',
+    intox:'',
+    hosp:'',
+    est_lab_gab:'',
+    terap_emp:'',
+    enfermedad:'',
+    mot_cons:'',
+    factor:'',
+    inicio:'',
+    sintomas:'',
+    evol:'',
+    edo_act:'',
+    list_prob:'',
 }
 export const pacienteIValidate = values => {
     let errors = {}
@@ -85,6 +117,134 @@ export const pacienteIValidate = values => {
 
     if (!values.famA) {
         errors.famA = "Por favor, ingrese el nombre de un familiar de contacto"
+    }
+
+    if (!values.tabaco) {
+        errors.tabaco = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.alc) {
+        errors.alc = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.toxi) {
+        errors.toxi = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.dep_ej) {
+        errors.dep_ej = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.hig) {
+        errors.hig = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.hab) {
+        errors.hab = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.alim) {
+        errors.alim = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.inmu_suero) {
+        errors.inmu_suero = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.trab_dcso_s) {
+        errors.trab_dcso_s = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.prot) {
+        errors.prot = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.hobby) {
+        errors.hobby = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.int_fam) {
+        errors.int_fam = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.att) {
+        errors.att = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.problema) {
+        errors.problema = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.enf_cong) {
+        errors.enf_cong = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.enf_infancia) {
+        errors.enf_infancia = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.qx) {
+        errors.qx = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.trauma) {
+        errors.trauma = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.alergia) {
+        errors.alergia = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.trans) {
+        errors.trans = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.intox) {
+        errors.intox = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.hosp) {
+        errors.hosp = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.est_lab_gab) {
+        errors.est_lab_gab = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.terap_emp) {
+        errors.terap_emp = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.enfermedad) {
+        errors.enfermedad = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.mot_cons) {
+        errors.mot_cons = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.factor) {
+        errors.factor = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.inicio) {
+        errors.inicio = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.sintomas) {
+        errors.sintomas = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.evol) {
+        errors.evol = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.edo_act) {
+        errors.edo_act = "Por favor, ingrese la información requerida"
+    }
+
+    if (!values.list_prob) {
+        errors.list_prob = "Por favor, ingrese la información requerida"
     }
 
     return errors

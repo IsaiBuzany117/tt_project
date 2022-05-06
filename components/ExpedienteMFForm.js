@@ -17,8 +17,6 @@ const ExpedienteMForm = () => {
 
                         <div className="flex flex-col w-full">
                             
-                            <p className='italic'>Ficha de identificación</p>
-                            
                             <TextField name="nombre" label="Nombre" required={true} error={errors.nombre} />
                             <TextField name="apaterno" label="Apellido Paterno" required={true} error={errors.apaterno} />
                             <TextField name="amaterno" label="Apellido Materno" required={true} error={errors.amaterno} />
@@ -37,8 +35,6 @@ const ExpedienteMForm = () => {
                             <TextField name="claseS" label="Clase socio-económica" required={true} error={errors.claseS}  />
                             <TextField name="famA" label="Familiar a quien avisar" required={true} error={errors.famA}  />                            
 
-                            <p className='italic'>Ficha de identificación</p>
-                            <textarea className="" placeholder="Bio"></textarea>
                         </div>
 
                     </Form>
