@@ -1,4 +1,5 @@
 import { Schema, model, models } from 'mongoose'
+import bcrypt from 'bcryptjs'
 
 const pacienteSchema = new Schema({
     nombre:{
@@ -20,8 +21,9 @@ const pacienteSchema = new Schema({
         maxlength: [50, 'El apellido materno no puede ser mayor a 50']
     },
     fecnac:{
-        type: Number,
+        type: String,
         required: [true, 'La fecha de nacimiento es requerida'],
+        trim: true
     },
     edonac:{
         type: String,
@@ -82,12 +84,16 @@ const pacienteSchema = new Schema({
         type: String,
         required: [true, 'La contraseña es requerida'],
         trim: true,
-        match: [/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/, 'La contraseña no es valida valida'],
         minlength: [8, 'La contraseseña no puede ser menor a 8']
     }
 }, {
     timestamps: true,
     versionKey: false
 })
+
+pacienteSchema.methods.encryptPassword = async (password) => {
+    const salt = await bcrypt.genSalt(10)
+    return bcrypt.hash(password, salt)
+}
 
 export default models.Paciente || model('Paciente', pacienteSchema)
