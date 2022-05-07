@@ -2,6 +2,7 @@ import TextField from "./TextField"
 import TextArea from "./TextArea"
 import { Formik, Form } from "formik"
 import { expedienteIvalues, pacienteIValidate } from '../utils/expedientem.config'
+//Colocar formula y modificar conforme a las observaciones
 
 const ExpedienteMNPForm = () => {
     return (

@@ -2,6 +2,8 @@ import TextArea from "./TextArea";
 import { Formik, Form } from "formik"
 import { expedienteIvalues, pacienteIValidate } from '../utils/expedientem.config'
 
+//Modificar conforme a las observaciones
+
 const ExpedienteMPForm = () => {
     return (
         <>
