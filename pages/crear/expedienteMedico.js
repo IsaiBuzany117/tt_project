@@ -13,7 +13,7 @@ function classNames(...classes) {
 
 const ExpedienteMedico = () => {
     let [categories] = useState({
-        Historia_Clínica: [
+        "Historia Clínica": [
             {
                 id: 1,
                 title: 'Interrogatorio',
@@ -25,14 +25,14 @@ const ExpedienteMedico = () => {
                 data: <ExpedienteM2 />,
             }
         ],
-        Nota_de_Evolución: [
+        "Nota de Evolución": [
             {
                 id: 1,
                 title: 'Secciones',
                 data: <ExpedienteNE />,
             },
         ],
-        Nota_de_Interconsulta: [
+        "Nota de Interconsulta": [
             {
                 id: 1,
                 title: 'Secciones',
