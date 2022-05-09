@@ -9,7 +9,7 @@ const ExpedienteNEForm = () => {
                     <div className="flex flex-col w-full">
                         <p className="my-3 mx-2">Evolución y actualización del cuadro clínico</p>
                         <TextArea name="evol_act" required={true} />
-                        <p className="my-3 mx-2">Signos vitales(si se considera necesaio)</p>
+                        <p className="my-3 mx-2">Signos vitales(si se considera necesario)</p>
                         <TextArea name="sig_vit" required={true} />
                         <p className="my-3 mx-2">Resultados relevantes de estudios solicitados</p>
                         <TextArea name="res_est" required={true} />

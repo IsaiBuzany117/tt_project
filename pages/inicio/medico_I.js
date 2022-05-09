@@ -17,28 +17,28 @@ const Medico_I = () => {
               <h1 className="text-center text-3xl my-4">¡BIENVENIDO, *Nombre!</h1>
               <div className="flex justify-center items-center">
                 <table className="w-5/6">
-                  <thead className="border-b bg-slate-300">
+                  <thead className="border-b bg-indigo-700">
                     <tr>
-                      <th scope="col" className=" px-6 py-4 text-left">Nombre(s)</th>
-                      <th scope="col" className=" px-6 py-4 text-left">Edad</th>
-                      <th scope="col" className=" px-6 py-4 text-left">Genero</th>
-                      <th scope="col" className=" px-6 py-4 text-left">Expediente</th>
+                      <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Nombre(s)</th>
+                      <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Edad</th>
+                      <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Género</th>
+                      <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Expediente</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="bg-white">
+                    <tr className="bg-white text-lg">
                       <td className="px-6 py-4 text-left whitespace-nowrap">Isai</td>
                       <td className="px-6 py-4 text-left whitespace-nowrap">21</td>
                       <td className="px-6 py-4 text-left whitespace-nowrap">Masculino</td>
                       <td className="px-6 py-4 text-left whitespace-nowrap">Consultar</td>
                     </tr>
-                    <tr className="bg-slate-100">
+                    <tr className="bg-blue-100 text-lg">
                       <td className="px-6 py-4  text-left whitespace-nowrap">Isai</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">21</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">Masculino</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">Consultar</td>
                     </tr>
-                    <tr className="bg-white">
+                    <tr className="bg-white text-lg">
                       <td className="px-6 py-4  text-left whitespace-nowrap">Isai</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">21</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">Masculino</td>
@@ -51,12 +51,12 @@ const Medico_I = () => {
                 <div className="grid grid-cols-2 gap-52">
                   <Link href="/crear/expedienteMedico">
                     <a>
-                      <AiFillPlusCircle className="h-20 w-20 text-purple-600" />
+                      <AiFillPlusCircle className="h-20 w-20 text-indigo-700" />
                     </a>
                   </Link>
                   <Link href="/inicio/accesoC">
                     <a>
-                      <BiSearchAlt className="h-20 w-20 text-purple-600" />
+                      <BiSearchAlt className="h-20 w-20 text-indigo-700" />
                     </a>
                   </Link>
                 </div>

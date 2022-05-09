@@ -1,17 +1,30 @@
+import { Disclosure, Dialog, Transition } from '@headlessui/react'
 import Navbar from "../../components/navprincipal"
 import Head from 'next/head'
 import ExpedienteM1 from "../../components/ExpedienteHCMenu"
 import ExpedienteM2 from "../../components/ExpedienteEFMenu"
 import ExpedienteNE from "../../components/ExpedienteNEForm"
 import ExpedienteNI from "../../components/ExpedienteNIForm"
-import { useState } from 'react'
+import Link from "next/link"
+import { useState, Fragment } from 'react'
 import { Tab } from '@headlessui/react'
 //Buscar la propiedad HIDE para que no se renderice una y otra vez
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 const ExpedienteMedico = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    function closeModal() {
+        setIsOpen(false)
+    }
+
+    function openModal() {
+        setIsOpen(true)
+    }
+
     let [categories] = useState({
         "Historia Clínica": [
             {
@@ -49,7 +62,7 @@ const ExpedienteMedico = () => {
             <Navbar />
 
             <div>
-                <h1 className="text-center text-3xl my-4">Expediente Médico</h1>
+                <h1 className="text-center text-3xl my-2">Expediente Médico</h1>
                 <div className="px-16 my-6">
                     <Tab.Group>
                         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
@@ -58,11 +71,11 @@ const ExpedienteMedico = () => {
                                     key={category}
                                     className={({ selected }) =>
                                         classNames(
-                                            'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-purple-700',
-                                            'ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-400 focus:outline-none focus:ring-2',
+                                            'w-full rounded-lg py-2.5 text-base font-medium leading-5 text-indigo-700',
+                                            'ring-white ring-opacity-60 ring-offset-2 ring-offset-indigo-400 focus:outline-none focus:ring-2',
                                             selected
                                                 ? 'bg-white shadow'
-                                                : 'text-purple-700 hover:bg-purple-500 hover:text-white'
+                                                : 'text-indigo-700 hover:bg-indigo-700 hover:text-white'
                                         )
                                     }
                                 >
@@ -76,7 +89,7 @@ const ExpedienteMedico = () => {
                                     key={idx}
                                     className={classNames(
                                         'rounded-xl bg-white p-3',
-                                        'ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-400 focus:outline-none focus:ring-2'
+                                        'ring-white ring-opacity-60 ring-offset-2 ring-offset-indigo-400 focus:outline-none focus:ring-2'
                                     )}
                                 >
                                     <ul>
@@ -99,6 +112,49 @@ const ExpedienteMedico = () => {
                             ))}
                         </Tab.Panels>
                     </Tab.Group>
+                    <div className="flex flex-row justify-center items-center">
+                        <button type="submit" onClick={openModal} className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-lg text-slate-100 hover:bg-indigo-700 w-50 h-14">Crear expediente</button>
+                    </div>
+                    <Transition appear show={isOpen} as={Fragment}>
+                        <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto text-center" onClose={closeModal} >
+                            <div className="min-h-screen px-4 text-center">
+                                <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0" >
+                                    <Dialog.Overlay className="fixed inset-0" />
+                                </Transition.Child>
+
+
+                                <span
+                                    className="inline-block h-screen align-middle"
+                                    aria-hidden="true"
+                                >
+                                    &#8203;
+                                </span>
+                                <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95" >
+                                    <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                                        <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900 text-center">
+                                            Modificación exitosa
+                                        </Dialog.Title>
+                                        <div className="mt-2">
+                                            <p className="text-base text-justify text-gray-500">
+                                                ¿Está seguro que quiere crear el expediente?
+                                            </p>
+                                        </div>
+
+                                        <div className="mt-4">
+                                            <Link href="/inicio/medico_I" passHref>
+                                                <button type="button" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-indigo-700" onClick={closeModal} >
+                                                    Continuar
+                                                </button>
+                                            </Link>
+                                            <button type="button" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-indigo-700" onClick={closeModal} >
+                                                Cancelar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </Transition.Child>
+                            </div>
+                        </Dialog>
+                    </Transition>
                 </div>
             </div>
         </div>

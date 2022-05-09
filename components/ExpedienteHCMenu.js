@@ -14,11 +14,11 @@ const ExpedienteMenu1 = () => {
             <Disclosure>
                 {({ open }) => (
                     <>
-                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-700 bg-purple-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-base font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                             <span>Ficha de identificación</span>
                             <HiChevronUp
                                 className={`${open ? 'transform rotate-180' : ''
-                                    } w-5 h-5 text-purple-500`}
+                                    } w-5 h-5 text-blue-500`}
                             />
                         </Disclosure.Button>
                         <Disclosure.Panel className=" m-2 p-4 text-sm ">
@@ -33,17 +33,17 @@ const ExpedienteMenu1 = () => {
             <Disclosure as="div" className="mt-3">
                 {({ open }) => (
                     <>
-                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-700 bg-purple-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-base font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                             <span>Antecedentes heredo-familiares</span>
                             <HiChevronUp
                                 className={`${open ? 'transform rotate-180' : ''
-                                    } w-5 h-5 text-purple-500`}
+                                    } w-5 h-5 text-blue-500`}
                             />
                         </Disclosure.Button>
                         <Disclosure.Panel className=" m-2 p-4 text-sm ">
                             <p className='my-2'>Escriba a continuación las enfermedades heredo-familiares</p>
                             <div className="flex flex-col w-full ">
-                                <textarea className="h-52 ring-1 border rounded shadow focus:outline-none focus:ring-purple-600"></textarea>
+                                <textarea className="h-52 ring-1 border rounded shadow focus:outline-none focus:ring-blue-600"></textarea>
                             </div>
                         </Disclosure.Panel>
                     </>
@@ -53,11 +53,11 @@ const ExpedienteMenu1 = () => {
             <Disclosure as="div" className="mt-3">
                 {({ open }) => (
                     <>
-                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-700 bg-purple-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-base font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                             <span>Antecedentes personales patológicos</span>
                             <HiChevronUp
                                 className={`${open ? 'transform rotate-180' : ''
-                                    } w-5 h-5 text-purple-500`}
+                                    } w-5 h-5 text-blue-500`}
                             />
                         </Disclosure.Button>
                         <Disclosure.Panel className=" m-2 p-4 text-sm ">
@@ -72,11 +72,11 @@ const ExpedienteMenu1 = () => {
             <Disclosure as="div" className="mt-3">
                 {({ open }) => (
                     <>
-                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-700 bg-purple-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-base font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                             <span>Antecedentes personales no patológicos</span>
                             <HiChevronUp
                                 className={`${open ? 'transform rotate-180' : ''
-                                    } w-5 h-5 text-purple-500`}
+                                    } w-5 h-5 text-blue-500`}
                             />
                         </Disclosure.Button>
                         <Disclosure.Panel className=" m-2 p-4 text-sm ">
@@ -91,11 +91,11 @@ const ExpedienteMenu1 = () => {
             <Disclosure as="div" className="mt-3">
                 {({ open }) => (
                     <>
-                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-700 bg-purple-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-base font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                             <span>Padecimiento actual</span>
                             <HiChevronUp
                                 className={`${open ? 'transform rotate-180' : ''
-                                    } w-5 h-5 text-purple-500`}
+                                    } w-5 h-5 text-blue-500`}
                             />
                         </Disclosure.Button>
                         <Disclosure.Panel className=" m-2 p-4 text-sm ">
@@ -110,11 +110,11 @@ const ExpedienteMenu1 = () => {
             <Disclosure as="div" className="mt-3">
                 {({ open }) => (
                     <>
-                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-sm font-bold text-left text-purple-700 bg-purple-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                        <Disclosure.Button className="flex justify-between w-full px-4 py-6 text-base font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
                             <span>Interrogatorio por aparatos y sistemas</span>
                             <HiChevronUp
                                 className={`${open ? 'transform rotate-180' : ''
-                                    } w-5 h-5 text-purple-500`}
+                                    } w-5 h-5 text-blue-500`}
                             />
                         </Disclosure.Button>
                         <Disclosure.Panel className=" m-2 p-4 text-sm ">
