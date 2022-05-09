@@ -1,11 +1,22 @@
-import Navbar from "../../components/navprincipal"
+import Navbar from "../../../components/navprincipal"
 import Head from 'next/head'
 import { AiFillPlusCircle } from "react-icons/ai"
 import { BiSearchAlt } from "react-icons/bi"
 import Link from "next/link"
+import { useRouter } from "next/router"
+import useSWR from 'swr'
 
 
-const medico_I = () => {
+const MedicoI = () => {
+  const router = useRouter()
+  const { id } = router.query
+  const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+  const { data, error } = useSWR(`http://localhost:3000/api/medico/${id}`, fetcher)
+
+  if(error) return <div>Error al cargar la informacion</div>
+  if(!data) return <div>Cargando...</div>
+
     return (
         <div className='h-screeen'>
             <Head>
@@ -14,7 +25,7 @@ const medico_I = () => {
             <Navbar />
 
             <div>
-              <h1 className="text-center text-3xl my-4">¡BIENVENIDO, *Nombre!</h1>
+              <h1 className="text-center text-3xl my-4">¡Bienvenido, {data.nombre}!</h1>
               <div className="flex justify-center items-center">
                 <table className="w-5/6">
                   <thead className="border-b bg-slate-300">
@@ -131,4 +142,4 @@ const medico_I = () => {
     )
 }
 
-export default medico_I
+export default MedicoI

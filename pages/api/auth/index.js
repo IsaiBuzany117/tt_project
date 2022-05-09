@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs'
 import { mongoconnection } from '../../../utils/mongodb'
 import Paciente from '../../../models/Paciente'
+import Medico from '../../../models/Medico'
 
 mongoconnection()
 
@@ -13,17 +14,25 @@ const handler = async (req, res) => {
     switch (method) {
         case 'POST':
             const paciente = await Paciente.findOne({ email })
-            if(!paciente) { return res.status(400).json({message: 'Usuario no encontrado'}) }
+            const medico = await Medico.findOne({ email })
+
+            if(!paciente && !medico) { return res.status(400).json({message: 'Usuario no encontrado'}) }
+            const usuario = paciente
+                ? paciente
+                : medico
+                ? medico
+                : null
             
-            const correctPass = paciente === null
+            const correctPass = usuario === null
                 ? false
-                : await bcrypt.compare(password, paciente.password)
-
+                : await bcrypt.compare(password, usuario.password)
+            
             if(!correctPass) { return res.status(400).json({message: 'Contraseña incorrecta'}) }
-
+            
             return res.status(200).json(
                 {
-                    id:paciente._id
+                    id:usuario._id,
+                    usertype: paciente?"paciente":"medico"
                 }
             )
         default:

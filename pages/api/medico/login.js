@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 import { mongoconnection } from '../../../utils/mongodb'
-import Paciente from '../../../models/Paciente'
+import Medico from '../../../models/Medico'
 
 mongoconnection()
 
@@ -14,10 +14,10 @@ const handler = async (req, res) => {
     switch (method) {
         case 'POST':
             try {
-                const paciente = await Paciente.findOne({ email })
-                if(!paciente) { return res.status(400).json({isFound: false, message: 'Paciente no encontrado'}) }
+                const medico = await Medico.findOne({ email })
+                if(!medico) { return res.status(400).json({message: 'Medico no encontrado'}) }
                 
-                const correctPass = paciente === null
+                const correctPass = medico === null
                     ? false
                     : await bcrypt.compare(password, paciente.password)
     

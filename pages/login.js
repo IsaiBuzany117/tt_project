@@ -13,18 +13,20 @@ import logo1 from "../assets/logo1.svg"
 const Login = () => {
   const router = useRouter()
   const handleSubmit = async (values) => {
-    await fetch('http://localhost:3000/api/paciente/login', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(values)
+    await fetch('http://localhost:3000/api/auth', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(values)
     })
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      router.push(`/inicio/${data.id}`)
+      router.push(`/inicio/${data.usertype}/${data.id}`)
     })
+    .catch(err => console.log(err))
+
   }
 
   return (
