@@ -95,7 +95,7 @@ const index = () => {
               return (
                 <div key={i}>
                   <p className="text-xl hover:text-indigo-500 hover:cursor-pointer">
-                    <Link href={`especialidad/${espec}`}>
+                    <Link href={`/buscar`}>
                       <a>{espec}</a>
                     </Link>
                   </p>
