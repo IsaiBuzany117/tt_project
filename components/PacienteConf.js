@@ -70,10 +70,10 @@ const PacienteConf = () => {
             <TextField name="tel" label="Telefono" placeholder="Escribe tu numero de telefono o celular"/>
             <TextField name="email" label="Correo Electronico" placeholder="Escribe la direccion de correo electronico" />
             <Link href="/configCuenta/cambiar">
-              <a className="text-purple-500">Cambiar mi contraseña</a>
+              <a className="text-indigo-500">Cambiar mi contraseña</a>
             </Link>
 
-            <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Aceptar</button>
+            <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-indigo-700">Aceptar</button>
           </Form>
         )}
       </Formik>

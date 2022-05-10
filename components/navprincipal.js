@@ -6,12 +6,12 @@ import { HiChevronDown } from 'react-icons/hi'
 import { GoGear } from 'react-icons/go'
 import { HiLogout } from 'react-icons/hi'
 import Image from 'next/image'
-import logoMain from '../assets/logoMain.svg'
+import logo from '../public/logo.svg'
 
 const MenuDropdown = () => {
     return (
         <div className='flex justify-center items-center'>
-        <Menu as="div" className="relative inline-bloc">
+        <Menu as="div" className="relative inline-block">
             <Menu.Button>
                 <div className='text-center p-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-indigo-800 hover:underline'>
                     <div className='flex justify-center items-center'>
@@ -70,7 +70,7 @@ const NavbarP = () => {
     return (
         <div className='grid grid-cols-2 border-b-2 border-indigo-700'>
             <div className='p-1'>
-                <Image src={logoMain} alt="" width={30} height={30}/>
+                <Image src={logo} alt="" width={30} height={30}/>
             </div>
             <div className='flex justify-end '>
                 <div className='grid grid-cols-2'>

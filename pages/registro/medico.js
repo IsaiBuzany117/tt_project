@@ -35,7 +35,7 @@ const medico = () => {
             </div>
             <br />
             <div className="flex justify-center">
-              <MdHealthAndSafety className="h-64 w-64 text-purple-600"/>
+              <MdHealthAndSafety className="h-64 w-64 text-indigo-600"/>
             </div>
           </div>
         </div>

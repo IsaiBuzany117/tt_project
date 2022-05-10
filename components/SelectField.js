@@ -9,7 +9,7 @@ const SelectField = ({name, label, placeholder, error, children}) => {
                 id={name}
                 name={name}
                 placeholder={placeholder}
-                className="p-1 ring-1 border rounded shadow focus:outline-none focus:ring-purple-600"
+                className="p-1 ring-1 border rounded shadow focus:outline-none focus:ring-indigo-600"
             >
                 {children}
             </Field>

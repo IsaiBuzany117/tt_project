@@ -26,7 +26,7 @@ const paciente = () => {
             </div>
             <br />
             <div className="flex justify-center">
-              <RiHeartPulseFill className="h-64 w-64 text-purple-600"/>
+              <RiHeartPulseFill className="h-64 w-64 text-indigo-600"/>
             </div>
           </div>
         </div>

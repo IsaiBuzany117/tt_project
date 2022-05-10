@@ -11,7 +11,8 @@ const handler = async (req, res) =>{
             return res.status(200).json(medicos)
         case 'POST':
             try {
-                const nuevoMedico = new Medico(body)
+                const medico = new Medico(body)
+                medico.password = await medico.encryptPassword(medico.password)
                 const medicoGuardado = await nuevoMedico.save()
                 return res.status(201).json(medicoGuardado)
             } catch (error) {

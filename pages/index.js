@@ -1,10 +1,10 @@
 import Navinicio from "../components/navinicio"
 import Image from "next/image"
 import Head from 'next/head'
-import logo1 from "../assets/logo1.svg"
+import logo from "../public/logoytitulo.svg"
 import ipn from '../assets/ipn.svg'
 import escom from '../assets/escom.svg'
-import blockchain from "../assets/blockchain.svg"
+import blockchain from "../public/blockchain.svg"
 import {HiShieldCheck} from 'react-icons/hi'
 import {MdEventAvailable, MdDevices} from 'react-icons/md'
 import {BiHealth} from 'react-icons/bi'
@@ -21,11 +21,11 @@ const index = () => {
       <div className='w-full h-3/4 bg-slate-100'>
         <Navinicio />
         <div className="flex justify-center w-full mt-8">
-          <Image src={logo1} alt="logo"/>  
+          <Image src={logo} alt="logo" height={424} width={424}/>  
         </div>
       </div>
       {/* Que somos y video* */}
-      <div className='w-full h-3/4 bg-purple-700'>
+      <div className='w-full h-3/4 bg-indigo-700'>
         <div className="grid grid-cols-2 h-full">
           <div className="flex justify-center items-center">
             <div className="bg-blue-500">VIDEO</div>
@@ -42,7 +42,7 @@ const index = () => {
         <div className="grid grid-cols-2 h-full">
           <div className="flex justify-end items-center">
             <p className="w-3/4 text-right text-2xl leading-loose text-gray-900">
-              BLOCKHEALTH utiliza la tecnología blockchain para mantener sus datos medicos <span className="text-purple-500">seguros</span> y <span className="text-purple-500">disponibles</span>  en todo momento, y totalmente descentralizados.
+              BLOCKHEALTH utiliza la tecnología blockchain para mantener sus datos medicos <span className="text-indigo-500">seguros</span> y <span className="text-indigo-500">disponibles</span>  en todo momento, y totalmente descentralizados.
               
             </p>
           </div>
@@ -52,7 +52,7 @@ const index = () => {
         </div>
       </div>
       {/* Ventajas */}
-      <div className='w-full h-3/4 bg-purple-700'>
+      <div className='w-full h-3/4 bg-indigo-700'>
         <div className="flex justify-center items-center h-full">
           <div className="grid grid-cols-3 divide-x-2 divide-solid h-5/6 w-full">
             <div className="flex flex-col justify-center items-center">
@@ -85,7 +85,7 @@ const index = () => {
         <div className=" p-12 h-full">
           <div className="flex">
             <h1 className="text-3xl">Especialidades</h1>
-            <BiHealth className="h-10 w-10 text-purple-600"/>
+            <BiHealth className="h-10 w-10 text-indigo-600"/>
           </div>
           <div className="pt-4 text-lg">
             <p>Si desea conocer más información de clic en la especialidad deseada y se realizará una búsqueda de los doctores disponibles.</p>
@@ -94,7 +94,7 @@ const index = () => {
             {especialidades.map((espec, i) =>{
               return (
                 <div key={i}>
-                  <p className="text-xl hover:text-purple-500 hover:cursor-pointer">
+                  <p className="text-xl hover:text-indigo-500 hover:cursor-pointer">
                     <Link href={`especialidad/${espec}`}>
                       <a>{espec}</a>
                     </Link>
@@ -105,7 +105,7 @@ const index = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-1/3 bg-purple-700">
+      <div className="w-full h-1/3 bg-indigo-700">
         <div className="grid grid-rows-2 px-40 py-6">
             <div className="flex justify-center">
               <div className="h-10 w-10 mx-4 my-2">

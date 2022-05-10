@@ -4,6 +4,7 @@ import TextField from "./TextField"
 import DateField from "./DateField"
 import SelectField from "./SelectField"
 import PasswordField from "./PasswordField"
+import ButtonSubmit from "./ButtonSubmit"
 import {pacientevalues, pacienteValidate} from '../utils/paciente.config'
 import {estados} from '../utils/estados'
 
@@ -80,8 +81,9 @@ const PacienteForm = () => {
             <TextField name="email" label="Correo Electronico" placeholder="Escribe la direccion de correo electronico" required={true} error={errors.email}/>
             <PasswordField name="password" label="Contraseña" placeholder="Escribe una contraseña" required={true} error={errors.password}/>
 
-            <small className="m-2 text-slate-700">Al registrarte aceptas nuestras <a className="text-purple-500">politicas de privacidad</a></small>
-            <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Registrarse</button>
+            <small className="m-2 text-slate-700">Al registrarte aceptas nuestras <a className="text-indigo-500">politicas de privacidad</a></small>
+            {/* <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Registrarse</button> */}
+            <ButtonSubmit value="Registrarse" name="submit"/>
           </Form>
         )}
       </Formik>

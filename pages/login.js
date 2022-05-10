@@ -8,27 +8,29 @@ import TextField from '../components/TextField'
 import PasswordField from '../components/PasswordField'
 import ButtonSubmit from '../components/ButtonSubmit'
 import Image from 'next/image'
-import logo1 from "../assets/logo1.svg"
+import logo from "../public/logoytitulo.svg"
 
 const Login = () => {
   const router = useRouter()
   const handleSubmit = async (values) => {
-    await fetch('http://localhost:3000/api/paciente/login', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(values)
+    await fetch('http://localhost:3000/api/auth', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(values)
     })
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      router.push(`/inicio/${data.id}`)
+      router.push(`/inicio/${data.usertype}/${data.id}`)
     })
+    .catch(err => console.log(err))
+
   }
 
   return (
-    <div className='flex justify-center items-center h-screen bg-purple-700'>
+    <div className='flex justify-center items-center h-screen bg-indigo-700'>
       <Head>
         <title>Iniciar Sesion</title>
       </Head>
@@ -73,8 +75,8 @@ const Login = () => {
             
           </div>
         </div>
-        <div className='my-4 mx-2'>
-          <Image src={logo1} alt="logo"/>
+        <div className='flex justify-center m-2'>
+          <Image src={logo} alt="logo" height={320} width={320}/>
         </div>
         
       </div>

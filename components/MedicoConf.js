@@ -79,9 +79,9 @@ const MedicoConf = () => {
           <TextField name="precio" label="Precio por consulta (pesos mexicanos)" placeholder="Escribe el precio por cconsulta" />
           <TextField name="tel" label="Teléfono" placeholder="Escribe tu numero de telefono o celular" />
           <TextField name="email" label="Correo Electrónico" placeholder="Escribe la dirección de correo electronico" />
-          Contraseña <a className="text-purple-500">Cambiar mi contraseña</a>
+          Contraseña <a className="text-indigo-500">Cambiar mi contraseña</a>
 
-            <button type="submit" className="block m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Aceptar</button>
+            <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-indigo-700">Aceptar</button>
         </Form>
       )}
     </Formik>
