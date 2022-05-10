@@ -2,7 +2,7 @@ import Navbar from "../../components/navprincipal"
 import Head from 'next/head'
 import TextField from "../../components/TextField"
 
-const accesoC = () => {
+const AccesoC = () => {
     return (
         <div className='h-screeen'>
             <Head>
@@ -39,4 +39,4 @@ const accesoC = () => {
     )
 }
 
-export default accesoC
+export default AccesoC
