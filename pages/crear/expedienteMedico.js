@@ -140,7 +140,7 @@ const ExpedienteMedico = () => {
                                             </p>
                                         </div>
 
-                                        <div className="mt-4">
+                                        <div className="mt-4 flex justify-center">
                                             <Link href="/inicio/medico_I" passHref>
                                                 <button type="button" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-indigo-700" onClick={closeModal} >
                                                     Continuar
