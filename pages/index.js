@@ -1,7 +1,7 @@
 import Navinicio from "../components/navinicio"
 import Image from "next/image"
 import Head from 'next/head'
-import logo1 from "../assets/logo1.svg"
+import logo from "../public/logoytitulo.svg"
 import ipn from '../assets/ipn.svg'
 import escom from '../assets/escom.svg'
 import blockchain from "../public/blockchain.svg"
@@ -21,7 +21,7 @@ const index = () => {
       <div className='w-full h-3/4 bg-slate-100'>
         <Navinicio />
         <div className="flex justify-center w-full mt-8">
-          <Image src={logo1} alt="logo"/>  
+          <Image src={logo} alt="logo" height={424} width={424}/>  
         </div>
       </div>
       {/* Que somos y video* */}

@@ -8,7 +8,7 @@ import TextField from '../components/TextField'
 import PasswordField from '../components/PasswordField'
 import ButtonSubmit from '../components/ButtonSubmit'
 import Image from 'next/image'
-import logo1 from "../assets/logo1.svg"
+import logo from "../public/logoytitulo.svg"
 
 const Login = () => {
   const router = useRouter()
@@ -75,8 +75,8 @@ const Login = () => {
             
           </div>
         </div>
-        <div className='my-4 mx-2'>
-          <Image src={logo1} alt="logo"/>
+        <div className='flex justify-center m-2'>
+          <Image src={logo} alt="logo" height={320} width={320}/>
         </div>
         
       </div>
