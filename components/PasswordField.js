@@ -8,7 +8,7 @@ const PasswordField = ({name, label, placeholder, required, error}) => {
                 id={name}
                 name={name}
                 placeholder={placeholder}
-                className="p-2 ring-1 border rounded shadow focus:outline-none focus:ring-purple-600"
+                className="p-2 ring-1 border rounded shadow focus:outline-none focus:ring-indigo-600"
             />
             <ErrorMessage name={name} component={() => (
                 <span className="m-1 text-sm text-rose-500">{error}</span>

@@ -30,7 +30,7 @@ const Login = () => {
   }
 
   return (
-    <div className='flex justify-center items-center h-screen bg-purple-700'>
+    <div className='flex justify-center items-center h-screen bg-indigo-700'>
       <Head>
         <title>Iniciar Sesion</title>
       </Head>

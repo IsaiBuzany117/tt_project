@@ -10,7 +10,7 @@ const DateField = ({name, label, placeholder, disabled, error}) => {
             name={name}
             placeholder={placeholder}
             disabled = {disabled}
-            className="p-1 ring-1 border rounded outline-none shadow focus:outline-none focus:ring-purple-600"
+            className="p-1 ring-1 border rounded outline-none shadow focus:outline-none focus:ring-indigo-600"
         />
         <ErrorMessage name={name} component={() => (
         <span className="m-1 text-sm text-rose-500">{error}</span>

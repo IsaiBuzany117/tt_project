@@ -43,7 +43,7 @@ const PacienteI = () => {
                             </p>
                             <div className="flex justify-center items-center">
                             <Link href="/especialidad">
-                                <a className="bg-purple-600 border rounded-md p-2 text-slate-100 hover:bg-purple-500">
+                                <a className="bg-indigo-600 border rounded-md p-2 text-slate-100 hover:bg-indigo-500">
                                     Expediente Medico
                                 </a>
                             </Link>
@@ -74,7 +74,7 @@ const PacienteI = () => {
                 </div>
                 <div className="flex justify-center p-8">
                     <Link href="/especialidad">
-                        <a className="bg-purple-600 border rounded-md p-2 text-slate-100 hover:bg-purple-500">
+                        <a className="bg-indigo-600 border rounded-md p-2 text-slate-100 hover:bg-indigo-500">
                             Buscar medico
                         </a>
                     </Link>

@@ -41,19 +41,31 @@ const MedicoI = () => {
                       <td className="px-6 py-4 text-left whitespace-nowrap">Isai</td>
                       <td className="px-6 py-4 text-left whitespace-nowrap">21</td>
                       <td className="px-6 py-4 text-left whitespace-nowrap">Masculino</td>
-                      <td className="px-6 py-4 text-left whitespace-nowrap">Consultar</td>
+                      <td className="px-6 py-4 text-left whitespace-nowrap">
+                        <Link href="#">
+                          <a className="text-indigo-500 hover:text-indigo-600 hover:underline">Consultar</a>
+                        </Link>
+                      </td>
                     </tr>
                     <tr className="bg-blue-100 text-lg">
                       <td className="px-6 py-4  text-left whitespace-nowrap">Isai</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">21</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">Masculino</td>
-                      <td className="px-6 py-4  text-left whitespace-nowrap">Consultar</td>
+                      <td className="px-6 py-4  text-left whitespace-nowrap">
+                        <Link href="#">
+                          <a className="text-indigo-500 hover:text-indigo-600 hover:underline">Consultar</a>
+                        </Link>
+                      </td>
                     </tr>
                     <tr className="bg-white text-lg">
                       <td className="px-6 py-4  text-left whitespace-nowrap">Isai</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">21</td>
                       <td className="px-6 py-4  text-left whitespace-nowrap">Masculino</td>
-                      <td className="px-6 py-4  text-left whitespace-nowrap">Consultar</td>
+                      <td className="px-6 py-4  text-left whitespace-nowrap">
+                        <Link href="#">
+                          <a className="text-indigo-500 hover:text-indigo-600 hover:underline">Consultar</a>
+                        </Link>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -62,12 +74,12 @@ const MedicoI = () => {
                 <div className="grid grid-cols-2 gap-52">
                   <Link href="/crear/expedienteMedico">
                     <a>
-                      <AiFillPlusCircle className="h-20 w-20 text-indigo-700" />
+                      <AiFillPlusCircle className="h-20 w-20 text-indigo-500 hover:text-indigo-600" />
                     </a>
                   </Link>
                   <Link href="/inicio/accesoC">
                     <a>
-                      <BiSearchAlt className="h-20 w-20 text-indigo-700" />
+                      <BiSearchAlt className="h-20 w-20 text-indigo-500 hover:text-indigo-600" />
                     </a>
                   </Link>
                 </div>

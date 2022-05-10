@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Navbar from "../../components/navprincipal"
 import Link from "next/link"
 
-const MedicoV = () => {
+const PacienteV = () => {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -100,9 +100,9 @@ const MedicoV = () => {
                                         </div>
                                     </div>
 
-                                    <div className="flex justify-center items-center">
+                                    {/* <div className="flex justify-center items-center">
                                         <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Modificar</button>
-                                    </div>
+                                    </div> */}
                                 </Disclosure.Panel>
                             </>
                         )}
@@ -145,9 +145,9 @@ const MedicoV = () => {
                                             <p className='italic'></p>
                                         </div>
                                     </div>
-                                    <div className="flex justify-center items-center">
+                                    {/* <div className="flex justify-center items-center">
                                         <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Modificar</button>
-                                    </div>
+                                    </div> */}
                                 </Disclosure.Panel>
                             </>
                         )}
@@ -178,9 +178,9 @@ const MedicoV = () => {
                                         <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
                                             <p className='italic'></p>
                                         </div>
-                                        <div className="flex justify-center items-center">
+                                        {/* <div className="flex justify-center items-center">
                                             <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Modificar</button>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </Disclosure.Panel>
                             </>
@@ -190,13 +190,13 @@ const MedicoV = () => {
             </div>
 
             <div className="flex flex-row justify-center items-center">
-                <Link href="/inicio/medico_I" passHref>
+                <Link href="/inicio/paciente" passHref>
                     <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Regresar</button>
                 </Link>
-                <button type="submit" onClick={openModal} className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-lg text-slate-100 hover:bg-indigo-700 w-50 h-14">Guardar expediente</button>
+                {/* <button type="submit" onClick={openModal} className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-lg text-slate-100 hover:bg-indigo-700 w-50 h-14">Guardar expediente</button> */}
             </div>
 
-            <Transition appear show={isOpen} as={Fragment}>
+            {/* <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeModal} >
                     <div className="min-h-screen px-4 text-center">
                         <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0" >
@@ -231,8 +231,8 @@ const MedicoV = () => {
                         </Transition.Child>
                     </div>
                 </Dialog>
-            </Transition>
+            </Transition> */}
         </div>
     )
 }
-export default MedicoV
+export default PacienteV

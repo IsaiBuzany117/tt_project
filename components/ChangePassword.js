@@ -19,7 +19,7 @@ const ChangePassword = () => {
           <TextField name="confirNewPassword" label="Confirmar contraseña" placeholder="Confirma tu nueva Contraseña" error={errors.confirNewPassword} />
         
           <div className="flex justify-center">
-            <button type="submit" className="w-1/3 m-2 bg-purple-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-purple-700">Aceptar</button>
+            <button type="submit" className="w-1/3 m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-indigo-700">Aceptar</button>
           </div>
         </Form>
       )}
