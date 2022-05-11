@@ -8,6 +8,7 @@ import blockchain from "../public/blockchain.svg"
 import {HiShieldCheck} from 'react-icons/hi'
 import {MdEventAvailable, MdDevices} from 'react-icons/md'
 import {BiHealth} from 'react-icons/bi'
+import { BsJournalMedical } from 'react-icons/bs' 
 import { especialidades } from "../utils/especialidades"
 import Link from "next/link"
 
@@ -28,7 +29,7 @@ const index = () => {
       <div className='w-full h-3/4 bg-indigo-700'>
         <div className="grid grid-cols-2 h-full">
           <div className="flex justify-center items-center">
-            <div className="bg-blue-500">VIDEO</div>
+            <BsJournalMedical className="text-slate-100 h-64 w-64"/>
           </div>
           <div className="flex items-center">
             <p className="w-3/4 text-left text-2xl leading-loose text-slate-100">
@@ -95,7 +96,7 @@ const index = () => {
               return (
                 <div key={i}>
                   <p className="text-xl hover:text-indigo-500 hover:cursor-pointer">
-                    <Link href={`especialidad/${espec}`}>
+                    <Link href={`/buscar`}>
                       <a>{espec}</a>
                     </Link>
                   </p>

@@ -5,7 +5,7 @@ const Navinicio = () => {
     <nav className="flex justify-center">
       <div className="grid grid-cols-2 p-1 w-full bg-slate-100 border-b-2 border-slate-300">
         <div className="flex">
-          <Link href='/busqueda'>
+          <Link href='/buscar'>
             <a className="mx-2 my-1 font-bold cursor-pointer transition duration-150 ease-in-out hover:scale-105  hover:text-indigo-800 hover:underline">Busqueda</a>
           </Link>
         </div>

@@ -91,7 +91,7 @@ const medicoSchema = new Schema({
         trim: true,
     },
     precio:{
-        type: float,
+        type: Number,
         required: false,
     },
     tel:{
