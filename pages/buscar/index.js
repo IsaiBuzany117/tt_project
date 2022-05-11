@@ -55,8 +55,8 @@ const Card = ({data}) => {
     const { nombre, apaterno, amaterno, tel, email, dirconsul,experiencia, precio }= data
     return (
         <div className='flex justify-center'>
-            <div className='px-3 py-2 bg-indigo-100 border rounded'>
-                <h2 className='text-center text-indigo-600 p-2'>{nombre} {apaterno} {amaterno}</h2>
+            <div className='px-3 py-2 bg-indigo-100 shadow-md shadow-indigo-200 border rounded'>
+                <h2 className='text-center text-indigo-600 p-2 text-lg'>{nombre} {apaterno} {amaterno}</h2>
                 <div>
                     <p>Tel: {tel}</p>
                     <p>Correo: {email}</p>
