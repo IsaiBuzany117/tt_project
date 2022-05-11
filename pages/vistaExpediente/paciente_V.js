@@ -4,9 +4,9 @@ import { HiChevronUp } from 'react-icons/hi'
 import Head from 'next/head'
 import Navbar from "../../components/navprincipal"
 import Link from "next/link"
-
+import { useRouter } from 'next/router'
 const PacienteV = () => {
-
+    const router = useRouter()
     const [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
@@ -190,48 +190,11 @@ const PacienteV = () => {
             </div>
 
             <div className="flex flex-row justify-center items-center">
-                <Link href="/inicio/paciente" passHref>
-                    <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Regresar</button>
-                </Link>
-                {/* <button type="submit" onClick={openModal} className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-lg text-slate-100 hover:bg-indigo-700 w-50 h-14">Guardar expediente</button> */}
+                {/* <Link href="/inicio/paciente" passHref> */}
+                    <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14" onClick={() => router.back()}>Regresar</button>
+                {/* </Link> */}
             </div>
 
-            {/* <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeModal} >
-                    <div className="min-h-screen px-4 text-center">
-                        <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0" >
-                            <Dialog.Overlay className="fixed inset-0" />
-                        </Transition.Child>
-
-
-                        <span
-                            className="inline-block h-screen align-middle"
-                            aria-hidden="true"
-                        >
-                            &#8203;
-                        </span>
-                        <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95" >
-                            <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                                <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900 text-center">
-                                    Modificación exitosa
-                                </Dialog.Title>
-                                <div className="mt-2">
-                                    <p className="text-base text-justify text-gray-500">
-                                        Espere a que el paciente acepte los cambios.
-                                        Las modificaciones se reflejarán en cuanto se concluya la transacción.
-                                    </p>
-                                </div>
-
-                                <div className="mt-4">
-                                    <button type="button" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-indigo-700" onClick={closeModal} >
-                                        Aceptar
-                                    </button>
-                                </div>
-                            </div>
-                        </Transition.Child>
-                    </div>
-                </Dialog>
-            </Transition> */}
         </div>
     )
 }
