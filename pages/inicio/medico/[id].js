@@ -30,7 +30,7 @@ const MedicoI = () => {
                 <table className="w-5/6">
                   <thead className="border-b bg-indigo-700">
                     <tr>
-                      <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Nombre(s)</th>
+                      <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Nombre Completo</th>
                       <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Edad</th>
                       <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Género</th>
                       <th scope="col" className=" px-6 py-4 text-left text-lg text-white">Expediente</th>
