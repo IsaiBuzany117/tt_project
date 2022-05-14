@@ -42,7 +42,7 @@ const MedicoI = () => {
                       <td className="px-6 py-4 text-left whitespace-nowrap">21</td>
                       <td className="px-6 py-4 text-left whitespace-nowrap">Masculino</td>
                       <td className="px-6 py-4 text-left whitespace-nowrap">
-                        <Link href="#">
+                        <Link href="/vistaExpediente/medico_V">
                           <a className="text-indigo-500 hover:text-indigo-600 hover:underline">Consultar</a>
                         </Link>
                       </td>

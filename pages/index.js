@@ -2,8 +2,8 @@ import Navinicio from "../components/navinicio"
 import Image from "next/image"
 import Head from 'next/head'
 import logo from "../public/logoytitulo.svg"
-import ipn from '../assets/ipn.svg'
-import escom from '../assets/escom.svg'
+// import ipn from '../assets/ipn.svg'
+// import escom from '../assets/escom.svg'
 import blockchain from "../public/blockchain.svg"
 import {HiShieldCheck} from 'react-icons/hi'
 import {MdEventAvailable, MdDevices} from 'react-icons/md'
@@ -19,14 +19,14 @@ const index = () => {
         <title>Blockhealth</title>
       </Head>
       {/* Navbar y logo */}
-      <div className='w-full h-3/4 bg-slate-100'>
+      <div className='w-full h-2/4 bg-slate-100'>
         <Navinicio />
-        <div className="flex justify-center w-full mt-8">
-          <Image src={logo} alt="logo" height={424} width={424}/>  
+        <div className="flex justify-center w-full py-2">
+          <Image src={logo} alt="logo" height={300} width={300}/>  
         </div>
       </div>
       {/* Que somos y video* */}
-      <div className='w-full h-3/4 bg-indigo-700'>
+      <div className='w-full h-2/4 bg-indigo-700'>
         <div className="grid grid-cols-2 h-full">
           <div className="flex justify-center items-center">
             <BsJournalMedical className="text-slate-100 h-64 w-64"/>
@@ -39,7 +39,7 @@ const index = () => {
         </div>
       </div>
       {/* Blockchain y beneficios */}
-      <div className='w-full h-3/4 bg-slate-100'>
+      <div className='w-full h-2/4 bg-slate-100'>
         <div className="grid grid-cols-2 h-full">
           <div className="flex justify-end items-center">
             <p className="w-3/4 text-right text-2xl leading-loose text-gray-900">
@@ -48,12 +48,12 @@ const index = () => {
             </p>
           </div>
           <div className="flex justify-center items-center">
-            <Image src={blockchain} alt="logo" height={400} width={400}/>
+            <Image src={blockchain} alt="logo" height={280} width={280}/>
           </div>
         </div>
       </div>
       {/* Ventajas */}
-      <div className='w-full h-3/4 bg-indigo-700'>
+      <div className='w-full h-2/4 bg-indigo-700'>
         <div className="flex justify-center items-center h-full">
           <div className="grid grid-cols-3 divide-x-2 divide-solid h-5/6 w-full">
             <div className="flex flex-col justify-center items-center">
@@ -82,20 +82,17 @@ const index = () => {
       </div>
       
       {/* Especialidades */}
-      <div className='w-full h-3/4 bg-slate-100'>
-        <div className=" p-12 h-full">
-          <div className="flex">
+      <div className='w-full h-2/4 bg-slate-100'>
+        <div className=" px-12 py-4 h-full">
+          <div className="flex justify-center">
             <h1 className="text-3xl">Especialidades</h1>
-            <BiHealth className="h-10 w-10 text-indigo-600"/>
+            <BiHealth className="h-8 w-8 text-indigo-600"/>
           </div>
-          <div className="pt-4 text-lg">
-            <p>Si desea conocer más información de clic en la especialidad deseada y se realizará una búsqueda de los doctores disponibles.</p>
-          </div>
-          <div className="grid grid-cols-4 gap-4 mt-6">
+          <div className="grid grid-cols-4 gap-4 my-4">
             {especialidades.map((espec, i) =>{
               return (
                 <div key={i}>
-                  <p className="text-xl hover:text-indigo-500 hover:cursor-pointer">
+                  <p className="text-lg text-center hover:text-indigo-500 hover:cursor-pointer">
                     <Link href={`/buscar`}>
                       <a>{espec}</a>
                     </Link>
@@ -106,9 +103,32 @@ const index = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-1/3 bg-indigo-700">
-        <div className="grid grid-rows-2 px-40 py-6">
-            <div className="flex justify-center">
+      <footer className="w-full min-h-2/3 bg-indigo-700">
+        <div className="grid grid-cols-2 px-40 py-6">
+          <div className="flex justify-center items-center">
+            <Image src={logo} alt="" height={180} width={180} className=""/>
+          </div>
+          <div>
+            <h2 className="text-lg text-slate-200 font-medium">
+              <i>Prototipo web para la gestión de expedientes médicos utilizando una cadena de bloques</i>
+            </h2>
+
+            <div className="mt-2 text-slate-200">
+              <div className="my-1">
+                <p>Buzany Ramírez Oscar Isai. tel. 55 6119 2639</p>
+                <p><i>idd.ttsalud@gmail.com</i></p>
+              </div>
+              <div className="my-1">
+                <p>Ordoñez Castro Dayann. tel.55 3680 7432</p>
+                <p><i>idd.ttsalud@gmail.com</i></p>
+              </div>
+              <div className="my-1">
+                <p>Santamaria Arcos Diana. tel. 55 2676 1907</p>
+                <p><i>idd.ttsalud@gmail.com</i></p>
+              </div>
+            </div>
+          </div>
+            {/* <div className="flex justify-center">
               <div className="h-10 w-10 mx-4 my-2">
                 <Image src={ipn} alt="ipn logo" />
               </div>
@@ -124,9 +144,9 @@ const index = () => {
               <h3 className="text-center"><i>Trabajo Terminal</i></h3>
               <h1 className="text-center text-lg font-semibold">{`"Prototipo web para la gestión de expedientes médicos utilizando una cadena de bloques"`}</h1>
               <h3 className="text-center"><i>2021-B066</i></h3>
-            </div>
+            </div> */}
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
