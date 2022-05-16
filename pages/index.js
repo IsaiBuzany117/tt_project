@@ -29,7 +29,7 @@ const index = () => {
       <div className='w-full h-2/4 bg-indigo-700'>
         <div className="grid grid-cols-2 h-full">
           <div className="flex justify-center items-center">
-            <BsJournalMedical className="text-slate-100 h-64 w-64"/>
+            <BsJournalMedical className="text-slate-100 h-56 w-56"/>
           </div>
           <div className="flex items-center">
             <p className="w-3/4 text-left text-2xl leading-loose text-slate-100">
