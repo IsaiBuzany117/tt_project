@@ -13,10 +13,6 @@ const ExpedienteNIForm = () => {
                         <TextArea name="planE" required={true} />
                         <p className="my-3 mx-2">Sugerencias diagnósticas y tratamiento</p>
                         <TextArea name="sugD" required={true} />
-                        <p className="my-3 mx-2">Otros datos</p>
-                        <TextArea name="otrosD" required={true} />
-                        <p className="my-3 mx-2">Otras revisiones</p>
-                        <TextArea name="otrasR" required={true} />
                     </div>
                 </Form>
 
