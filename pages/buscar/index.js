@@ -86,12 +86,12 @@ const Busqueda = () => {
     return (
         <div className='h-screen'>
             <Head>
-                <title>Buscar Medicos</title>
+                <title>Buscar Médicos</title>
             </Head>
             <Navbar />
 
             <div className="text-center my-2">
-                <h1 className="text-3xl">Busqueda de Medicos</h1>
+                <h1 className="text-3xl">Busqueda de Médicos</h1>
             </div>
 
             <div className='grid grid-cols-2 m-6'>

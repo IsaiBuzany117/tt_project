@@ -128,19 +128,15 @@ const MedicoV = () => {
                                         <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
                                             <p className='italic'></p>
                                         </div>
-                                        <p className='font-bold'>Resultados de estudios solicitados</p>
+                                        <p className='font-bold'>Sintomatología</p>
                                         <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
                                             <p className='italic'></p>
                                         </div>
-                                        <p className='font-bold'>Diagnóstico o problema clínico</p>
+                                        <p className='font-bold'>Resultados relevantes de estudios solicitados</p>
                                         <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
                                             <p className='italic'></p>
                                         </div>
-                                        <p className='font-bold'>Pronóstico</p>
-                                        <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                                            <p className='italic'></p>
-                                        </div>
-                                        <p className='font-bold'>Tratamiento</p>
+                                        <p className='font-bold'>Diagnóstico y pronóstico</p>
                                         <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
                                             <p className='italic'></p>
                                         </div>
@@ -211,7 +207,7 @@ const MedicoV = () => {
                             &#8203;
                         </span>
                         <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95" >
-                            <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                            <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden  align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                                 <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900 text-center">
                                     Modificación exitosa
                                 </Dialog.Title>
@@ -222,7 +218,7 @@ const MedicoV = () => {
                                     </p>
                                 </div>
 
-                                <div className="mt-4">
+                                <div className="mt-4 justify-center">
                                     <button type="button" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 hover:bg-indigo-700" onClick={closeModal} >
                                         Aceptar
                                     </button>

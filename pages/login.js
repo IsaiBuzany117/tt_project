@@ -36,7 +36,7 @@ const Login = () => {
       </Head>
       <div className='grid grid-cols-2 py-4 w-8/12 h-96 bg-slate-100 shadow-lg border rounded-lg'>
         <div className='mx-4'>
-          <h1 className='m-2 mb-4 text-xl text-center'><strong>Iniciar Sesion</strong></h1>
+          <h1 className='m-2 mb-4 text-xl text-center'><strong>Iniciar Sesión</strong></h1>
           <div>
           <Formik
             initialValues={loginValues}
@@ -54,16 +54,16 @@ const Login = () => {
                 <ButtonSubmit name="ingresar" value="Ingresar"/>
                 <div>
                   <span className='block text-sm text-slate-600 mx-2 my-2'>
-                  Olvidaste tu contraseña? <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'>Recuperala aqui</a>
+                  ¿Olvidaste tu contraseña? <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'>Recuperala aqui</a>
                   </span>
                   <span className='block text-sm text-slate-600 mx-2 my-2'>
-                  Eres paciente? 
+                  ¿Eres paciente? 
                   <Link href="/registro/paciente">
                     <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'> Registrate aqui</a>
                   </Link>
                   </span>
                   <span className='block text-sm text-slate-600 mx-2 my-2'>
-                  Eres medico?
+                  ¿Eres médico?
                   <Link href="/registro/medico">
                     <a className='text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer'> Registrate aqui</a>
                   </Link>
