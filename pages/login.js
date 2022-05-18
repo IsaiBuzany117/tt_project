@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -12,6 +12,8 @@ import logo from "../public/logoytitulo.svg"
 
 const Login = () => {
   const router = useRouter()
+  const [error, setError] = useState('')
+
   const handleSubmit = async (values) => {
     await fetch('http://localhost:3000/api/auth', {
         method: 'POST',
@@ -23,7 +25,8 @@ const Login = () => {
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      router.push(`/inicio/${data.usertype}/${data.id}`)
+      if(data.message) setError(data.message)
+      else router.push(`/inicio/${data.usertype}/${data.id}`)
     })
     .catch(err => console.log(err))
 
@@ -50,6 +53,9 @@ const Login = () => {
               <Form>
                 <TextField name="email" label="Correo electronico" placeholder="Correo electronico"/>
                 <PasswordField name="password" label="Contraseña" placeholder="Contraseña"/>
+                {
+                  error && <span className='mx-2 text-sm text-rose-600'>{error}</span>
+                }
                 <br />
                 <ButtonSubmit name="ingresar" value="Ingresar"/>
                 <div>
