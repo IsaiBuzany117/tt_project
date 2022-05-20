@@ -16,7 +16,7 @@ const handler = async (req, res) => {
             const paciente = await Paciente.findOne({ email })
             const medico = await Medico.findOne({ email })
 
-            if(!paciente && !medico) { return res.status(400).json({message: 'Usuario no encontrado'}) }
+            if(!paciente && !medico) { return res.status(400).json({message: 'Correo no encontrado'}) }
             const usuario = paciente
                 ? paciente
                 : medico
