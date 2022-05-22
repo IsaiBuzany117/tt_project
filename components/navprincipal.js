@@ -5,10 +5,11 @@ import { Menu, Transition } from '@headlessui/react'
 import { HiChevronDown } from 'react-icons/hi'
 import { GoGear } from 'react-icons/go'
 import { HiLogout } from 'react-icons/hi'
+import { CgProfile } from 'react-icons/cg'
 import Image from 'next/image'
 import logo from '../public/logo.svg'
 
-const MenuDropdown = () => {
+const MenuDropdown = ({usertype, id}) => {
     return (
         <div className='flex justify-center items-center'>
         <Menu as="div" className="relative inline-block">
@@ -36,9 +37,23 @@ const MenuDropdown = () => {
                             {({active}) => (
                                 <button className={`${active?'text-indigo-800 underline':'text-gray-900'} group flex rounded-md items-center w-full px-2 py-2 text-sm`}>
                                     {
+                                        active ? (<CgProfile className='h-4 w-4 mr-2'/>):(<CgProfile className='h-4 w-4 mr-2'/>)
+                                    }
+                                    <Link href={`/inicio/${usertype}/${id}`}>
+                                        <a>Mi Perfil</a>
+                                    </Link>
+                                </button>
+                            )}
+                        </Menu.Item>
+                    </div>
+                    <div className='px-2 py-1'>
+                        <Menu.Item>
+                            {({active}) => (
+                                <button className={`${active?'text-indigo-800 underline':'text-gray-900'} group flex rounded-md items-center w-full px-2 py-2 text-sm`}>
+                                    {
                                         active ? (<GoGear className='h-4 w-4 mr-2'/>):(<GoGear className='h-4 w-4 mr-2'/>)
                                     }
-                                    <Link href="/configCuenta">
+                                    <Link href={`/configCuenta/${usertype}/${id}`}>
                                         <a>Configuracion</a>
                                     </Link>
                                 </button>
@@ -66,7 +81,7 @@ const MenuDropdown = () => {
     )
 }
 
-const NavbarP = () => {
+const NavbarP = ({usertype, id}) => {
     return (
         <div className='grid grid-cols-2 border-b-2 border-indigo-700'>
             <div className='p-1'>
@@ -74,7 +89,7 @@ const NavbarP = () => {
             </div>
             <div className='flex justify-end '>
                 <div className='grid grid-cols-2'>
-                    <MenuDropdown />
+                    <MenuDropdown usertype={usertype} id={id}/>
                     <div className='flex justify-center items-center'>
                         <span className='p-1 cursor-pointer hover:text-indigo-800'>
                             <MdNotifications className=" w-6 h-6"/>

@@ -22,7 +22,7 @@ const MedicoI = () => {
             <Head>
                 <title>Inicio - Médico</title>
             </Head>
-            <Navbar />
+            <Navbar usertype={'medico'} id={id}/>
 
             <div>
               <h1 className="text-center text-3xl my-4">¡Bienvenido, {data.nombre}!</h1>
