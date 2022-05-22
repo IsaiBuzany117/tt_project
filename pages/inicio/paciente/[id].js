@@ -19,7 +19,7 @@ const PacienteI = () => {
             <Head>
                 <title>Inicio - Paciente</title>
             </Head>
-            <NavbarP />
+            <NavbarP usertype={'paciente'} id={id}/>
 
             <div>
                 <h1 className="text-center text-3xl m-4">¡Bienvenido, {data.nombre}!</h1>
