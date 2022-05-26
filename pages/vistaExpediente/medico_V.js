@@ -1,11 +1,14 @@
 import { Disclosure, Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { HiChevronUp } from 'react-icons/hi'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Navbar from "../../components/navprincipal"
 import Link from "next/link"
 
 const MedicoV = () => {
+
+    const router = useRouter()
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -186,9 +189,7 @@ const MedicoV = () => {
             </div>
 
             <div className="flex flex-row justify-center items-center">
-                <Link href="/inicio/medico_I" passHref>
-                    <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Regresar</button>
-                </Link>
+                <button type="submit" onClick={() => router.back()} className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Regresar</button>
                 <button type="submit" onClick={openModal} className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-lg text-slate-100 hover:bg-indigo-700 w-50 h-14">Guardar expediente</button>
             </div>
 
