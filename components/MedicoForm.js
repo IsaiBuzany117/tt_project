@@ -35,8 +35,8 @@ const MedicoForm = () => {
         initialValues={medicovalues}
         validate={values => medicoValidate(values) }
         onSubmit={values => {
-          const {fecnac, experiencia, precio} = values
-          values.fecnac = Number(fecnac.replace(/-/g, ''))
+          const {experiencia, precio} = values
+          // values.fecnac = Number(fecnac.replace(/-/g, ''))
           values.experiencia = Number(experiencia)
           values.precio = Number(precio)
           console.log(values)
