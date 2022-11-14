@@ -1,17 +1,17 @@
 export const loginValues = {
-    email:'',
-    password:''
+    loginemail:'',
+    loginpassword:''
 }
 
 export const loginValidate = values => {
     let errors = {}
 
-    if(!values.email) {
-        errors.email = 'Porfavor, ingrese su correo'
+    if (!values.loginemail) {
+      errors.loginemail = "Porfavor, ingrese su correo";
     }
 
-    if(!values.password) {
-        errors.password = 'Porfavor, ingrese su contraseña'
+    if (!values.loginpassword) {
+      errors.loginpassword = "Porfavor, ingrese su contraseña";
     }
     return errors
 }
