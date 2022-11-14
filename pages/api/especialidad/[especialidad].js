@@ -1,5 +1,5 @@
-import { mongoconnection } from '../../../utils/mongodb'
-import Medico from '../../../models/Medico'
+import { mongoconnection } from '/utils/mongodb'
+import Medico from '/models/Medico'
 
 mongoconnection()
 
