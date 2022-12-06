@@ -10,6 +10,23 @@ import Userlayout from "components/layouts/userlayout";
 
 const Crear = () => {
 
+    const handleClick = async (values) => {
+        console.log(values)
+        await fetch("http://localhost:4000/create", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            console.log("Expediente creado")
+        })
+        .catch((err) => console.log(err));
+    }
+
   return (
       <Userlayout type="medico">
           <div>
@@ -18,7 +35,8 @@ const Crear = () => {
                   initialValues={expedienteIvalues}
                   // validate={(values) => pacienteIValidate(values)}
                   onSubmit={(values) => {
-                      console.log(values);
+                    //   console.log(values);
+                      handleClick(values)
                   }}
               >
                   {({ values, errors }) => (

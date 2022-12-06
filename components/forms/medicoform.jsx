@@ -13,6 +13,7 @@ const MedicoForm = () => {
   const router = useRouter();
 
   const handleSubmit = async (values) => {
+    console.log(values)
     await fetch("http://localhost:3000/api/medico", {
       method: "POST",
       headers: {
@@ -37,7 +38,7 @@ const MedicoForm = () => {
           // values.fecnac = Number(fecnac.replace(/-/g, ''))
           values.experiencia = Number(experiencia);
           values.precio = Number(precio);
-          console.log(values);
+          // console.log(values);
           handleSubmit(values);
         }}
       >

@@ -1,4 +1,5 @@
 export const expedienteIvalues = {
+    curp: "",
     i: {
         // Ficha de identificacion
         fi: {

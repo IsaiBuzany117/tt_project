@@ -13,6 +13,13 @@ const Interrogatorio = ({ values, errors }) => {
         <div>
             <h2 className="text-lg font-bold py-1 px-2">Interrogatorio</h2>
             <Accordion label="Ficha de indentificacion">
+
+                <Textfield
+                    name="curp"
+                    label="CURP"
+                    required
+                    error={errors.curp}
+                />
                 <Textfield
                     name="i.fi.nombre"
                     label="Nombre"
@@ -133,7 +140,7 @@ const Interrogatorio = ({ values, errors }) => {
                     <option value="B-">B negativo (B-)</option>
                     <option value="AB+">AB positivo (AB+)</option>
                     <option value="AB-">AB negativo (AB-)</option>
-                    <option value="O+">O positivo (O-)</option>
+                    <option value="O+">O positivo (O+)</option>
                     <option value="O-">O negativo (O-)</option>
                 </Select>
             </Accordion>

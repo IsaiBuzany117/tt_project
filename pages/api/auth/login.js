@@ -13,7 +13,10 @@ const loginhandler = async (req, res) => {
 
   const paciente = await Paciente.findOne({ email: loginemail });
   const medico = await Medico.findOne({ email: loginemail });
+  console.log(paciente)
+  console.log(medico)
 
+  // return res.json(u)
   if (!paciente && !medico) {
     return res.status(401).json({ error: "Correo no encontrado" });
   }

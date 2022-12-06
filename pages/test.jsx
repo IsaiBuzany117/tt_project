@@ -205,6 +205,14 @@ const Modal1 = () => {
   );
 };
 
+const server = async() => {
+    // console.log("first")
+    await fetch('http://localhost:4000/')
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(e => console.log(e))
+  }
+
 const Test = () => {
   // const value = "hello"
   const [value, setValue] = useState("second");
@@ -220,6 +228,7 @@ const Test = () => {
         <Provider.Provider value={{ value, setValue }}>
           {/* <Tabs></Tabs> */}
         </Provider.Provider>
+        <button onClick={server}>Click!!!!!</button>
         <Formik
           initialValues={{ check: "" }}
           onSubmit={(values) => console.log(values)}
