@@ -16,6 +16,7 @@ import Accordion from "components/accordion";
 import Textfield from "components/inputs/textfield";
 import Checkbox from 'components/inputs/checkbox'
 import { send } from "utils/stream";
+import useSWR from "swr";
 
 const Provider = createContext();
 
@@ -218,9 +219,20 @@ const Test = () => {
   const [value, setValue] = useState("second");
   let v = { a: "", b: "" };
 
+  const fetcherP = (...args) => fetch(...args).then((res) => res.json());
+
+  const { data, errorp } = useSWR(
+    `http://localhost:3000/api/paciente`,
+    fetcherP
+  );
+
   const [isOpen, setIsOpen] = useState(false);
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
+
+  console.log(data)
+  if (errorp) return <div>Error al cargar la informacion</div>;
+  if (!data) return <div>Cargando...</div>;
 
   return (
     <>

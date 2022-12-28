@@ -90,6 +90,12 @@ const pacienteSchema = new Schema(
       trim: true,
       minlength: [8, "La contraseseña no puede ser menor a 8"],
     },
+    code_access: {
+      type: String,
+      required: [true, "Debe generarse un código de acceso"],
+      trim: true,
+      minlength: [13, "Debe tener una longitud de 13 caracteres"]
+    },
   },
   {
     timestamps: true,

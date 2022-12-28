@@ -23,7 +23,7 @@ const loginhandler = async (req, res) => {
 
   let user = paciente ? paciente : medico ? medico : null;
 
-  let { password, _id, email } = user;
+  let { password, _id, email, curp } = user;
 
   const correctpass = await bcrypt.compare(loginpassword, password);
 
@@ -35,7 +35,8 @@ const loginhandler = async (req, res) => {
       exp: Math.floor(Date.now() / 1000) + 60 * 60 * 4,
       usertype: paciente ? "paciente" : "medico",
       id: _id,
-      email: email
+      email: email,
+      curp: curp
     },
     process.env.JWT_SECRET
   );

@@ -92,8 +92,8 @@ const PacienteForm = () => {
                 error={errors.sexo}
               >
                 <option value="">Selecciona tu sexo</option>
-                <option value="M">Femenino</option>
-                <option value="H">Masculino</option>
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
               </SelectField>
               <TextField
                 name="nac"

@@ -21,7 +21,7 @@ const Userlayout = ({type, children}) => {
           </div>
         </div>
       </nav>
-      <main className="h-screen w-full">{children}</main>
+      <main className="h-full w-full">{children}</main>
     </div>
   );
 }

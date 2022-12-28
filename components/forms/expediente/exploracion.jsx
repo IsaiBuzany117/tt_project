@@ -17,8 +17,16 @@ const Exploracion = ({ errors }) => {
                     name="ef.sv.tensionarterial"
                 />
                 <Textfield
-                    label="Frecuencia respiratoria/cardiaca"
-                    name="ef.sv.frecrespycardi"
+                    label="Frecuencia respiratoria"
+                    name="ef.sv.frecresp"
+                />
+                <Textfield
+                    label="Frecuencia cardiaca"
+                    name="ef.sv.freccardi"
+                />
+                <Textfield
+                    label="Presión arterial"
+                    name="ef.sv.presionarterial"
                 />
                 <Textfield
                     label="Saturacion de oxigeno"

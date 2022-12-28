@@ -1,6 +1,7 @@
 import { verify } from "jsonwebtoken";
 import { mongoconnection } from "/utils/mongodb";
 import Paciente from "/models/Paciente";
+import {codigoAcceso} from '../../utils/codigoAcceso'
 
 mongoconnection();
 
@@ -19,8 +20,10 @@ const handler = async (req, res) => {
         return res.status(404).json({ error: "Paciente no encontrado" });
       }
       return res.status(200).json(paciente);
+
     case "POST": //registra un paciente
       try {
+        body.code_access = codigoAcceso(body.curp)
         const paciente = new Paciente(body);
         paciente.password = await paciente.encryptPassword(paciente.password);
         const pacienteGuardado = await paciente.save();
