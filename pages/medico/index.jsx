@@ -32,6 +32,12 @@ const IndexM = () => {
                   scope="col"
                   className=" px-6 py-4 text-left text-lg text-white"
                 >
+                  CURP
+                </th>
+                <th
+                  scope="col"
+                  className=" px-6 py-4 text-left text-lg text-white"
+                >
                   Nombre Completo
                 </th>
                 <th
@@ -55,7 +61,29 @@ const IndexM = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-white text-lg">
+
+              {
+                data.listaPacientes.map(p => (
+                  <tr className="bg-white text-lg" key={p}>
+                    <td className="px-6 py-4 text-left whitespace-nowrap">{p.curp}</td>
+                    <td className="px-6 py-4 text-left whitespace-nowrap">{p.nombre}</td>
+                    <td className="px-6 py-4 text-left whitespace-nowrap">{p.edad}</td>
+                    <td className="px-6 py-4 text-left whitespace-nowrap">
+                      {p.sexo === 'M' ? "Masculino" : "Femenino"}
+                    </td>
+                    <td className="px-6 py-4 text-left whitespace-nowrap">
+                      <Link href={`/medico/expediente`}>
+                        <a className="text-indigo-500 hover:text-indigo-600 hover:underline">
+                          Consultar
+                        </a>
+                      </Link>
+                    </td>
+                  </tr>
+                ))
+              }
+              
+              {/* <tr className="bg-white text-lg">
+                <td className="px-6 py-4 text-left whitespace-nowrap">BURO000902HMCZMSA8</td>
                 <td className="px-6 py-4 text-left whitespace-nowrap">Isai</td>
                 <td className="px-6 py-4 text-left whitespace-nowrap">21</td>
                 <td className="px-6 py-4 text-left whitespace-nowrap">
@@ -68,8 +96,8 @@ const IndexM = () => {
                     </a>
                   </Link>
                 </td>
-              </tr>
-              <tr className="bg-blue-100 text-lg">
+              </tr> */}
+              {/* <tr className="bg-blue-100 text-lg">
                 <td className="px-6 py-4  text-left whitespace-nowrap">Isai</td>
                 <td className="px-6 py-4  text-left whitespace-nowrap">21</td>
                 <td className="px-6 py-4  text-left whitespace-nowrap">
@@ -96,10 +124,18 @@ const IndexM = () => {
                     </a>
                   </Link>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
+        {
+          data.listaPacientes.length <= 0 
+          ? (
+            <p className="italic text-center text-xl p-4">Aun no cuentas con pacientes. Registra a un nuevo paciente.</p>
+          )
+          : null
+        }
+        
         <div className="flex justify-center mt-16">
           <div className="grid grid-cols-2 gap-52">
             <Link href={`/medico/crear`}>

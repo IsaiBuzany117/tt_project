@@ -115,6 +115,14 @@ const medicoSchema = new Schema(
       trim: true,
       minlength: [8, "La contraseseña no puede ser menor a 8"],
     },
+    listaPacientes: {
+      type: [{
+        curp: String,
+        nombre: String,
+        edad: Number,
+        sexo: String
+      }]
+    }
   },
   {
     timestamps: true,
