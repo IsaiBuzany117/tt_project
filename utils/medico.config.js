@@ -10,7 +10,8 @@ export const medicovalues = {
     edo:'',
     mun:'',
     loc:'',
-    cedula:'',
+    cedulageneral:'',
+    cedulaespecial:'',
     especialidad:'',
     experiencia:'',
     dirconsul:'',
@@ -66,10 +67,14 @@ export const medicoValidate = values => {
         errors.loc = "Por favor, ingrese su localidad de residencia"
     }
 
-    if (!values.cedula) {
-        errors.cedula = "Por favor, ingrese su cedula profesional"
+    if (!values.cedulageneral) {
+        errors.cedula = "Por favor, ingrese su cedula profesional general"
     }
 
+    if (!values.cedulaespecial) {
+        errors.cedula = "Por favor, ingrese su cedula profesional de especialidad"
+    }
+    
     if (!values.especialidad) {
         errors.especialidad = "Por favor, ingrese su especialidad"
     }

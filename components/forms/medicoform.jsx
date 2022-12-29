@@ -146,13 +146,19 @@ const MedicoForm = () => {
               error={errors.loc}
             />
             <TextField
-              name="cedula"
-              label="Cedula profesional"
-              placeholder="Escribe tu cédula profesional"
+              name="cedulageneral"
+              label="Cedula general profesional"
+              placeholder="Escribe tu cédula profesional general"
               required
-              error={errors.cedula}
+              error={errors.cedulageneral}
             />
-
+            <TextField
+              name="cedulaespecial"
+              label="Cedula profesional de especialidad"
+              placeholder="Escribe tu cédula profesional de especialidad"
+              required
+              error={errors.cedulaespecial}
+            />  
             <div className="grid grid-cols-2">
               <SelectField
                 name="especialidad"

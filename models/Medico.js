@@ -72,7 +72,12 @@ const medicoSchema = new Schema(
       required: [true, "La localidad de residencia es requerido"],
       trim: true,
     },
-    cedula: {
+    cedulageneral: {
+      type: String,
+      required: [true, "La cedula profesional es requerida"],
+      trim: true,
+    },
+    cedulaespecial: {
       type: String,
       required: [true, "La cedula profesional es requerida"],
       trim: true,
