@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { FieldArray, Field, ErrorMessage, useFormikContext } from "formik";
+import { estados } from "utils/estados";
 import Accordion from "components/accordion";
 import Textfield from "components/inputs/textfield";
 import Textarea from "components/inputs/textarea";
@@ -61,12 +62,24 @@ const Interrogatorio = ({ values, errors }) => {
                     <option value="M">Femenino</option>
                     <option value="H">Masculino</option>
                 </Select>
-                <Textfield
+                {/* <Textfield
                     name="i.fi.edo"
                     label="Entidad federativa de residencia"
                     required
                     error={errors.edo}
-                />
+                /> */}
+                <Select
+                    name="i.fi.edo"
+                    label="Entidad federativa de residencia"
+                    error={errors.edo}
+                >
+                    <option value=""></option>
+                    {estados.map((estado, i) => (
+                    <option value={estado.codigo} key={i}>
+                        {estado.nombre}
+                    </option>
+                    ))}
+                </Select>
                 <Textfield
                     name="i.fi.mun"
                     label="Municipio de residencia"
@@ -85,12 +98,24 @@ const Interrogatorio = ({ values, errors }) => {
                     required
                     error={errors.tel}
                 />
-                <Textfield
+                {/* <Textfield
                     name="i.fi.edonac"
                     label="Lugar de nacimiento"
                     required
                     error={errors.edonac}
-                />
+                /> */}
+                <Select
+                    name="i.fi.edonac"
+                    label="Lugar de nacimiento"
+                    error={errors.edonac}
+                >
+                    <option value=""></option>
+                    {estados.map((estado, i) => (
+                    <option value={estado.codigo} key={i}>
+                        {estado.nombre}
+                    </option>
+                    ))}
+                </Select>
                 <Textfield
                     name="i.fi.edocivil"
                     label="Estado Civil"
@@ -219,34 +244,29 @@ const Interrogatorio = ({ values, errors }) => {
                     <h3 className="font-semibold">Enfermedades congenitas</h3>
                     <div>
                         <Checkbox
-                            label="Ejemplo"
+                            label="Asma"
                             name="i.app.congenitas.patologias"
-                            value="1"
+                            value="Asma"
                         />
                         <Checkbox
-                            label="Ejemplo"
+                            label="Diabetes"
                             name="i.app.congenitas.patologias"
-                            value="2"
+                            value="Diabetes"
                         />
                         <Checkbox
-                            label="Ejemplo"
+                            label="ETS"
                             name="i.app.congenitas.patologias"
                             value="3"
                         />
                         <Checkbox
-                            label="Ejemplo"
+                            label="Epilepsia"
                             name="i.app.congenitas.patologias"
                             value="4"
                         />
                         <Checkbox
-                            label="Ejemplo"
+                            label="Influenza(gripe)"
                             name="i.app.congenitas.patologias"
-                            value="5"
-                        />
-                        <Checkbox
-                            label="Ejemplo"
-                            name="i.app.congenitas.patologias"
-                            value="6"
+                            value="Influenza(gripe)"
                         />
                         <Textfield
                             label="Otra"
@@ -265,34 +285,29 @@ const Interrogatorio = ({ values, errors }) => {
                     </h3>
                     <div>
                         <Checkbox
-                            label="Ejemplo"
+                            label="Varicela"
                             name="i.app.propias_infancia.patologias"
-                            value="1"
+                            value="Varicela"
                         />
                         <Checkbox
-                            label="Ejemplo"
+                            label="Sinusitis"
                             name="i.app.propias_infancia.patologias"
-                            value="2"
+                            value="Sinusitis"
                         />
                         <Checkbox
-                            label="Ejemplo"
+                            label="Dolor de garganta"
                             name="i.app.propias_infancia.patologias"
-                            value="3"
+                            value="Dolor de garganta"
                         />
                         <Checkbox
-                            label="Ejemplo"
+                            label="Influenza(gripe)"
                             name="i.app.propias_infancia.patologias"
-                            value="4"
+                            value="Influenza(gripe)"
                         />
                         <Checkbox
-                            label="Ejemplo"
+                            label="Conjuntivitis"
                             name="i.app.propias_infancia.patologias"
-                            value="5"
-                        />
-                        <Checkbox
-                            label="Ejemplo"
-                            name="i.app.propias_infancia.patologias"
-                            value="6"
+                            value="Conjuntivitis"
                         />
                         <Textfield
                             label="Otra"

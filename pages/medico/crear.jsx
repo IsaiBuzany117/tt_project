@@ -1,4 +1,5 @@
 import { Dialog, Transition, Tab } from "@headlessui/react";
+import {useRouter} from 'next/router'
 import { Formik, Form } from "formik";
 import Interrogatorio from 'components/forms/expediente/interrogatorio'
 import Exploracion from 'components/forms/expediente/exploracion'
@@ -7,8 +8,17 @@ import Notainterconsulta from 'components/forms/expediente/notainterconsulta'
 import Buttonsubmit from 'components/inputs/buttonsubmit'
 import { expedienteIvalues, pacienteIValidate } from "utils/expedientem.config";
 import Userlayout from "components/layouts/userlayout";
+import Modal from 'components/modal'
+import {BsPersonCheckFill} from 'react-icons/bs'
+import { useState } from "react";
 
 const Crear = () => {
+
+    const router = useRouter()
+    const [isCreated, setIsCreated] = useState(false)
+    // const [isOpen, setIsOpen] = useState(false);
+    const open = () => setIsCreated(true);
+    const close = () => setIsCreated(false);
 
     const handleClick = async (values) => {
         console.log(values)
@@ -23,8 +33,18 @@ const Crear = () => {
         .then((data) => {
             console.log(data)
             console.log("Expediente creado")
+            open(true)
+            setTimeout(()=> {
+                close()
+                router.push('/medico')
+            }, 3000)
         })
         .catch((err) => console.log(err));
+        // open(true)
+        //     setTimeout(()=> {
+        //         // router.push('/medico')
+        //         close()
+        //     }, 3000)
     }
 
   return (
@@ -102,6 +122,14 @@ const Crear = () => {
                   )}
               </Formik>
           </div>
+            <Modal isOpen={isCreated} close={close}>
+                <div className="flex justify-center">
+                    <p className="text-lg text-center">¡Expediente medico creado correctamente!</p>
+                </div>
+                <div className="flex justify-center">
+                    <BsPersonCheckFill className="text-indigo-700" size={64}/>
+                </div>
+            </Modal>
       </Userlayout>
   );
 };

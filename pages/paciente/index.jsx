@@ -145,27 +145,30 @@ const IndexP = () => {
                   <div className='grid grid-cols-2'>
                     <div className="p-4">
                       <p className="my-2">
-                        <strong>Temperatura: </strong> ... Cº
+                        <strong>Temperatura: </strong> {exp.ef.sv.temperatura} Cº
                       </p>
                       <p className="my-2">
-                        <strong>Frecuencia respiratoria: </strong> ... r/m
+                        <strong>Frecuencia respiratoria: </strong> {exp.ef.sv.frecresp} r/m
                       </p>
                       <p className="my-2">
-                        <strong>Frecuencia cardiaca: </strong> ... ppm
+                        <strong>Frecuencia cardiaca: </strong> {exp.ef.sv.freccardi} ppm
                       </p>
                       <p className="my-2">
-                        <strong>Presion arterial: </strong> ...mmHg
+                        <strong>Presion arterial: </strong> {exp.ef.sv.tensionarterial} mmHg
                       </p>
                     </div>
                     <div className="p-4">
                       <p className="my-2">
-                        <strong>Estatura: </strong> ... m
+                        <strong>Saturacion de oxigeno: </strong> {exp.ef.sv.satuoxigeno} %
                       </p>
                       <p className="my-2">
-                        <strong>Peso: </strong> ...kg
+                        <strong>Estatura: </strong> {exp.ef.somatometría.talla} cm
                       </p>
                       <p className="my-2">
-                        <strong>IMC: </strong> ...imc
+                        <strong>Peso: </strong> {exp.ef.somatometría.peso} kg
+                      </p>
+                      <p className="my-2">
+                        <strong>IMC: </strong> {exp.ef.somatometría.imc} imc
                       </p>
                     </div>
                   </div>
