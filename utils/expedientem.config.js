@@ -119,7 +119,8 @@ export const expedienteIvalues = {
         sv: {
             temperatura: "",
             tensionarterial: "",
-            frecrespycardi: "",
+            frecresp: "",
+            freccardi: "",
             satuoxigeno: "",
             otro: "",
         },
@@ -143,7 +144,6 @@ export const expedienteIvalues = {
             tensionarterial: "",
             frecresp: "",
             freccardi: "",
-            presionarterial: "",
             satuoxigeno: "",
             otro: "",
         },

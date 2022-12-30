@@ -14,8 +14,12 @@ const Notaevolucion = () => {
                     name="ne.sv.tensionarterial"
                 />
                 <Textfield
-                    label="Frecuancia respiratoria/cardiaca"
-                    name="ne.sv.frecrespycardi"
+                    label="Frecuancia respiratoria"
+                    name="ne.sv.frecresp"
+                />
+                <Textfield
+                    label="Frecuancia cardiaca"
+                    name="ne.sv.freccardi"
                 />
                 <Textfield
                     label="Saturación de oxígeno"

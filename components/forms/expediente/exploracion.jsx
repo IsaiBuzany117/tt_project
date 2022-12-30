@@ -25,10 +25,6 @@ const Exploracion = ({ errors }) => {
                     name="ef.sv.freccardi"
                 />
                 <Textfield
-                    label="Presión arterial"
-                    name="ef.sv.presionarterial"
-                />
-                <Textfield
                     label="Saturacion de oxigeno"
                     name="ef.sv.satuoxigeno"
                 />
