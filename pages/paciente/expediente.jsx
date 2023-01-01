@@ -1,23 +1,49 @@
-import { Disclosure, Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
-import { HiChevronUp } from "react-icons/hi";
-import Head from "next/head";
-import Navbar from "components/navs/navprincipal";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { Tab } from '@headlessui/react'
 import Userlayout from "components/layouts/userlayout";
+import Efpaciente from 'components/expedientepaciente/efpaciente'
+import Ipaciente from 'components/expedientepaciente/ipaciente'
+import Nepaciente from 'components/expedientepaciente/nepaciente'
+import Nipaciente from 'components/expedientepaciente/nipaciente'
 
 const PacienteV = () => {
   const router = useRouter();
-  const { id } = router.query;
-  const [isOpen, setIsOpen] = useState(false);
+  const [curp, setCurp] = useState('')
+  const [cargando, setCargando] = useState(false)
+  const [exp, setExp] = useState(null)
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+  useEffect(() => {
+    setCargando(true)
+    const data = localStorage.getItem('data')
+    if (data) {
+      console.log(data)
+      setCurp(data)
+    }
+    
+    const fetchingExp =async () => {
+      await fetch('http://localhost:4000/read', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ curp }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          setExp(data)
+          setCargando(false)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+    fetchingExp()
+  }, [curp])
 
-  function openModal() {
-    setIsOpen(true);
-  }
+  if (!exp) return <div>Error al cargar la informacion</div>;
+  if (cargando) return <div>Cargando...</div>;
 
   return (
     <Userlayout type="paciente">
@@ -25,181 +51,54 @@ const PacienteV = () => {
         <h1 className="text-3xl">Expediente Médico</h1>
       </div>
 
-      <div className="px-4 my-6">
-        <div className=" w-2/3 p-2 mx-auto">
-          <Disclosure>
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex justify-between w-full h-24 px-9 py-9 text-sm font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
-                  <span className="text-lg">Historia Clínica</span>
-                  <HiChevronUp
-                    className={`${
-                      open ? "transform rotate-180" : ""
-                    } w-5 h-5 text-blue-500`}
-                  />
-                </Disclosure.Button>
-                <Disclosure.Panel className=" m-2 px-7 pt-4 text-base">
-                  <div className="flex flex-col w-full ">
-                    <p className="font-bold">Interrogatorio</p>
-
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic ">Ficha de identificación</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Antecedentes heredofamiliares</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">
-                        Antecedentes personales patológicos
-                      </p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">
-                        Antecedentes personales no patológicos
-                      </p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Padecimiento Actual</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">
-                        Interrogatorio por aparatos y sistemas
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col w-full ">
-                    <p className="font-bold">Exploración física</p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">
-                        Aspecto general (Habitus exterior)
-                      </p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Signos vitales</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Somatometría</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Cabeza</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Cuello</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Torax</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Abdomen</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Extremidades</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Genitales</p>
-                    </div>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic">Exploraciones especiales</p>
-                    </div>
-                  </div>
-
-                  {/* <div className="flex justify-center items-center">
-                                        <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Modificar</button>
-                                    </div> */}
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
-
-          <Disclosure as="div" className="mt-4">
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex justify-between w-full h-24 px-9 py-9 text-sm font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
-                  <span className="text-lg">Nota de evolución</span>
-                  <HiChevronUp
-                    className={`${
-                      open ? "transform rotate-180" : ""
-                    } w-5 h-5 text-blue-500`}
-                  />
-                </Disclosure.Button>
-                <Disclosure.Panel className="px-7 pt-4 text-base">
-                  <div className="flex flex-col w-full ">
-                    <p className="font-bold">
-                      Evolución y actualización del cuadro clínico
-                    </p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                    <p className="font-bold">Signos vitales</p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                    <p className="font-bold">
-                      Resultados de estudios solicitados
-                    </p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                    <p className="font-bold">Diagnóstico o problema clínico</p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                    <p className="font-bold">Pronóstico</p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                    <p className="font-bold">Tratamiento</p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                  </div>
-                  {/* <div className="flex justify-center items-center">
-                                        <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Modificar</button>
-                                    </div> */}
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
-
-          <Disclosure as="div" className="mt-4">
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex justify-between w-full h-24 px-9 py-9 text-sm font-bold text-left text-blue-900 bg-blue-100 rounded-lg hover:bg-blue-200 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-opacity-75">
-                  <span className="text-lg">Nota de interconsulta</span>
-                  <HiChevronUp
-                    className={`${
-                      open ? "transform rotate-180" : ""
-                    } w-5 h-5 text-blue-500`}
-                  />
-                </Disclosure.Button>
-                <Disclosure.Panel className="px-7 pt-4 text-base">
-                  <div className="flex flex-col w-full">
-                    <p className="font-bold">Criterios de diagnóstico</p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                    <p className="font-bold">Plan de estudios</p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                    <p className="font-bold">
-                      Sugerencias diagnósticas y tratamiento
-                    </p>
-                    <div className="grid h-20 card border-blue-700 border-dotted border-2 rounded-box">
-                      <p className="italic"></p>
-                    </div>
-                    {/* <div className="flex justify-center items-center">
-                                            <button type="submit" className="block m-2 bg-indigo-600 border rounded-md p-2 mt-2 text-slate-100 text-lg hover:bg-indigo-700 w-36 h-14">Modificar</button>
-                                        </div> */}
-                  </div>
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
-        </div>
+      <div className="flex justify-center items-center">
+        <Tab.Group as="div" className="w-[80%] mx-auto">
+          <Tab.List className="flex justify-center space-x-2 px-4 py-2.5 rounded-full ring ring-indigo-400 bg-indigo-50">
+            <Tab
+              className={({ selected }) =>
+                `w-full p-2 rounded-full bg-indigo-100 ring-offset-indigo-400 focus:outline-none focus:ring-2 ${selected
+                  ? "bg-indigo-700 text-white"
+                  : "text-indigo-700 hover:bg-indigo-700 hover:text-white"
+                }`
+              }
+            >
+              Historia Clínica
+            </Tab>
+            <Tab
+              className={({ selected }) =>
+                `w-full p-2 rounded-full bg-indigo-100 ring-offset-indigo-400 focus:outline-none focus:ring-2 ${selected
+                  ? "bg-indigo-700 text-white"
+                  : "text-indigo-700 hover:bg-indigo-700 hover:text-white"
+                }`
+              }
+            >
+              Nota de Evolución
+            </Tab>
+            <Tab
+              className={({ selected }) =>
+                `w-full p-2 rounded-full bg-indigo-100 ring-offset-indigo-400 focus:outline-none focus:ring-2 ${selected
+                  ? "bg-indigo-700 text-white"
+                  : "text-indigo-700 hover:bg-indigo-700 hover:text-white"
+                }`
+              }
+            >
+              Nota de Interconsulta
+            </Tab>
+          </Tab.List>
+          <Tab.Panels as="div" className="w-full p-4">
+            <Tab.Panel className="w-full rounded-md">
+              <Ipaciente exp={exp}/>
+              <Efpaciente exp={exp} />
+            </Tab.Panel>
+            <Tab.Panel className="w-full rounded-md">
+              <Nepaciente exp={exp}/>
+            </Tab.Panel>
+            <Tab.Panel className="w-full rounded-md">
+              <Nipaciente exp={exp}/>
+            </Tab.Panel>
+          </Tab.Panels>
+        </Tab.Group>
       </div>
-
       <div className="flex flex-row justify-center items-center">
         {/* <Link href="/inicio/paciente" passHref> */}
         <button

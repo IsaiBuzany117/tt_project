@@ -40,11 +40,6 @@ const Crear = () => {
             }, 3000)
         })
         .catch((err) => console.log(err));
-        // open(true)
-        //     setTimeout(()=> {
-        //         // router.push('/medico')
-        //         close()
-        //     }, 3000)
     }
 
   return (
