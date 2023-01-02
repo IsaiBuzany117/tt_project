@@ -35,7 +35,17 @@ const handler = async (req, res) => {
                 return res.status(401).json({ error: "No logeado" });
             }
             const { usertype, id } = verify(tokensession, process.env.JWT_SECRET);
+            
+            const p2 = await Paciente.findOne({curp: body.curp})
+            console.log(p2)
+            if (!p2) {
+                return res.status(404).json({ error: "Paciente no encontrado"})
+            }
 
+            p2.code_access = codigoAcceso(body.curp)
+            const pacienteActualizado = await p2.save()
+            console.log(pacienteActualizado)
+            
             const medico = await Medico.findById(id);
             if (!medico) {
                 return res.status(404).json({ error: "Medico no encontrado" });
@@ -44,17 +54,8 @@ const handler = async (req, res) => {
             medico.listaPacientes = [...medico.listaPacientes, body]
 
             const medicoActualizado = await medico.save()
-            console.log(medicoActualizado)
+            // console.log(medicoActualizado)
 
-            const p2 = await Paciente.findOne({curp: body.curp})
-
-            if (!p2) {
-                return res.status(404).json({ error: "Paciente no encontrado"})
-            }
-
-            p2.code_access = codigoAcceso(body.curp)
-            const pacienteActualizado = await p2.save()
-            console.log(pacienteActualizado)
 
             return res.status(200).json({medicoActualizado, pacienteActualizado, usertype})
             break

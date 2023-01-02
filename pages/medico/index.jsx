@@ -4,19 +4,48 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { BiSearchAlt } from "react-icons/bi";
 import useSWR from "swr";
 import Userlayout from 'components/layouts/userlayout'
+import { useEffect, useState } from "react";
+
+const Row = ({p, ...rest}) => {
+  return (
+    <tr className="bg-white text-lg" {...rest}>
+      <td className="px-6 py-4 text-left whitespace-nowrap">{p.curp}</td>
+      <td className="px-6 py-4 text-left whitespace-nowrap">{p.nombre}</td>
+      <td className="px-6 py-4 text-left whitespace-nowrap">{p.edad}</td>
+      <td className="px-6 py-4 text-left whitespace-nowrap">
+        {p.sexo === 'M' ? "Masculino" : "Femenino"}
+      </td>
+      <td className="px-6 py-4 text-left whitespace-nowrap">
+        <Link href={`/medico/${p.curp}`}>
+          <a className="text-indigo-500 hover:text-indigo-600 hover:underline">
+            Consultar
+          </a>
+        </Link>
+      </td>
+    </tr>
+  )
+}
 
 const IndexM = () => {
   const router = useRouter();
-  // const { id } = router.query;
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const [data, setData] = useState(null)
+  const [cargando, setCargando] = useState(false)
+  useEffect(() => {
+    const fetchingPacient = async() => {
+      setCargando(true)
+      await fetch("http://localhost:3000/api/medico")
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          setData(data)
+          setCargando(false)
+        })
+    }
+    fetchingPacient()
+  }, [])
 
-  const { data, error } = useSWR(
-    `http://localhost:3000/api/medico`,
-    fetcher
-  );
-
-  if (error) return <div>Error al cargar la informacion</div>;
-  if (!data) return <div>Cargando...</div>;
+  if (!data) return <div>Error al cargar la informacion</div>;
+  if (cargando) return <div>Cargando...</div>;
 
   return (
     <Userlayout type='medico'>
@@ -63,68 +92,25 @@ const IndexM = () => {
             <tbody>
 
               {
-                data.listaPacientes.map(p => (
-                  <tr className="bg-white text-lg" key={p}>
-                    <td className="px-6 py-4 text-left whitespace-nowrap">{p.curp}</td>
-                    <td className="px-6 py-4 text-left whitespace-nowrap">{p.nombre}</td>
-                    <td className="px-6 py-4 text-left whitespace-nowrap">{p.edad}</td>
-                    <td className="px-6 py-4 text-left whitespace-nowrap">
-                      {p.sexo === 'M' ? "Masculino" : "Femenino"}
-                    </td>
-                    <td className="px-6 py-4 text-left whitespace-nowrap">
-                      <Link href={`/medico/expediente`}>
-                        <a className="text-indigo-500 hover:text-indigo-600 hover:underline">
-                          Consultar
-                        </a>
-                      </Link>
-                    </td>
-                  </tr>
+                data.listaPacientes.map((p, i) => (
+                  <Row p={p} key={i}/>
+                  // <tr className="bg-white text-lg" key={p}>
+                  //   <td className="px-6 py-4 text-left whitespace-nowrap">{p.curp}</td>
+                  //   <td className="px-6 py-4 text-left whitespace-nowrap">{p.nombre}</td>
+                  //   <td className="px-6 py-4 text-left whitespace-nowrap">{p.edad}</td>
+                  //   <td className="px-6 py-4 text-left whitespace-nowrap">
+                  //     {p.sexo === 'M' ? "Masculino" : "Femenino"}
+                  //   </td>
+                  //   <td className="px-6 py-4 text-left whitespace-nowrap">
+                  //     <Link href={`/medico/expediente`}>
+                  //       <a className="text-indigo-500 hover:text-indigo-600 hover:underline">
+                  //         Consultar
+                  //       </a>
+                  //     </Link>
+                  //   </td>
+                  // </tr>
                 ))
               }
-              
-              {/* <tr className="bg-white text-lg">
-                <td className="px-6 py-4 text-left whitespace-nowrap">BURO000902HMCZMSA8</td>
-                <td className="px-6 py-4 text-left whitespace-nowrap">Isai</td>
-                <td className="px-6 py-4 text-left whitespace-nowrap">21</td>
-                <td className="px-6 py-4 text-left whitespace-nowrap">
-                  Masculino
-                </td>
-                <td className="px-6 py-4 text-left whitespace-nowrap">
-                  <Link href={`/medico/expediente`}>
-                    <a className="text-indigo-500 hover:text-indigo-600 hover:underline">
-                      Consultar
-                    </a>
-                  </Link>
-                </td>
-              </tr> */}
-              {/* <tr className="bg-blue-100 text-lg">
-                <td className="px-6 py-4  text-left whitespace-nowrap">Isai</td>
-                <td className="px-6 py-4  text-left whitespace-nowrap">21</td>
-                <td className="px-6 py-4  text-left whitespace-nowrap">
-                  Masculino
-                </td>
-                <td className="px-6 py-4  text-left whitespace-nowrap">
-                  <Link href="#">
-                    <a className="text-indigo-500 hover:text-indigo-600 hover:underline">
-                      Consultar
-                    </a>
-                  </Link>
-                </td>
-              </tr>
-              <tr className="bg-white text-lg">
-                <td className="px-6 py-4  text-left whitespace-nowrap">Isai</td>
-                <td className="px-6 py-4  text-left whitespace-nowrap">21</td>
-                <td className="px-6 py-4  text-left whitespace-nowrap">
-                  Masculino
-                </td>
-                <td className="px-6 py-4  text-left whitespace-nowrap">
-                  <Link href="#">
-                    <a className="text-indigo-500 hover:text-indigo-600 hover:underline">
-                      Consultar
-                    </a>
-                  </Link>
-                </td>
-              </tr> */}
             </tbody>
           </table>
         </div>

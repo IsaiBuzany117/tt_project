@@ -10,7 +10,8 @@ const TextArea = ({ label, error, ...props }) => {
         </span>
         <Field
           as="textarea"
-          className="h-48 ring-1 border rounded shadow focus:outline-none focus:ring-indigo-600"
+          className={`${props.disabled && `bg-slate-200 text-black/60`
+            } h-48 ring-1 border rounded shadow focus:outline-none focus:ring-indigo-600`}
           {...props}
         />
       </label>

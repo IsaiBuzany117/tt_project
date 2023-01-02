@@ -10,7 +10,8 @@ const SelectField = ({ label, error, children, ...props }) => {
         </p>
         <Field
           component="select"
-          className="px-4 py-1 text-sm rounded-xl shadow shadow-indigo-200 border-[0.8px] border-indigo-400 focus:outline-indigo-700 focus:outline-2"
+          className={`${props.disabled && `bg-slate-200 text-black/60`
+            } px-4 py-1 text-sm rounded-xl shadow shadow-indigo-200 border-[0.8px] border-indigo-400 focus:outline-indigo-700 focus:outline-2`}
           {...props}
         >
           {children}

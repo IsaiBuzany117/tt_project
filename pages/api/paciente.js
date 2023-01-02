@@ -31,7 +31,7 @@ const handler = async (req, res) => {
 
     case "POST": //registra un paciente
       try {
-        body.code_access = codigoAcceso(body.curp)
+        body.code_access = ""
         const paciente = new Paciente(body);
         paciente.password = await paciente.encryptPassword(paciente.password);
         const pacienteGuardado = await paciente.save();

@@ -81,7 +81,9 @@ const IndexP = () => {
                 </div>
                 <div className='py-4 px-6'>
                   <h2 className="text-center text-[1.35rem] p-2">Codigo de acceso</h2>
-                  <p className="text-center my-8 text-2xl text-indigo-600 font-bold">{data.code_access}</p>
+                  <p className="text-center my-8 text-2xl text-indigo-600 font-bold">
+                    {data.code_access === "" ? "************" : data.code_access}
+                  </p>
                 </div>
               </div>
             </div>

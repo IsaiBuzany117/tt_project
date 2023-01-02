@@ -139,23 +139,31 @@ export const expedienteIvalues = {
     },
     // Notas de evolucion
     ne: {
-        sv: {
-            temperatura: "",
-            tensionarterial: "",
-            frecresp: "",
-            freccardi: "",
-            satuoxigeno: "",
-            otro: "",
+        aux: {
+            fecha: new Date(Date.now()).toLocaleDateString(),
+            sv: {
+                temperatura: "",
+                tensionarterial: "",
+                frecresp: "",
+                freccardi: "",
+                satuoxigeno: "",
+                otro: "",
+            },
+            eyadcc: "",
+            sintomatologia: "",
+            dyp: "",
+            rrdes: "",
         },
-        eyadcc: "",
-        sintomatologia: "",
-        dyp: "",
-        rrdes: "",
+        nota: []
     },
     // Notas de intreconsulta
     ni: {
-        cyd: "",
-        pde: "",
-        sdyt: "",
+        aux: {
+            fecha: new Date(Date.now()).toLocaleDateString(),
+            cyd: "",
+            pde: "",
+            sdyt: "",
+        },
+        nota: []
     },
 };
