@@ -19,15 +19,7 @@ const handler = async (req, res) => {
       if (!paciente) {
         return res.status(404).json({ error: "Paciente no encontrado" });
       }
-      return res.status(200).json({
-        nombre: `${paciente.nombre} ${paciente.apaterno} ${paciente.amaterno}`,
-        curp: paciente.curp,
-        fecnac: paciente.fecnac,
-        sexo: paciente.sexo,
-        email: paciente.email,
-        tel: paciente.tel,
-        code_access: paciente.code_access
-      });
+      return res.status(200).json(paciente);
 
     case "POST": //registra un paciente
       try {

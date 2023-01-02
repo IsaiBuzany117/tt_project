@@ -64,7 +64,7 @@ const IndexP = () => {
                     {data.sexo === 'M' 
                       ? (<GrUser className='flex' size={75}/>)
                       : (<GrUserFemale className='flex' size={75}/>)}
-                      <p className='pl-2 pt-1 font-bold text-[1.4rem]'>{`${data.nombre}`}</p>
+                    <p className='pl-2 pt-1 font-bold text-[1.4rem]'>{`${data.nombre} ${data.apaterno} ${data.amaterno}`}</p>
                   </div>
                   <p>
                     <HiOutlineIdentification className='inline-block mb-1'/> {data.curp}
