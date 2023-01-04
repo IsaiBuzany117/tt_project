@@ -61,7 +61,7 @@ const Identificar = () => {
         </div>
         {isSendEmail ? (
           <p className="mx-auto font-thin text-lime-500 text-sm">
-            Se ha enviado te a enviado un email a tu correo, por favor revisa ru
+            Se ha enviado un email a tu correo, por favor revisa tu
             bandeja de entrada.
           </p>
         ) : null}

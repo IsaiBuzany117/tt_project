@@ -7,10 +7,17 @@ import PasswordField from "../inputs/passwordfield";
 import ButtonSubmit from "../inputs/buttonsubmit";
 import { pacientevalues, pacienteValidate } from "utils/paciente.config";
 import { estados } from "utils/estados";
+import { useState } from "react";
+import Modal from "components/modal";
+import Link from "next/link";
 
 const PacienteForm = () => {
   const router = useRouter();
+  const [error, setError] = useState('')
+  const [thereError, setThereError] = useState(false)
 
+  const open = () => setThereError(true);
+  const close = () => setThereError(false);
   const handleSubmit = async (values) => {
     await fetch("http://localhost:3000/api/paciente", {
       method: "POST",
@@ -21,8 +28,17 @@ const PacienteForm = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        router.push("/login");
+        if (data.error) {
+          console.log(data);
+          setError(data.error)
+          open()
+          setTimeout(() => {
+            close()
+          }, 3000)
+        } else {
+          console.log(data);
+          router.push("/login");
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -139,15 +155,15 @@ const PacienteForm = () => {
             />
             <TextField
               name="tel"
-              label="Telefono"
-              placeholder="Escribe tu numero de telefono o celular"
+              label="Teléfono"
+              placeholder="Escribe tu numero de teléfono o celular"
               required={false}
               error={errors.tel}
             />
             <TextField
               name="email"
-              label="Correo Electronico"
-              placeholder="Escribe la direccion de correo electronico"
+              label="Correo Electrónico"
+              placeholder="Escribe la direccion de correo electrónico"
               required
               error={errors.email}
             />
@@ -161,12 +177,19 @@ const PacienteForm = () => {
 
             <small className="m-2 text-slate-700">
               Al registrarte aceptas nuestras{" "}
-              <a className="text-indigo-500">politicas de privacidad</a>
+              <Link href={`/privacidad`}>
+                <a className="text-indigo-500">políticas de privacidad</a>
+              </Link>
             </small>
             <ButtonSubmit value="Registrarse" name="submit" />
           </Form>
         )}
       </Formik>
+      <Modal isOpen={thereError} close={close}>
+        <div className="flex justify-center">
+          <p className="text-lg text-center">{error}</p>
+        </div>
+      </Modal>
     </>
   );
 };

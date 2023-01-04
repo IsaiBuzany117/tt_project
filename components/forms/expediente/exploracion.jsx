@@ -50,7 +50,7 @@ const Exploracion = ({ errors, isDisabled }) => {
 
     return (
         <div>
-            <h2 className="text-lg font-bold py-1 px-2">Exploracion fisica</h2>
+            <h2 className="text-lg font-bold py-1 px-2">Exploración física</h2>
             <Accordion label="Aspecto general">
                 <Textarea label='Apecto general'name="ef.aspectogeneral" disabled={deshabilitado.aspectogeneral}/>
                 <DisabledButtons isDisabled={isDisabled} enabledButton={() => enabledField("aspectogeneral")} disabledButton={() => disabledField("aspectogeneral")} />
@@ -58,7 +58,7 @@ const Exploracion = ({ errors, isDisabled }) => {
             <Accordion label="Signos vitales">
                 <Textfield label="Temperatura" name="ef.sv.temperatura" disabled={deshabilitado.sv} />
                 <Textfield
-                    label="Tension arterial"
+                    label="Tensión arterial"
                     name="ef.sv.tensionarterial"
                     disabled={deshabilitado.sv}
                 />
@@ -68,12 +68,12 @@ const Exploracion = ({ errors, isDisabled }) => {
                     disabled={deshabilitado.sv}
                 />
                 <Textfield
-                    label="Frecuencia cardiaca"
+                    label="Frecuencia cardíaca"
                     name="ef.sv.freccardi"
                     disabled={deshabilitado.sv}
                 />
                 <Textfield
-                    label="Saturacion de oxigeno"
+                    label="Saturación de oxígeno"
                     name="ef.sv.satuoxigeno"
                     disabled={deshabilitado.sv}
                 />
@@ -94,8 +94,8 @@ const Exploracion = ({ errors, isDisabled }) => {
                 <Textarea label="Cuello" name="ef.cuello" disabled={deshabilitado.cuello} />
                 <DisabledButtons isDisabled={isDisabled} enabledButton={() => enabledField("cuello")} disabledButton={() => disabledField("cuello")} />
             </Accordion>
-            <Accordion label="Torax">
-                <Textarea label="Torax" name="ef.torax" disabled={deshabilitado.torax} />
+            <Accordion label="Tórax">
+                <Textarea label="Tórax" name="ef.torax" disabled={deshabilitado.torax} />
                 <DisabledButtons isDisabled={isDisabled} enabledButton={() => enabledField("fi")} disabledButton={() => disabledField("fi")} />
             </Accordion>
             <Accordion label="Abdomen">

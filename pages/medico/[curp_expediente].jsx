@@ -248,7 +248,7 @@ const MedicoV = () => {
             modified ? (
               <div>
                 <div className="flex justify-center">
-                  <p className="text-lg text-center">¡Expediente medico modificado correctamente!</p>
+                  <p className="text-lg text-center">¡Expediente médico modificado correctamente!</p>
                 </div>
                 <div className="flex justify-center">
                   <BsPersonCheckFill className="text-indigo-700" size={64} />
@@ -256,7 +256,7 @@ const MedicoV = () => {
               </div>
             ) : (
               <div>
-                <p className="text-center">Seguro que quieres guardar los cambios?</p>
+                <p className="text-center">¿Seguro que quieres guardar los cambios?</p>
                 <div className="flex justify-center m-2">
                   <button className="bg-indigo-600 text-white p-2 mx-2 border rounded w-32 hover:bg-indigo-700" onClick={() => {
                     close()
@@ -266,7 +266,7 @@ const MedicoV = () => {
                   <button className="bg-indigo-600 text-white p-2 mx-2 border rounded w-32 hover:bg-indigo-700" onClick={() => {
                     submit(values)
                   }}>
-                    Si
+                    Sí
                   </button>
                 </div>
               </div>

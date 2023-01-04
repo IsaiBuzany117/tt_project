@@ -24,7 +24,7 @@ const Signuplayout = ({ title, children}) => {
           {title === "Paciente" ? (
             <li className="px-3 py-2 font-bold transition duration-150 ease-in-out hover:scale-105 hover:text-indigo-800">
               <Link href={`/registro/medico`}>
-                <a>{`Soy medico`}</a>
+                <a>{`Soy médico`}</a>
               </Link>
             </li>
           ) : (
@@ -36,7 +36,7 @@ const Signuplayout = ({ title, children}) => {
           )}
           <li className="px-3 py-2 font-bold transition duration-150 ease-in-out hover:scale-105 hover:text-indigo-800">
             <Link href="/login">
-              <a>Iniciar Sesion</a>
+              <a>Iniciar Sesión</a>
             </Link>
           </li>
         </ul>

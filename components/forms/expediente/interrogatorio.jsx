@@ -53,7 +53,7 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
     return (
         <div>
             <h2 className="text-lg font-bold py-1 px-2">Interrogatorio</h2>
-            <Accordion label="Ficha de indentificacion">
+            <Accordion label="Ficha de indentificación">
                 <Textfield
                     name="curp"
                     label="CURP"
@@ -300,7 +300,7 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
             </Accordion>
             <Accordion label="Antecedentes personales patológicos">
                 <div className="px-4 pb-2">
-                    <h3 className="font-semibold">Enfermedades congenitas</h3>
+                    <h3 className="font-semibold">Enfermedades congénitas</h3>
                     <div>
                         <Checkbox
                             label="Asma"
@@ -393,9 +393,9 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
                         />
                     </div>
                 </div>
-                <Textarea label="Quirurgicos" name="i.app.quirurgicos" disabled={deshabilitado.app} />
+                <Textarea label="Quirúrgicos" name="i.app.quirurgicos" disabled={deshabilitado.app} />
                 <Textarea label="Intoxicaciones" name="i.app.intoxicaciones" disabled={deshabilitado.app} />
-                <Textarea label="Traumatico" name="i.app.traumatico" disabled={deshabilitado.app} />
+                <Textarea label="Traumático" name="i.app.traumatico" disabled={deshabilitado.app} />
                 <Textarea
                     label="Hospitalizaciones"
                     name="i.app.hospitalizaciones"
@@ -411,9 +411,9 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
                 <DisabledButtons isDisabled={isDisabled} enabledButton={() => enabledField("app")} disabledButton={() => disabledField("app")} />
             </Accordion>
             <Accordion label="Antecedentes personales no patológicos">
-                <h3 className="font-semibold">Toxicomanias</h3>
+                <h3 className="font-semibold">Toxicomanías</h3>
                 <div>
-                    <h4>Indice de tabaco</h4>
+                    <h4>Índice de tabaco</h4>
                     <div className="flex">
                         <Radio
                             label="Si"
@@ -431,12 +431,12 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
                     {apnp.toxicomania.tabaco["?"] === "si" ? (
                         <div className="grid grid-cols-3">
                             <Textfield
-                                label="Numero de cigarros diarios"
+                                label="Número de cigarros diarios"
                                 name="i.apnp.toxicomania.tabaco.cigdiarios"
                                 disabled={deshabilitado.apnp}
                             />
                             <Textfield
-                                label="Numero de años fumando"
+                                label="Número de años fumando"
                                 name="i.apnp.toxicomania.tabaco.añosfumando"
                                 disabled={deshabilitado.apnp}
                             />
@@ -479,9 +479,9 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
                     disabled={deshabilitado.apnp}
                 />
                 <Textarea label="Ejercicio" name="i.apnp.ejercicio" disabled={deshabilitado.apnp} />
-                <Textarea label="Habitacion" name="i.apnp.habitacion" disabled={deshabilitado.apnp} />
+                <Textarea label="Habitación" name="i.apnp.habitacion" disabled={deshabilitado.apnp} />
                 <div>
-                    <h3 className="font-semibold">Alimentacion</h3>
+                    <h3 className="font-semibold">Alimentación</h3>
                     <Textfield
                         label="Verduras y frutas"
                         name="i.apnp.alimentacion.verdyfrut"
@@ -516,12 +516,12 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
                 <div>
                     <h3>Inmunizaciones</h3>
                     <Textfield
-                        label="Ultima vacuna"
+                        label="Última vacuna"
                         name="i.apnp.inmunizaciones.ultivacuna"
                         disabled={deshabilitado.apnp}
                     />
                     <Textfield
-                        label="Esquema de vacunacion"
+                        label="Esquema de vacunación"
                         name="i.apnp.inmunizaciones.esquemavacuna"
                         disabled={deshabilitado.apnp}
                     />
@@ -539,19 +539,19 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
                 <Textarea label="Estado actual" name="i.pa.edoactual" disabled={deshabilitado.pa} />
                 <Textarea label="Inicio" name="i.pa.inicio" disabled={deshabilitado.pa} />
                 <Textarea label="Sitomatología" name="i.pa.sintomatologia" disabled={deshabilitado.pa} />
-                <Textarea label="Evolucion" name="i.pa.evolucion" disabled={deshabilitado.pa} />
+                <Textarea label="Evolución" name="i.pa.evolucion" disabled={deshabilitado.pa} />
                 <Textarea label="Factores" name="i.pa.factores" disabled={deshabilitado.pa} />
                 <DisabledButtons isDisabled={isDisabled} enabledButton={() => enabledField("pa")} disabledButton={() => disabledField("pa")} />
             </Accordion>
             <Accordion label="Interrogatorio por aparatos y sistemas">
                 <Textarea
-                    label="Sintomas generales"
+                    label="Síntomas generales"
                     name="i.ipays.sintgenerales"
                     disabled={deshabilitado.ipays}
                 />
                 <Textarea label="Ojos" name="i.ipays.ojos" disabled={deshabilitado.ipays} />
-                <Textarea label="Oidos" name="i.ipays.oidos" disabled={deshabilitado.ipays} />
-                <Textarea label="Naris" name="i.ipays.naris" disabled={deshabilitado.ipays} />
+                <Textarea label="Oídos" name="i.ipays.oidos" disabled={deshabilitado.ipays} />
+                <Textarea label="Nariz" name="i.ipays.naris" disabled={deshabilitado.ipays} />
                 <Textarea label="Garganta" name="i.ipays.garganta" disabled={deshabilitado.ipays} />
                 <Textarea label="Gusto" name="i.ipays.gusto" disabled={deshabilitado.ipays} />
                 <Textarea
@@ -563,12 +563,12 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
                 <Textarea label="Urinario" name="i.ipays.urinario" disabled={deshabilitado.ipays} />
                 <Textarea label="Genital" name="i.ipays.genital" disabled={deshabilitado.ipays} />
                 <Textarea label="Digestivo" name="i.ipays.digestivo" disabled={deshabilitado.ipays} />
-                <Textarea label="Hemolinfatico" name="i.ipays.hemolinfatico" disabled={deshabilitado.ipays} />
-                <Textarea label="Endocrino" name="i.ipays.endocrino" disabled={deshabilitado.ipays} />
+                <Textarea label="Hemolinfático" name="i.ipays.hemolinfatico" disabled={deshabilitado.ipays} />
+                <Textarea label="Endócrino" name="i.ipays.endocrino" disabled={deshabilitado.ipays} />
                 <Textarea label="Nervioso" name="i.ipays.nervioso" disabled={deshabilitado.ipays} />
-                <Textarea label="Psiquiatrico" name="i.ipays.psiquiatrico" disabled={deshabilitado.ipays} />
+                <Textarea label="Psiquiátrico" name="i.ipays.psiquiatrico" disabled={deshabilitado.ipays} />
                 <Textarea
-                    label="Musculo-esqueletico"
+                    label="Músculo-esquelético"
                     name="i.ipays.musculoesqueletico"
                     disabled={deshabilitado.ipays}
                 />

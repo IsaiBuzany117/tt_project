@@ -22,8 +22,12 @@ const handler = async (req, res) => {
     case "POST":
       try {
         console.log(body)
+        const m = await Medico.findOne({ curp: body.curp });
+        if (m) {
+          return res.status(404).json({ error: "El registro ya existe. Ingrese un medico nuevo" });
+        }
         // res.json(body)
-        body.listaPacientes = []
+        // body.listaPacientes = []
         const medico = new Medico(body);
         medico.password = await medico.encryptPassword(medico.password);
         const medicoGuardado = await medico.save();

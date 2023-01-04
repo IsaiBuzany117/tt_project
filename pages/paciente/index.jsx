@@ -80,7 +80,7 @@ const IndexP = () => {
                   </p>
                 </div>
                 <div className='py-4 px-6'>
-                  <h2 className="text-center text-[1.35rem] p-2">Codigo de acceso</h2>
+                  <h2 className="text-center text-[1.35rem] p-2">Código de acceso</h2>
                   <p className="text-center my-8 text-2xl text-indigo-600 font-bold">
                     {data.code_access === "" ? "************" : data.code_access}
                   </p>
@@ -90,13 +90,13 @@ const IndexP = () => {
           </div>
            <div className="flex justify-center items-center row-span-2">
             <div className="h-full w-full border border-slate-300 rounded-md shadow-md">
-              <h2 className="text-center text-xl p-2">Antecedentes Medicos</h2>
+              <h2 className="text-center text-xl p-2">Antecedentes Médicos</h2>
               {
                 !exp
                 ? (
                   <p className='text-center py-2 px-6 italic text-sm'>
-                    Aun no cuentas con un expediente medico.
-                    Acude con un medico para crear tu expediente.
+                    Aún no cuentas con un expediente médico.
+                    Acude con un médico para crear tu expediente.
                   </p>
                 )
                 : (
@@ -105,7 +105,7 @@ const IndexP = () => {
                         <h3 className='py-2 text-indigo-700 font-bold'>Patológicos</h3>
                       <div className='grid grid-cols-1 divide-y-2 divide-slate-300'>
                         <div className='grid grid-cols-2 p-[0.25rem]'>
-                          <p className='font-semibold '>Congenitas</p>
+                          <p className='font-semibold '>Congénitas</p>
                           <p>{`${exp.i.app.congenitas.patologias.join(", ")} ${exp.i.app.congenitas.otro}`}</p>
                         </div>
                         <div className='grid grid-cols-2 p-[0.25rem]'>
@@ -122,7 +122,7 @@ const IndexP = () => {
                       <h3 className='py-2 text-indigo-700 font-bold'> No Patólogicos</h3>
                       <div className='grid grid-cols-1 divide-y-2 divide-slate-300'>
                         <div className='grid grid-cols-2 p-[0.25rem]'>
-                          <p className='font-semibold '>Alimentacion</p>
+                          <p className='font-semibold '>Alimentación</p>
                           <p>{exp.i.apnp.alimentacion.verdyfrut}, {exp.i.apnp.alimentacion.cereales}, {exp.i.apnp.alimentacion.leguminosas}, {exp.i.apnp.alimentacion.alimentosanimal}, {exp.i.apnp.alimentacion.bebidas}</p>
                         </div>
                         <div className='grid grid-cols-2 p-[0.25rem]'>
@@ -139,7 +139,7 @@ const IndexP = () => {
                       <h3 className='py-2 text-indigo-700 font-bold'>Inmunizaciones</h3>
                       <div className='grid grid-cols-1 divide-y-2 divide-slate-300'>
                         <div className='grid grid-cols-2 p-[0.25rem]'>
-                          <p className='font-semibold '>Ultima vacuna</p>
+                          <p className='font-semibold '>Última vacuna</p>
                           <p className='w-full'>{exp.i.apnp.inmunizaciones.ultivacuna}</p>
                         </div>
                       </div>
@@ -179,8 +179,8 @@ const IndexP = () => {
                 !exp
                 ? (
                   <p className='text-center py-2 px-6 italic text-sm'>
-                    Aun no cuentas con un expediente medico.
-                    Acude con un medico para crear tu expediente.
+                      Aún no cuentas con un expediente médico.
+                      Acude con un médico para crear tu expediente.
                   </p>
                 )
                 : (
@@ -193,13 +193,13 @@ const IndexP = () => {
                         <strong>Frecuencia respiratoria: </strong> {exp.ef.sv.frecresp} r/m
                       </p>
                       <p className="my-2">
-                        <strong>Frecuencia cardiaca: </strong> {exp.ef.sv.freccardi} ppm
+                        <strong>Frecuencia cardíaca: </strong> {exp.ef.sv.freccardi} ppm
                       </p>
                       <p className="my-2">
-                        <strong>Presion arterial: </strong> {exp.ef.sv.tensionarterial} mmHg
+                        <strong>Presión arterial: </strong> {exp.ef.sv.tensionarterial} mmHg
                       </p>
                       <p className="my-2">
-                        <strong>Saturacion de oxigeno: </strong> {exp.ef.sv.satuoxigeno} %
+                        <strong>Saturación de oxígeno: </strong> {exp.ef.sv.satuoxigeno} %
                       </p>
                     </div>
                     <div className="p-4">
@@ -225,7 +225,7 @@ const IndexP = () => {
         <div className="flex justify-center p-8">
           <Link href="/buscar">
             <a className="bg-indigo-600 border rounded-md p-2 text-slate-100 hover:bg-indigo-500">
-              Buscar medico
+              Buscar médico
             </a>
           </Link>
         </div>

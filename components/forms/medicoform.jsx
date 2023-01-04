@@ -8,10 +8,17 @@ import ButtonSubmit from "../inputs/buttonsubmit";
 import { medicovalues, medicoValidate } from "utils/medico.config";
 import { estados } from "utils/estados";
 import { especialidades } from "utils/especialidades";
+import Modal from "components/modal";
+import { useState } from "react";
+import Link from "next/link";
 
 const MedicoForm = () => {
   const router = useRouter();
+  const [error, setError] = useState('')
+  const [thereError, setThereError] = useState(false)
 
+  const open = () => setThereError(true);
+  const close = () => setThereError(false);
   const handleSubmit = async (values) => {
     console.log(values)
     await fetch("http://localhost:3000/api/medico", {
@@ -23,8 +30,17 @@ const MedicoForm = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        router.push("/login");
+        if (data.error) {
+          console.log(data);
+          setError(data.error)
+          open()
+          setTimeout(() => {
+            close()
+          }, 3000)
+        } else {
+          console.log(data);
+          router.push("/login");
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -147,18 +163,18 @@ const MedicoForm = () => {
             />
             <TextField
               name="cedulageneral"
-              label="Cedula general profesional"
+              label="Cédula general profesional"
               placeholder="Escribe tu cédula profesional general"
               required
               error={errors.cedulageneral}
             />
             <TextField
               name="cedulaespecial"
-              label="Cedula profesional de especialidad"
+              label="Cédula profesional de especialidad"
               placeholder="Escribe tu cédula profesional de especialidad"
               required
               error={errors.cedulaespecial}
-            />  
+            />
             <div className="grid grid-cols-2">
               <SelectField
                 name="especialidad"
@@ -198,13 +214,13 @@ const MedicoForm = () => {
             <TextField
               name="tel"
               label="Teléfono"
-              placeholder="Escribe tu numero de telefono o celular"
+              placeholder="Escribe tu numero de teléfono o celular"
               required={false}
             />
             <TextField
               name="email"
               label="Correo Electrónico"
-              placeholder="Escribe la dirección de correo electronico"
+              placeholder="Escribe la dirección de correo electrónico"
               required
               error={errors.email}
             />
@@ -218,12 +234,19 @@ const MedicoForm = () => {
 
             <small className="m-2 text-slate-700">
               Al registrarte aceptas nuestras{" "}
-              <a className="text-indigo-500">politicas de privacidad</a>
+              <Link href={`/privacidad`}>
+                <a className="text-indigo-500">políticas de privacidad</a>
+              </Link>
             </small>
             <ButtonSubmit value="Registrarse" name="submit" />
           </Form>
         )}
       </Formik>
+      <Modal isOpen={thereError} close={close}>
+        <div className="flex justify-center">
+          <p className="text-lg text-center">{error}</p>
+        </div>
+      </Modal>
     </>
   );
 };

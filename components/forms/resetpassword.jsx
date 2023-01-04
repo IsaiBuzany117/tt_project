@@ -32,7 +32,7 @@ const Resetpassword = ({ id, resetfunction }) => {
           const includeChar = (pass) => /(?=.*[-+_!@#$%^&*.,?])/.test(pass);
 
           if (!values.newpass) {
-            errors.newpass = "Por favor, inrgesa una contraseña";
+            errors.newpass = "Por favor, ingresa una contraseña";
           } else {
             if (values.newpass.length < 8) {
               errors.newpass = "La contraseña debe tener minimo 8 caracteres";

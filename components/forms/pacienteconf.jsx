@@ -104,16 +104,16 @@ const PacienteConf = ({ data }) => {
               />
             </fieldset>
             <fieldset className="w-full px-24 mb-8 border-0 border-t-2 border-indigo-700">
-              <legend className="text-2xl">Informacion de contacto</legend>
+              <legend className="text-2xl">Información de contacto</legend>
               <TextField
                 name="tel"
-                label="Telefono"
-                placeholder="Escribe tu numero de telefono o celular"
+                label="Teléfono"
+                placeholder="Escribe tu numero de teléfono o celular"
               />
               <TextField
                 name="email"
-                label="Correo Electronico"
-                placeholder="Escribe la direccion de correo electronico"
+                label="Correo Electrónico"
+                placeholder="Escribe la direccion de correo electrónico"
               />
             </fieldset>
             <fieldset className="w-full px-24 mb-8 border-0 border-t-2 border-indigo-700">

@@ -48,7 +48,7 @@ const Notaevolucion = ({ values, isDisabled, index }) => {
             <Accordion label="Signos vitales">
                 <Textfield label="Temperatura" name={`ne.aux.sv.temperatura`} disabled={deshabilitado.sv} />
                 <Textfield
-                    label="Tension arterial"
+                    label="Tensión arterial"
                     name={`ne.aux.sv.tensionarterial`}
                     disabled={deshabilitado.sv}
                 />
@@ -58,7 +58,7 @@ const Notaevolucion = ({ values, isDisabled, index }) => {
                     disabled={deshabilitado.sv}
                 />
                 <Textfield
-                    label="Frecuancia cardiaca"
+                    label="Frecuancia cardíaca"
                     name={`ne.aux.sv.freccardi`}
                     disabled={deshabilitado.sv}
                 />

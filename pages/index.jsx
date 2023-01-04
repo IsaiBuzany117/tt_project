@@ -25,7 +25,7 @@ const index = () => {
             <p className="px-10 text-left text-2xl leading-loose text-slate-100">
               Nuestro objetivo es proporcionarle a nuestros pacientes un control
               sobre sus datos médicos, ya que ellos podrán compartir la versión
-              única y completa de su expediente médico, con cada médico
+              única y completa de su expediente médico, con cada médico que
               consulte.
             </p>
           </div>
@@ -37,7 +37,7 @@ const index = () => {
           <div className="flex justify-end items-center">
             <p className="px-10 text-right text-2xl leading-loose text-gray-900">
               BLOCKHEALTH utiliza la tecnología blockchain para mantener sus
-              datos medicos <span className="text-indigo-500">seguros</span> y{" "}
+              datos médicos <span className="text-indigo-500">seguros</span> y{" "}
               <span className="text-indigo-500">disponibles</span> en todo
               momento, y totalmente descentralizados.
             </p>
@@ -69,7 +69,7 @@ const index = () => {
               <MdDevices className="text-slate-100 h-40 w-40" />
               <div>
                 <h2 className="text-slate-100 text-2xl">
-                  Consultalo en cualquier dispositivo
+                  Consúltalo en cualquier dispositivo
                 </h2>
               </div>
             </div>
@@ -132,6 +132,12 @@ const index = () => {
                 </p>
               </div>
             </div>
+            <div className="w-full h-[0.1rem] rounded-lg bg-indigo-800"></div>
+            <p className="py-2 hover:text-slate-800 hover:cursor-pointer">
+              <Link href={`/privacidad`}>
+                <a>Política de privacidad</a>
+              </Link>
+            </p>
           </div>
         </div>
       </footer>

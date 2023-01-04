@@ -1,7 +1,7 @@
 import { verify } from "jsonwebtoken";
 import { mongoconnection } from "/utils/mongodb";
 import Paciente from "/models/Paciente";
-import {codigoAcceso} from '../../utils/codigoAcceso'
+import { codigoAcceso } from '../../utils/codigoAcceso'
 
 mongoconnection();
 
@@ -23,7 +23,11 @@ const handler = async (req, res) => {
 
     case "POST": //registra un paciente
       try {
-        body.code_access = ""
+        const p = await Paciente.findOne({ curp: body.curp });
+        if (p) {
+          return res.status(404).json({ error: "El registro ya existe. Ingrese un paciente nuevo" });
+        }
+        // body.code_access = ""
         const paciente = new Paciente(body);
         paciente.password = await paciente.encryptPassword(paciente.password);
         const pacienteGuardado = await paciente.save();
@@ -44,7 +48,7 @@ const handler = async (req, res) => {
           id: paciente._id,
           usertype: "paciente",
         });
-      } catch (error) {}
+      } catch (error) { }
       break;
     default:
       return res

@@ -27,17 +27,17 @@ const Homelayout = ({ title, children }) => {
           </li>
           <li className="px-3 py-2 font-bold transition duration-150 ease-in-out hover:scale-105 hover:text-indigo-800">
             <Link href="/registro/paciente">
-              <a>Registrate como Paciente</a>
+              <a>Regístrate como Paciente</a>
             </Link>
           </li>
           <li className="px-3 py-2 font-bold transition duration-150 ease-in-out hover:scale-105 hover:text-indigo-800">
             <Link href="/registro/medico">
-              <a>Registrate como Médico</a>
+              <a>Regístrate como Médico</a>
             </Link>
           </li>
           <li className="px-3 py-2 font-bold transition duration-150 ease-in-out hover:scale-105 hover:text-indigo-800">
             <Link href="/login">
-              <a>Iniciar Sesion</a>
+              <a>Iniciar Sesión</a>
             </Link>
           </li>
         </ul>

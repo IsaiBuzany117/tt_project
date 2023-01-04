@@ -78,7 +78,7 @@ const Card = ({ data }) => {
         <div>
           <p>Tel: {tel}</p>
           <p>Correo: {email}</p>
-          <p>Direccion: {dirconsul}</p>
+          <p>Dirección: {dirconsul}</p>
           <p>Experiencia: {experiencia}</p>
           <p>Costo de la consulta: ${precio}</p>
         </div>
@@ -112,7 +112,7 @@ const Busqueda = () => {
       <Navbar />
 
       <div className="text-center my-2">
-        <h1 className="text-3xl">Busqueda de Médicos</h1>
+        <h1 className="text-3xl">Búsqueda de Médicos</h1>
       </div>
 
       <div className="grid grid-cols-2 m-6">

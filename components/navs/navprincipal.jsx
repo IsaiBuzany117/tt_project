@@ -54,7 +54,7 @@ const MenuDropdown = ({usertype, id}) => {
                                         active ? (<GoGear className='h-4 w-4 mr-2'/>):(<GoGear className='h-4 w-4 mr-2'/>)
                                     }
                                     <Link href={`/${usertype}/${id}/configuracion`}>
-                                        <a>Configuracion</a>
+                                        <a>Configuración</a>
                                     </Link>
                                 </button>
                             )}
@@ -68,7 +68,7 @@ const MenuDropdown = ({usertype, id}) => {
                                         active ? (<HiLogout className='h-4 w-4 mr-2'/>):(<HiLogout className='h-4 w-4 mr-2'/>)
                                     }
                                     <Link href="/">
-                                        <a>Cerrar sesion</a>
+                                        <a>Cerrar sesión</a>
                                     </Link>
                                 </button>
                             )}

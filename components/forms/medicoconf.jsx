@@ -104,7 +104,7 @@ const MedicoConf = ({ data, id }) => {
               />
             </fieldset>
             <fieldset className="w-full px-24 mb-8 border-0 border-t-2 border-indigo-700">
-              <legend className="text-2xl">Informacion preofesional</legend>
+              <legend className="text-2xl">Información preofesional</legend>
               <div className="grid grid-cols-2">
                 <SelectField
                   name="especialidad"
@@ -129,13 +129,13 @@ const MedicoConf = ({ data, id }) => {
               </div>
               <TextField
                 name="cedula"
-                label="Cedula profesional"
-                placeholder="Escribe tus años de experiencia"
+                label="Cédula profesional"
+                placeholder="Escribe tu cédula profesional"
                 disabled
               />
             </fieldset>
             <fieldset className="w-full px-24 mb-8 border-0 border-t-2 border-indigo-700">
-              <legend className="text-2xl">Informacion del consultorio</legend>
+              <legend className="text-2xl">Información del consultorio</legend>
               <TextField
                 name="dirconsul"
                 label="Dirección del Consultorio"
@@ -148,16 +148,16 @@ const MedicoConf = ({ data, id }) => {
               />
             </fieldset>
             <fieldset className="w-full px-24 mb-8 border-0 border-t-2 border-indigo-700">
-              <legend className="text-2xl">Informacion de contacto</legend>
+              <legend className="text-2xl">Información de contacto</legend>
               <TextField
                 name="tel"
                 label="Teléfono"
-                placeholder="Escribe tu numero de telefono o celular"
+                placeholder="Escribe tu numero de teléfono o celular"
               />
               <TextField
                 name="email"
                 label="Correo Electrónico"
-                placeholder="Escribe la dirección de correo electronico"
+                placeholder="Escribe la dirección de correo electrónico"
               />
             </fieldset>
             <fieldset className="w-full px-24 mb-8 border-0 border-t-2 border-indigo-700">

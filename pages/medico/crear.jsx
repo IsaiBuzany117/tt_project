@@ -184,7 +184,7 @@ const Crear = () => {
                     !error ? (
                         <>
                             <div className="flex justify-center">
-                                <p className="text-lg text-center">¡Expediente medico creado correctamente!</p>
+                                <p className="text-lg text-center">¡Expediente médico creado correctamente!</p>
                             </div>
                             <div className="flex justify-center">
                                 <BsPersonCheckFill className="text-indigo-700" size={64} />

@@ -56,8 +56,8 @@ const Login = () => {
                 <Form>
                   <TextField
                     name="loginemail"
-                    label="Correo electronico"
-                    placeholder="Correo electronico"
+                    label="Correo electrónico"
+                    placeholder="Correo electrónico"
                   />
                   <PasswordField
                     name="loginpassword"
@@ -74,7 +74,7 @@ const Login = () => {
                       ¿Olvidaste tu contraseña?{" "}
                       <Link href="/login/identificar">
                         <a className="text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer">
-                          Recuperala aqui
+                          Recupérala aquí
                         </a>
                       </Link>
                     </span>
@@ -83,7 +83,7 @@ const Login = () => {
                       <Link href="/registro/paciente">
                         <a className="text-indigo-600 hover:underline hover:text-indigo-400 cursor-pointer">
                           {" "}
-                          Registrate aqui
+                          Regístrate aquí
                         </a>
                       </Link>
                     </span>
