@@ -8,8 +8,19 @@ import Homelayout from 'components/layouts/homelayout'
 import logo from "public/logoytitulo.svg";
 import blockchain from "public/blockchain.svg";
 import { especialidades } from "utils/especialidades";
+import { useRef } from "react";
+import { useRouter } from "next/router";
 
-const index = () => {
+const Index = () => {
+  const router = useRouter()
+  const espRef = useRef([])
+  const handleEspecialidad = (i) => {
+    console.log(espRef.current[i].textContent)
+    const especialidad = espRef.current[i].textContent
+    localStorage.setItem("esp", especialidad)
+    router.push('/buscar')
+  }
+
   return (
     <Homelayout title='Blockhealth'>
       <div className="flex justify-center w-full py-6">
@@ -88,11 +99,9 @@ const index = () => {
             {especialidades.map((espec, i) => {
               return (
                 <div key={i}>
-                  <p className="text-lg text-center hover:text-indigo-500 hover:cursor-pointer">
-                    <Link href={`/buscar`}>
-                      <a>{espec}</a>
-                    </Link>
-                  </p>
+                  <button className="text-lg text-center hover:text-indigo-500 hover:cursor-pointer" ref={e => espRef.current[i] = e} onClick={() => handleEspecialidad(i)}>
+                    {espec}
+                  </button>
                 </div>
               );
             })}
@@ -145,4 +154,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

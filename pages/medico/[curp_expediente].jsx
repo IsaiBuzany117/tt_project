@@ -73,6 +73,16 @@ const MedicoV = () => {
     values.ni.nota.push(auxni)
     console.log(values)
 
+    const fetchingMail = async () => {
+      await fetch('http://localhost:3000/api/notificar', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({curp : exp.curp}),
+      })
+    }
+
     await fetch('http://localhost:4000/update', {
       method: "POST",
       headers: {
@@ -84,6 +94,7 @@ const MedicoV = () => {
       .then(data => {
         console.log("Expediente actualizado correctamente", data)
         setModified(true)
+        fetchingMail()
         setTimeout(() => {
           close()
           router.push('/medico')

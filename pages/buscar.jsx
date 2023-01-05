@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Navbar from "components/navs/navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { HiSelector } from "react-icons/hi";
 import { especialidades } from "utils/especialidades";
@@ -69,6 +69,8 @@ const Card = ({ data }) => {
     experiencia,
     precio,
   } = data;
+
+
   return (
     <div className="flex justify-center">
       <div className="px-3 py-2 bg-indigo-100 shadow-md shadow-indigo-200 border rounded">
@@ -89,11 +91,10 @@ const Card = ({ data }) => {
 
 const Busqueda = () => {
   const [medicos, setMedicos] = useState([]);
-  const [especialidad, setEspecialidad] = useState(
-    "Selecciona una especialidad"
-  );
+  const [especialidad, setEspecialidad] = useState('');
 
   const getEspecialidad = async () => {
+    console.log(especialidad)
     const res = await fetch(
       `http://localhost:3000/api/especialidad/${especialidad}`
     );
@@ -103,6 +104,31 @@ const Busqueda = () => {
     if (data) setMedicos([...data]);
     else setMedicos([]);
   };
+
+  useEffect(() => {
+    const esp = localStorage.getItem('esp')
+    console.log(esp)
+    const fetching =async () => {
+      const res = await fetch(
+        `http://localhost:3000/api/especialidad/${especialidad}`
+      );
+      const data = await res.json();
+
+      console.log(data);
+      if (data) setMedicos([...data]);
+      else setMedicos([]);
+    }
+    if (esp){
+      setEspecialidad(esp)
+      fetching()
+      setTimeout(() => {
+        localStorage.removeItem("esp")
+      }, 3000)
+      // setEspecialidad("")
+    }
+    
+  }, [especialidad])
+  
 
   return (
     <div className="h-screen">
@@ -117,10 +143,19 @@ const Busqueda = () => {
 
       <div className="grid grid-cols-2 m-6">
         <div className="flex justify-end mr-4">
-          <ComboboxEspceialidad
+          <select name="especialidades" onChange={({target}) => setEspecialidad(target.value)}>
+            
+            <option value="">Selecciona una opcion</option>
+            {
+              especialidades.map((e, i) => (
+                <option value={e} key={i}>{e}</option>
+              ))
+            }
+          </select>
+          {/* <ComboboxEspceialidad
             especialidad={especialidad}
             setEspecialidad={setEspecialidad}
-          />
+          /> */}
         </div>
         <div className="flex justify-start ml-4 max-h-10 w-64">
           <button

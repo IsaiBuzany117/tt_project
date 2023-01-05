@@ -13,7 +13,8 @@ export const pacientevalues = {
     tel:'',
     email:'',
     password:'',
-    code_access: ''
+    code_access: '',
+    listaMedicos: []
 }
 
 const includeUpper = pass => /(?=.*[A-Z])/.test(pass)

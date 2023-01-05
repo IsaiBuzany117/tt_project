@@ -94,6 +94,13 @@ const pacienteSchema = new Schema(
       type: String,
       trim: true,
     },
+    listaMedicos: {
+      type: [{
+        nombre: String,
+        email: String,
+        tel: String
+      }]
+    }
   },
   {
     timestamps: true,

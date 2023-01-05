@@ -41,23 +41,31 @@ const handler = async (req, res) => {
             if (!p2) {
                 return res.status(404).json({ error: "Paciente no encontrado"})
             }
-
-            p2.code_access = codigoAcceso(body.curp)
-            const pacienteActualizado = await p2.save()
-            console.log(pacienteActualizado)
             
             const medico = await Medico.findById(id);
+            console.log(medico)
             if (!medico) {
                 return res.status(404).json({ error: "Medico no encontrado" });
             }
 
             medico.listaPacientes = [...medico.listaPacientes, body]
-
             const medicoActualizado = await medico.save()
-            // console.log(medicoActualizado)
+            console.log(medicoActualizado)
 
+            
+            p2.code_access = codigoAcceso(body.curp)
+            const newM = {
+                nombre: `${medico.nombre} ${medico.apaterno} ${medico.amaterno}`,
+                email: medico.email,
+                tel: medico.tel
+            }
+            p2.listaMedicos = [...p2.listaMedicos, newM]
+
+            const pacienteActualizado = await p2.save()
+            console.log(pacienteActualizado)
 
             return res.status(200).json({medicoActualizado, pacienteActualizado, usertype})
+            // return res.status(200).json({ok: 'ok'})
             break
         default:
             return res

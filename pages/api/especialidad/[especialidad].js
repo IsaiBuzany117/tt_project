@@ -5,8 +5,10 @@ mongoconnection()
 
 const handler = async (req, res) =>{
     const { especialidad } = req.query
+    console.log(especialidad)
     // console.log(especialidad)
     const medicos = await Medico.find({especialidad})
+    console.log(medicos)
     // if(!medicos) return res.status(400).json({message: "Medicos no encontrados con esta especialidad"})
     return res.status(200).json(medicos)
 }
