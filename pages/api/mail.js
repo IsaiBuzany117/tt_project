@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   const medico = await Medico.findOne({ email });
 
   if (!paciente && !medico) {
-    return res.status(400).json({ message: "Correo no encontrado" });
+    return res.status(400).json({ error: "Correo no encontrado" });
   }
   const usuario = paciente ? paciente : medico ? medico : null;
 

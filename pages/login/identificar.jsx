@@ -6,8 +6,9 @@ import Textfield from "components/inputs/textfield";
 import Buttonsubmit from "components/inputs/buttonsubmit";
 
 const Identificar = () => {
-  const [isSendEmail, setIsSendEmail] = useState(false);
   const router = useRouter();
+  const [isSendEmail, setIsSendEmail] = useState(false);
+  const [error, setError] = useState('')
 
   const handleSubmit = async (values) => {
     await fetch("http://localhost:3000/api/mail", {
@@ -16,12 +17,20 @@ const Identificar = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(values),
-    }).then((res) => {
-      console.log(res.status);
-      setIsSendEmail(true);
-      setTimeout(() => {
-        setIsSendEmail(false);
-      }, 3000);
+    }).then((res) => res.json())
+    .then(data => {
+      console.log(data);
+      if(data.error) {
+        setError(data.error)
+        setTimeout(()=>{
+          setError('')
+        }, 3000)
+      } else {
+        setIsSendEmail(true);
+        setTimeout(() => {
+          setIsSendEmail(false);
+        }, 3000);
+      }
     });
   };
   return (
@@ -59,12 +68,25 @@ const Identificar = () => {
             </Formik>
           </div>
         </div>
-        {isSendEmail ? (
-          <p className="mx-auto font-thin text-lime-500 text-sm">
-            Se ha enviado un email a tu correo, por favor revisa tu
-            bandeja de entrada.
-          </p>
-        ) : null}
+        {
+          isSendEmail ? (
+            <p className="mx-auto font-thin text-lime-500 text-sm">
+              Se ha enviado un email a tu correo, por favor revisa tu
+              bandeja de entrada.
+            </p>
+          ) : (
+            <>
+              {
+                error && (
+                    <p className="mx-auto text-center font-thin text-rose-500 text-sm">
+                      {error}
+                    </p>
+                )
+              }
+            </>
+          )
+        
+        }
       </div>
     </Layout>
   );
