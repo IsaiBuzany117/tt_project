@@ -24,6 +24,7 @@ const PacienteConf = ({ data }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        router.push("/paciente")
       })
       .catch((err) => console.log(err));
   };

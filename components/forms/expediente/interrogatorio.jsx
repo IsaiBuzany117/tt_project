@@ -105,8 +105,8 @@ const Interrogatorio = ({ values, errors, isDisabled }) => {
                     disabled={isDisabled}
                 >
                     <option value=""></option>
-                    <option value="M">Femenino</option>
-                    <option value="H">Masculino</option>
+                    <option value="F">Femenino</option>
+                    <option value="M">Masculino</option>
                 </Select>
                 <Select
                     name="i.fi.edo"

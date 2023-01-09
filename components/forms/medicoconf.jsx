@@ -23,6 +23,7 @@ const MedicoConf = ({ data, id }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        router.push("/medico")
         // router.push(`/inicio/${data.usertype}/${data.id}`);
       })
       .catch((err) => console.log(err));
@@ -128,8 +129,14 @@ const MedicoConf = ({ data, id }) => {
                 />
               </div>
               <TextField
-                name="cedula"
+                name="cedulageneral"
                 label="Cédula profesional"
+                placeholder="Escribe tu cédula profesional"
+                disabled
+              />
+              <TextField
+                name="cedulaespecial"
+                label="Cédula profesional de especialidad"
                 placeholder="Escribe tu cédula profesional"
                 disabled
               />

@@ -2,19 +2,28 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Userlayout from "components/layouts/userlayout";
 import PacienteConf from "components/forms/pacienteconf";
+import { useEffect, useState } from "react";
 
 const PacienteConfiguracion = () => {
   const router = useRouter();
-  // const { id } = router.query;
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const [data, setData] = useState(null)
+  const [cargando, setCargando] = useState(false)
+  useEffect(() => {
+    const fetchingPacient = async () => {
+      setCargando(true)
+      await fetch("http://localhost:3000/api/paciente")
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          setData(data)
+          setCargando(false)
+        })
+    }
+    fetchingPacient()
+  }, [])
 
-  const { data, error } = useSWR(
-    `http://localhost:3000/api/paciente`,
-    fetcher
-  );
-
-  if (error) return <div>Error al cargar la informacion</div>;
-  if (!data) return <div>Cargando...</div>;
+  if (!data) return <div>Error al cargar la informacion</div>;
+  if (cargando) return <div>Cargando...</div>;
 
   return (
     <Userlayout type="paciente">

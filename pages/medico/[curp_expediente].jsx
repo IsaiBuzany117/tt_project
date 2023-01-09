@@ -235,7 +235,7 @@ const MedicoV = () => {
               <div className="grid grid-cols-2 w-[40%]">
                 <div className="w-full">
                   <div className="flex justify-center">
-                    <button className="w-4/5 p-1.5 mt-2 mb-4 shadow-md bg-indigo-600 text-slate-100 border rounded-md hover:bg-indigo-800 cursor-pointer" onClick={() => {
+                    <button className="w-4/5 p-1.5 mt-2 mb-4 shadow-md bg-indigo-600 text-slate-100 border rounded-md hover:bg-indigo-800 cursor-pointer" type="button" onClick={() => {
                       router.back()
                     }}>
                       Regresar
